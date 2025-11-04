@@ -1,0 +1,139 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" opacity="0.3">
+  <defs>
+    <!-- Avião real do Ativo 1.png -->
+    <g id="airplane-real">
+      <g transform="translate(0, 0) scale(0.05, 0.05)" fill="#000000" fill-opacity="0.7" stroke="none">
+        <path d="M1077.57,349.78c-96.42,59.95-261.72,163.17-367.46,228.94C604.57,644.49,518.42,699,518.81,699.78
+        	c1.36,2.91,350.39,223.12,351.55,221.95c2.52-2.52,383.95-680.02,383.37-680.6C1253.35,240.74,1174.19,289.64,1077.57,349.78z"/>
+        <path d="M1220.95,250.06c-1.75,1.16-32.79,9.89-68.87,19.6c-75.08,19.98-417.91,111.75-725.22,193.82
+        	C58.03,562.03,27.38,570.18,26.6,570.96c-0.97,1.16-8.34-0.97,145.12,39.97c76.25,20.37,140.47,36.67,142.6,36.28
+        	c2.13-0.58,53.16-22.51,113.5-48.89c60.34-26.39,129.21-56.46,153.27-66.93c24.06-10.48,106.13-46.18,182.37-79.55
+        	c76.25-33.18,182.37-79.55,235.73-102.83s106.13-46.37,117.18-51.22s20.57-8.73,20.76-8.34c0.39,0.39-32.59,16.49-73.53,35.7
+        	c-40.74,19.4-160.06,75.86-265.22,125.72S546.56,570.37,472.44,605.49s-135.62,64.61-136.39,65.38s17.85,54.91,41.52,120.29
+        	c23.67,65.19,43.27,118.35,43.85,117.96c0.58-0.78,17.66-78.38,38.61-176.55c4.07-18.82,7.76-35.12,8.54-36.09
+        	c0.58-0.97,170.34-101.47,377.36-223.12s377.75-222.15,379.3-223.12C1229.1,247.73,1225.22,247.73,1220.95,250.06z"/>
+        <path d="M476.91,820.85c-14.16,54.71-25.42,99.72-25.03,100.11c1.16,0.97,148.81-128.24,148.23-129.8
+        	c-0.58-1.75-94.48-69.65-96.42-69.65C503.1,721.51,491.07,766.33,476.91,820.85z"/>
+      </g>
+    </g>
+  </defs>
+  
+  <!-- Pattern de aviões distribuídos como os foguetes, rotacionados -45° -->
+  <g>
+    <!-- Aviões grandes -->
+    <g transform="translate(100, 150) scale(0.6)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(400, 200) scale(0.7)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(700, 250) scale(0.56)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(150, 500) scale(0.44)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(450, 600) scale(0.6)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(650, 650) scale(0.56)">
+      <use href="#airplane-real"/>
+    </g>
+    
+    <!-- Aviões médios -->
+    <g transform="translate(250, 300) scale(0.5)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(550, 400) scale(0.4)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(50, 350) scale(0.5)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(300, 700) scale(0.48)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(600, 100) scale(0.52)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(200, 100) scale(0.46)">
+      <use href="#airplane-real"/>
+    </g>
+    
+    <!-- Aviões pequenos - preenchimento -->
+    <g transform="translate(80, 250) scale(0.35)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(320, 120) scale(0.3)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(480, 320) scale(0.38)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(180, 650) scale(0.32)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(380, 480) scale(0.36)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(680, 480) scale(0.34)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(520, 750) scale(0.33)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(750, 120) scale(0.37)">
+      <use href="#airplane-real"/>
+    </g>
+    
+    <!-- Aviões micro - detalhes de fundo -->
+    <g transform="translate(350, 50) scale(0.25)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(120, 400) scale(0.22)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(580, 220) scale(0.28)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(280, 350) scale(0.24)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(420, 80) scale(0.26)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(180, 280) scale(0.23)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(480, 180) scale(0.27)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(350, 420) scale(0.25)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(620, 350) scale(0.24)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(250, 550) scale(0.22)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(450, 450) scale(0.26)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(720, 600) scale(0.23)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(50, 600) scale(0.28)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(380, 750) scale(0.25)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(150, 50) scale(0.24)">
+      <use href="#airplane-real"/>
+    </g>
+    <g transform="translate(550, 580) scale(0.27)">
+      <use href="#airplane-real"/>
+    </g>
+  </g>
+</svg> 

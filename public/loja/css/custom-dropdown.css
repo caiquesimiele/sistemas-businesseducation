@@ -1,0 +1,374 @@
+/* ===============================================
+   DROPDOWN CUSTOMIZADO - Business Education Stores
+   Baseado no sistema forms (pesquisa pais/professores)
+   =============================================== */
+
+/* Container principal do dropdown */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    background: transparent !important;
+    background-color: transparent !important;
+    padding: 0 !important; /* Sem padding para não vazar */
+    margin: 0 !important; /* Remove toda margem para usar apenas a do .dropdown-selected */
+    display: block !important;
+    box-sizing: border-box;
+}
+
+/* Remover qualquer pseudo-elemento com background */
+.custom-dropdown::before,
+.custom-dropdown::after,
+.dropdown-selected::before,
+.dropdown-selected::after {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}
+
+/* Campo selecionado (botão principal) */
+.dropdown-selected {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #ffffff;
+    background-color: #ffffff;
+    background-image: none !important;
+    color: #121F4B;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    box-sizing: border-box;
+    margin: 0; /* Remove margem para evitar sobreposição - espaçamento controlado pelo label */
+    position: relative;
+    z-index: auto;
+    height: auto; /* Altura automática baseada no padding e conteúdo */
+    min-height: calc(14px + 24px); /* 14px font-size + 12px padding top/bottom */
+}
+
+/* Hover no campo selecionado - apenas contorno */
+.dropdown-selected:hover:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    border-color: #121F4B;
+}
+
+/* NOVO: Estilos de feedback são aplicados via style.css com maior especificidade */
+
+/* Estado ativo do dropdown - apenas contorno */
+.dropdown-selected.active:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    border-color: #121F4B;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1);
+}
+
+/* NOVO: Estados ativos com feedback preservado serão estilizados via style.css */
+
+/* Manter box-shadow consistente em campos filhos */
+#campos-filhos .dropdown-selected.active {
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1);
+}
+
+/* Fundo branco padrão apenas quando não tem feedback */
+.dropdown-selected:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    background: white;
+    background-color: white;
+}
+
+/* Texto selecionado */
+.selected-text {
+    flex: 1;
+    text-align: left;
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #121F4B;
+}
+
+/* Placeholder */
+.selected-text[data-placeholder]:empty::before,
+.selected-text.placeholder::before {
+    content: attr(data-placeholder);
+    color: #6c757d;
+    background: transparent !important;
+}
+
+/* Ícone de seta */
+.dropdown-arrow {
+    transition: transform 0.15s ease;
+    width: 12px;
+    height: 8px;
+    flex-shrink: 0;
+    background: transparent !important;
+    fill: none !important;
+}
+
+/* Garantir que SVG path não tenha background */
+.dropdown-arrow path {
+    fill: none !important;
+    background: transparent !important;
+}
+
+/* Rotação da seta quando aberto */
+.dropdown-selected.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Container das opções */
+.dropdown-options {
+    position: fixed !important;
+    background: white !important;
+    background-color: white !important;
+    border: 2px solid #121F4B;
+    border-radius: 8px;
+    max-height: 300px;
+    overflow-y: auto; /* ✅ CORREÇÃO: Permite scroll vertical */
+    z-index: 99999 !important;
+    display: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+}
+
+/* Mostrar opções */
+.dropdown-options.show {
+    display: block;
+}
+
+/* Opção individual */
+.dropdown-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    background: white;
+    background-color: white;
+    color: #121F4B;
+    font-size: 14px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+/* Última opção sem borda */
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+/* Hover na opção */
+.dropdown-option:hover {
+    background-color: #f8f9fa;
+}
+
+/* Opção selecionada */
+.dropdown-option.selected {
+    background-color: #121F4B;
+    color: white;
+}
+
+/* Estado inválido do dropdown */
+.custom-dropdown.invalid .dropdown-selected {
+    border-color: #dc3545;
+}
+
+/* Scrollbar customizada para as opções */
+.dropdown-options::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dropdown-options::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.dropdown-options::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.dropdown-options::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .dropdown-options {
+        max-height: 200px;
+    }
+    
+    .dropdown-option {
+        padding: 1rem;
+    }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 480px) {
+    .dropdown-selected {
+        font-size: 16px; /* Evita zoom no iOS */
+        background: white !important;
+        background-color: white !important;
+    }
+    
+    .dropdown-option {
+        font-size: 16px;
+    }
+}
+
+/* Regra de alta especificidade para garantir fundo branco APENAS sem feedback ativo */
+.custom-dropdown .dropdown-selected:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+.custom-dropdown .dropdown-options,
+.custom-dropdown .dropdown-option:not(.selected) {
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+}
+
+/* Remover qualquer background herdado dos containers APENAS sem feedback ativo */
+#campos-filhos .custom-dropdown .dropdown-selected:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+#campos-filhos .custom-dropdown .dropdown-options,
+.filho-container .custom-dropdown .dropdown-selected:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+.filho-container .custom-dropdown .dropdown-options {
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+}
+
+/* Garantir que texto placeholder também tenha fundo branco */
+.custom-dropdown .dropdown-selected .selected-text,
+.custom-dropdown .dropdown-selected .selected-text.placeholder {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Apenas opções selecionadas têm fundo escuro */
+.custom-dropdown .dropdown-option.selected {
+    background: #121F4B !important;
+    background-color: #121F4B !important;
+    color: white !important;
+}
+
+/* Border-radius para primeira e última opção quando selecionadas */
+.custom-dropdown .dropdown-option.selected:first-child {
+    border-radius: 0 !important;
+}
+
+.custom-dropdown .dropdown-option.selected:last-child {
+    border-radius: 0 !important;
+}
+
+/* Caso seja a única opção selecionada */
+.custom-dropdown .dropdown-option.selected:first-child:last-child {
+    border-radius: 0 !important;
+}
+
+/* Garantir fundo branco APENAS para dropdowns sem feedback ativo */
+.custom-dropdown .dropdown-selected:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+}
+
+/* Estilos específicos para campos-filhos - mantém consistência com outros campos */
+#campos-filhos .custom-dropdown,
+.filho-container .custom-dropdown {
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#campos-filhos .dropdown-selected:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+.filho-container .dropdown-selected:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    /* Herda os estilos padrão do .dropdown-selected APENAS sem feedback */
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+}
+
+/* CORREÇÃO CRÍTICA: Garantir overflow visible nos containers que contêm dropdowns */
+.col:has(.custom-dropdown),
+.form-section:has(.custom-dropdown),
+.row:has(.custom-dropdown) {
+    overflow: visible !important;
+    position: static !important;
+}
+
+/* Garantir que qualquer container pai de dropdown permita overflow */
+.col,
+.form-section,
+.row {
+    overflow: visible !important;
+}
+
+/* Garantir que select original seja completamente invisível */
+select[style*="display: none"] {
+    display: none !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* Força overflow visible com máxima especificidade */
+.col .col .custom-dropdown,
+.form-section .form-section .custom-dropdown,
+div.col:has(.custom-dropdown),
+div.form-section:has(.custom-dropdown) {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* CORREÇÃO CRÍTICA: Garantir que dropdown-options não herde background de containers pais */
+.dropdown-options,
+.dropdown-options *,
+.dropdown-options::before,
+.dropdown-options::after {
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+    border-radius: inherit !important;
+}
+
+/* Garantir que o container pai do dropdown não interfira */
+.custom-dropdown {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Garantir que o dropdown-selected tenha radius correto */
+.dropdown-selected {
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
+/* CORREÇÃO CRÍTICA: Prevenir que JavaScript sobrescreva estilos com !important */
+.dropdown-options[style*="background"],
+.dropdown-options[style*="background-color"],
+.dropdown-options[style*="border-radius"] {
+    background: white !important;
+    background-color: white !important;
+    border-radius: 8px !important;
+    /* ✅ REMOVIDO overflow: hidden que impedia scroll */
+}
+
+/* Garantir que estilos inline não sobrescrevam o radius */
+.custom-dropdown[style*="background"],
+.custom-dropdown[style*="border-radius"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* Prevenir qualquer container de fundo que possa aparecer dinamicamente */
+.dropdown-options::before,
+.dropdown-options::after,
+.custom-dropdown::before,
+.custom-dropdown::after {
+    display: none !important;
+    content: none !important;
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+}

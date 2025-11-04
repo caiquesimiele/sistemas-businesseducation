@@ -1,0 +1,34 @@
+# Permitir acesso às imagens OG para WhatsApp, Facebook, Twitter, LinkedIn
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Permitir acesso direto a imagens PNG, JPG, JPEG, GIF
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteCond %{REQUEST_URI} \.(png|jpg|jpeg|gif)$ [NC]
+    RewriteRule ^ - [L]
+</IfModule>
+
+# Headers para garantir que imagens sejam acessíveis
+<IfModule mod_headers.c>
+    # Permitir acesso cross-origin para OG scrapers
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type"
+    
+    # Cache de imagens OG por 7 dias
+    <FilesMatch "\.(png|jpg|jpeg|gif)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+# Garantir que o tipo MIME correto seja enviado
+<IfModule mod_mime.c>
+    AddType image/png .png
+    AddType image/jpeg .jpg .jpeg
+    AddType image/gif .gif
+</IfModule>
+
+# Permitir listagem apenas para bots conhecidos (WhatsApp, Facebook, etc)
+Options -Indexes
+
+

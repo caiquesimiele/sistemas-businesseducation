@@ -1,0 +1,758 @@
+﻿ <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Ajuda | Business Education &amp; Colégio Adventista de Campos</title>
+    <meta name="description" content="Precisa de ajuda? Envie sua solicitação de suporte, dúvidas sobre pedidos ou problemas com produtos.">
+    <meta name="store-id" content="S4VWCB5F-CAPEC">
+    <meta name="store-name" content="Colégio Adventista de Campos">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://loja.businesseducation.com.br/stores/s4vwcb5f-capec/ajuda/">
+    <meta property="og:title" content="Central de Ajuda | Business Education &amp; Colégio Adventista de Campos">
+    <meta property="og:description" content="Nossa central de ajuda está aqui para você. Envie suas dúvidas e solicitações de suporte.">
+    <meta property="og:image" content="https://loja.businesseducation.com.br/stores/imagens/og_preview_ajuda.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="Loja Rápida Business Education">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://loja.businesseducation.com.br/stores/s4vwcb5f-capec/ajuda/">
+    <meta name="twitter:title" content="Central de Ajuda | Business Education &amp; Colégio Adventista de Campos">
+    <meta name="twitter:description" content="Nossa central de ajuda está aqui para você. Envie suas dúvidas e solicitações de suporte.">
+    <meta name="twitter:image" content="https://loja.businesseducation.com.br/stores/imagens/og_preview_ajuda.png">    
+    <link rel="icon" type="image/png" href="../Favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="ajuda.css">
+    <link rel="stylesheet" href="css/phone-ddi-selector.css">
+    <link rel="stylesheet" href="css/autofill-neutralizer.css">
+    <link rel="stylesheet" href="css/custom-dropdown.css">
+    <link rel="stylesheet" href="css/field-feedback.css">
+
+</head>
+<body>
+<!-- Header -->
+<header class="site-header">
+    <div class="header-container">
+        <div class="logo-container">
+            <a href="../home/" title="Ir para a página inicial">
+                <img src="../images/logo-loja.png" alt="Logo Business Education">
+            </a>
+        </div>
+        <nav class="header-nav">
+        <a href="../index" class="header-btn loja-rapida-destaque" title="Loja Rápida">
+            <span class="btn-text">Loja Rápida</span>
+            <span class="btn-text-mobile">Loja Rápida</span>
+            <i class="fas fa-store"></i>
+        </a>
+        <a href="../pedidos/meus-pedidos" class="header-btn" title="Meus Pedidos">
+            <span class="btn-text">Meus Pedidos</span>
+            <span class="btn-text-mobile">Pedidos</span>
+            <i class="fas fa-box"></i>
+        </a>
+        <a href="../faq/index" class="header-btn" title="FAQ">
+            <span class="btn-text">FAQ</span>
+            <span class="btn-text-mobile"></span>
+            <i class="fas fa-question-circle"></i>
+        </a>
+        <a href="#" class="header-btn carrinho" id="header-btn-carrinho" title="Carrinho">
+            <span class="btn-text">Carrinho</span>
+            <span class="btn-text-mobile"></span>
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="https://wa.me/551142102216" target="_blank" class="header-btn whatsapp" title="WhatsApp">
+            <span class="btn-text">WhatsApp</span>
+            <span class="btn-text-mobile">WhatsApp</span>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://businesseducation.com.br" target="_blank" class="header-btn business" title="Site Business">
+            <span class="btn-text">Site Business</span>
+            <span class="btn-text-mobile">Business</span>
+            <img src="../images/favicon-business.png" class="favicon-icon" alt="Business">
+        </a>
+        </nav>
+    </div>
+</header>
+
+<div class="help-container">
+    <!-- Container do formulário -->
+    <div class="help-form-container">
+        <h1>
+            Solicitações da Loja
+        </h1>
+        
+        <form class="help-form" id="helpForm" enctype="multipart/form-data">
+            <!-- Tipo de Solicitação -->
+            <div class="form-group">
+                <label for="tipo_solicitacao" class="required">Tipo de Solicitação</label>
+                <select id="tipo_solicitacao" name="tipo_solicitacao" required>
+                    <option value="">Selecione o tipo de solicitação</option>
+                    <option value="alterar_pagamento">Alterar forma de pagamento</option>
+                    <option value="alterar_dados">Alterar dados ou endereço</option>
+                    <option value="falta_componentes">Falta de componentes no pedido</option>
+                    <option value="cancelamento">Cancelamento do pedido</option>
+                    <option value="devolucao">Devolução do pedido</option>
+                    <option value="defeito">Produto com defeito</option>
+                    <option value="troca">Troca de produto</option>
+                    <option value="duvidas">Dúvidas</option>
+                    <option value="outro">Outro</option>
+                </select>
+            </div>
+
+            <!-- Título da solicitação -->
+            <div class="form-group">
+                <label for="titulo" class="required">Título da solicitação</label>
+                <input type="text" id="titulo" name="titulo" placeholder="Descreva brevemente sua solicitação" required>
+            </div>
+
+            <!-- Descrição da solicitação -->
+            <div class="form-group">
+                <label for="descricao" class="required">Descrição da solicitação</label>
+                <textarea id="descricao" name="descricao" placeholder="Descreva detalhadamente sua solicitação ou problema" required></textarea>
+            </div>
+
+            <!-- Número do pedido -->
+            <div class="form-group">
+                <label for="numero_pedido">Número do pedido (se tiver)</label>
+                <input type="text" id="numero_pedido" name="numero_pedido" placeholder="Ex: LOJA-MODELO-1234567890">
+            </div>
+
+            <!-- Nome e Sobrenome -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nome" class="required">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="sobrenome" class="required">Sobrenome</label>
+                    <input type="text" id="sobrenome" name="sobrenome" placeholder="Seu sobrenome" required>
+                </div>
+            </div>
+
+            <!-- E-mail e Celular -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email" class="required">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="celular" class="required">Celular</label>
+                    <div class="phone-input-container phone-input-full-width" id="phone-container-celular">
+                        <!-- Seletor DDI será inicializado automaticamente -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Campos Condicionais: Fotos da solicitação -->
+            <div class="form-group conditional-field" id="fotos_field">
+                <label for="fotos" class="required">Fotos da solicitação</label>
+                <div class="file-input-container">
+                    <input type="file" id="fotos" name="fotos[]" class="file-input" multiple accept=".jpeg,.jpg,.png,.pdf,.doc,.docx" required>
+                    <label for="fotos" class="file-input-label">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        Clique para selecionar arquivos ou arraste aqui
+                        <br><small>Formatos: JPEG, PNG, PDF, DOC (máx. 10MB cada)</small>
+                    </label>
+                    <div class="file-names" id="file-names"></div>
+                </div>
+            </div>
+
+            <!-- Campos Condicionais: PIX para devolução -->
+            <div class="form-group conditional-field" id="pix_field">
+                <label for="pix_devolucao" class="required">PIX para devolução - deve ser de conta bancária do titular da compra</label>
+                <input type="text" id="pix_devolucao" name="pix_devolucao" placeholder="CPF, e-mail, celular ou chave aleatória PIX">
+                <small style="color: rgba(255, 255, 255, 0.7); margin-top: 0.5rem; display: block;">
+                    A conta bancária deve estar no mesmo nome do titular da compra
+                </small>
+            </div>
+
+        </form>
+
+        <!-- Mensagens de feedback -->
+        <div class="help-message success" id="success-message">
+            <i class="fas fa-check-circle"></i>
+            Solicitação enviada com sucesso! Entraremos em contato em breve.
+        </div>
+        <div class="help-message error" id="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <span id="error-text">Erro ao enviar solicitação. Tente novamente.</span>
+        </div>
+
+        <!-- Botão de envio -->
+        <button type="submit" form="helpForm" class="btn-send-help" id="btn-send">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Solicitação
+        </button>
+    </div>
+</div>
+
+<!-- Menu flutuante -->
+<div class="menu-flutuante-container">
+    <button id="btn-menu-flutuante" class="btn-menu-flutuante" title="Menu">
+        <i class="fas fa-bars"></i>
+    </button>
+    <div class="menu-flutuante-opcoes">
+        <a href="#" class="menu-opcao carrinho" id="btn-flutuante-carrinho" title="Carrinho">
+            <span>Carrinho</span>
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+        <a href="#" class="menu-opcao ajuda" title="Ajuda">
+            <span>Ajuda</span>
+            <i class="fas fa-headset"></i>
+        </a>
+        <a href="../faq/index" class="menu-opcao faq" title="FAQ">
+            <span>FAQ</span>
+            <i class="fas fa-question-circle"></i>
+        </a>
+        <a href="../index" class="menu-opcao loja-rapida" title="Loja Rápida">
+            <span>Loja Rápida</span>
+            <i class="fas fa-store"></i>
+        </a>
+        <a href="https://wa.me/551142102216" target="_blank" class="menu-opcao whatsapp" title="WhatsApp">
+            <span>WhatsApp</span>
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="../pedidos/meus-pedidos" class="menu-opcao pedidos-destaque" title="Meus Pedidos">
+            <span>Meus Pedidos</span>
+            <i class="fas fa-box"></i>
+        </a>
+        <a href="https://businesseducation.com.br" target="_blank" class="menu-opcao business" title="Site Business">
+            <span>Site Business</span>
+            <img src="../images/favicon-business.png" class="favicon-icon" alt="Business">
+        </a>
+    </div>
+</div>
+
+<!-- Popup de validação -->
+<div id="validation-popup-overlay" class="validation-popup-overlay">
+    <div class="validation-popup">
+        <div class="validation-popup-header">
+            <i class="fas fa-exclamation-triangle icon"></i>
+            <h3>Campos obrigatórios não preenchidos</h3>
+            <button type="button" class="validation-popup-close" onclick="closeValidationPopup()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="validation-popup-body">
+            <p class="validation-popup-message">
+                Para enviar a solicitação, é necessário preencher todos os campos obrigatórios. 
+                Por favor, complete os seguintes campos:
+            </p>
+            <div class="missing-questions-list">
+                <h4>
+                    <i class="fas fa-list-ul icon"></i>
+                    Campos em falta
+                </h4>
+                <div id="missing-questions-grid" class="missing-questions-grid">
+                    <!-- Itens serão inseridos dinamicamente -->
+                </div>
+            </div>
+            <div class="validation-popup-actions">
+                <button type="button" class="validation-popup-btn" onclick="closeValidationPopup()">
+                    <i class="fas fa-check"></i>
+                    Entendi, vou preencher
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Configuração dos campos condicionais
+const tipoSolicitacao = document.getElementById('tipo_solicitacao');
+const fotosField = document.getElementById('fotos_field');
+const pixField = document.getElementById('pix_field');
+const pixInput = document.getElementById('pix_devolucao');
+const fotosInput = document.getElementById('fotos');
+
+// Tipos que precisam de fotos
+const tiposComFotos = ['falta_componentes', 'devolucao', 'defeito', 'troca'];
+
+// Tipos que precisam de PIX
+const tiposComPix = ['alterar_pagamento', 'cancelamento', 'devolucao'];
+
+// Controle de campos condicionais
+tipoSolicitacao.addEventListener('change', function() {
+    const valor = this.value;
+    
+    // Controle do campo de fotos
+    if (tiposComFotos.includes(valor)) {
+        fotosField.classList.add('show');
+        fotosInput.required = true;
+    } else {
+        fotosField.classList.remove('show');
+        fotosInput.required = false;
+        selectedFiles = [];
+        updateFileDisplay();
+    }
+    
+    // Controle do campo PIX
+    if (tiposComPix.includes(valor)) {
+        pixField.classList.add('show');
+        pixInput.required = true;
+    } else {
+        pixField.classList.remove('show');
+        pixInput.required = false;
+        pixInput.value = '';
+    }
+});
+
+// Formatação do celular removida - agora usa sistema DDI
+// document.getElementById('celular').addEventListener('input', function(e) {
+//     let value = e.target.value.replace(/\D/g, '');
+//     if (value.length <= 11) {
+//         value = value.replace(/(\d{2})(\d)/, '($1) $2');
+//         value = value.replace(/(\d{5})(\d{1,4})$/, '$1-$2');
+//     }
+//     e.target.value = value;
+// });
+
+// Controle de upload de arquivos
+const fileInput = document.getElementById('fotos');
+const fileNames = document.getElementById('file-names');
+let selectedFiles = [];
+
+fileInput.addEventListener('change', function() {
+    const files = Array.from(this.files);
+    
+    files.forEach(file => {
+        // Validação de tamanho (10MB)
+        if (file.size > 10485760) {
+            showError(`Arquivo "${file.name}" muito grande. Máximo 10MB.`);
+            return;
+        }
+        
+        // Validação de tipo
+        const allowedTypes = ['jpeg', 'jpg', 'png', 'pdf', 'doc', 'docx'];
+        const fileExtension = file.name.split('.').pop().toLowerCase();
+        if (!allowedTypes.includes(fileExtension)) {
+            showError(`Tipo de arquivo "${fileExtension}" não permitido.`);
+            return;
+        }
+        
+        // Adiciona arquivo se não existir
+        if (!selectedFiles.find(f => f.name === file.name && f.size === file.size)) {
+            selectedFiles.push(file);
+        }
+    });
+    
+    updateFileDisplay();
+});
+
+function updateFileDisplay() {
+    fileNames.innerHTML = '';
+    selectedFiles.forEach((file, index) => {
+        const fileItem = document.createElement('div');
+        fileItem.className = 'file-item';
+        fileItem.innerHTML = `
+            <span>${file.name} (${formatFileSize(file.size)})</span>
+            <span class="remove-file" onclick="removeFile(${index})">
+                <i class="fas fa-times"></i> Remover
+            </span>
+        `;
+        fileNames.appendChild(fileItem);
+    });
+}
+
+function removeFile(index) {
+    selectedFiles.splice(index, 1);
+    updateFileDisplay();
+}
+
+function formatFileSize(bytes) {
+    if (bytes === 0) return '0 Bytes';
+    const k = 1024;
+    const sizes = ['Bytes', 'KB', 'MB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+    return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+// Sistema de validação do formulário de ajuda
+function validateHelpForm() {
+    let isValid = true;
+    let missingFields = [];
+
+
+    // Mapeamento de campos para nomes amigáveis
+    const fieldToNameMap = {
+        'tipo_solicitacao': 'Tipo de Solicitação',
+        'titulo': 'Título da solicitação',
+        'descricao': 'Descrição da solicitação',
+        'nome': 'Nome',
+        'sobrenome': 'Sobrenome',
+        'email': 'E-mail',
+        'celular': 'Celular',
+        'fotos': 'Fotos da solicitação',
+        'pix_devolucao': 'PIX para devolução'
+    };
+
+    // Campos obrigatórios sempre visíveis
+    const alwaysRequiredFields = [
+        'tipo_solicitacao',
+        'titulo', 
+        'descricao',
+        'nome',
+        'sobrenome',
+        'email',
+        'celular'
+    ];
+
+    // Validar campos sempre obrigatórios
+    alwaysRequiredFields.forEach(fieldName => {
+        // Validação especial para celular (não existe elemento com ID 'celular')
+        if (fieldName === 'celular') {
+            if (window.phoneDDI && typeof window.phoneDDI.getFormattedNumber === 'function') {
+                const formattedNumber = window.phoneDDI.getFormattedNumber();
+                console.log('DEBUG validateHelpForm: Celular formatado =', formattedNumber);
+                // Validação: deve ter conteúdo e pelo menos 10 caracteres (código país + número)
+                if (!formattedNumber || formattedNumber.trim() === '' || formattedNumber.length < 10) {
+                    console.log('DEBUG validateHelpForm: Celular INVÁLIDO');
+                    missingFields.push(fieldToNameMap[fieldName]);
+                    isValid = false;
+                } else {
+                    console.log('DEBUG validateHelpForm: Celular VÁLIDO');
+                }
+            } else {
+                console.log('DEBUG validateHelpForm: PhoneDDI não encontrado');
+                missingFields.push(fieldToNameMap[fieldName]);
+                isValid = false;
+            }
+            return; // Pula para próxima iteração
+        }
+        
+        // Validação normal para outros campos
+        const field = document.getElementById(fieldName);
+        if (field) {
+            if (!field.value.trim()) {
+                missingFields.push(fieldToNameMap[fieldName]);
+                isValid = false;
+            }
+        } else {
+            missingFields.push(fieldToNameMap[fieldName]);
+            isValid = false;
+        }
+    });
+
+    // Validações condicionais baseadas no tipo de solicitação
+    const tipoSolicitacao = document.getElementById('tipo_solicitacao').value;
+    
+    // Tipos que precisam de fotos
+    const tiposComFotos = ['falta_componentes', 'devolucao', 'defeito', 'troca'];
+    if (tiposComFotos.includes(tipoSolicitacao)) {
+        const fotosField = document.getElementById('fotos');
+        if (!fotosField || selectedFiles.length === 0) {
+            missingFields.push('Fotos da solicitação');
+            isValid = false;
+        }
+    }
+    
+    // Tipos que precisam de PIX
+    const tiposComPix = ['alterar_pagamento', 'cancelamento', 'devolucao'];
+    if (tiposComPix.includes(tipoSolicitacao)) {
+        const pixField = document.getElementById('pix_devolucao');
+        if (!pixField || !pixField.value.trim()) {
+            missingFields.push('PIX para devolução');
+            isValid = false;
+        }
+    }
+
+    // Se houver campos faltando, mostrar popup
+    if (!isValid && missingFields.length > 0) {
+        showValidationPopup(missingFields);
+    }
+    return isValid;
+}
+
+// Sistema de popup de validação
+function showValidationPopup(missingFields) {
+    const overlay = document.getElementById('validation-popup-overlay');
+    const grid = document.getElementById('missing-questions-grid');
+    
+    if (!overlay || !grid) {
+        showError(missingFields.join('<br>'));
+        return;
+    }
+    
+    // Limpar grid anterior
+    grid.innerHTML = '';
+    
+    // Adicionar itens dos campos em falta
+    missingFields.forEach(fieldName => {
+        const item = document.createElement('div');
+        item.className = 'missing-question-item';
+        item.textContent = fieldName;
+        
+        item.onclick = () => {
+            closeValidationPopup();
+            scrollToField(fieldName);
+        };
+        
+        grid.appendChild(item);
+    });
+    
+    // Mostrar popup
+    overlay.classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeValidationPopup() {
+    const overlay = document.getElementById('validation-popup-overlay');
+    if (overlay) {
+        overlay.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+function scrollToField(fieldName) {
+    // Mapeamento reverso para encontrar o elemento correto
+    const fieldMappings = {
+        'Tipo de Solicitação': 'tipo_solicitacao',
+        'Título da solicitação': 'titulo',
+        'Descrição da solicitação': 'descricao',
+        'Nome': 'nome',
+        'Sobrenome': 'sobrenome',
+        'E-mail': 'email',
+        'Celular': 'phone-container-celular',
+        'Fotos da solicitação': 'fotos_field',
+        'PIX para devolução': 'pix_devolucao'
+    };
+
+    const elementId = fieldMappings[fieldName] || fieldName.toLowerCase().replace(/\s+/g, '_');
+    let element = document.getElementById(elementId);
+    
+    if (element) {
+        element.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
+        
+        // Adicionar efeito visual temporário
+        element.style.outline = '3px solid #FF662B';
+        setTimeout(() => {
+            element.style.outline = '';
+        }, 3000);
+        }
+}
+
+// Funções globais para controle do popup
+window.closeValidationPopup = closeValidationPopup;
+window.showValidationPopup = showValidationPopup;
+window.scrollToField = scrollToField;
+
+// FUNÇÃO PRINCIPAL DE SUBMIT (SEPARADA)
+async function processarEnvioFormulario(e) {
+    if (e) e.preventDefault();
+    
+    // VALIDAÇÃO PRIMEIRO
+    const isValid = validateHelpForm();
+    
+    if (!isValid) {
+        return;
+    }
+    
+    const btnSend = document.getElementById('btn-send');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    
+    // Loading state
+    btnSend.classList.add('loading');
+    btnSend.disabled = true;
+    successMessage.style.display = 'none';
+    errorMessage.style.display = 'none';
+    
+    try {
+        // Criar FormData
+        const formData = new FormData();
+        
+        // Adicionar campos do formulário
+        const formFields = ['tipo_solicitacao', 'titulo', 'descricao', 'numero_pedido', 'nome', 'sobrenome', 'email', 'pix_devolucao'];
+        formFields.forEach(field => {
+            const element = document.getElementById(field);
+            if (element && element.value) {
+                formData.append(field, element.value);
+            }
+        });
+        
+        // Adicionar celular do sistema DDI
+        if (window.phoneDDI && window.phoneDDI.getFormattedNumber) {
+            const celularFormatado = window.phoneDDI.getFormattedNumber();
+            console.log('DEBUG: Celular a ser enviado:', celularFormatado);
+            formData.append('celular', celularFormatado);
+        } else {
+            console.error('ERRO: PhoneDDI não inicializado ou método getFormattedNumber não disponível');
+        }
+        
+        // Adicionar arquivos selecionados
+        selectedFiles.forEach((file, index) => {
+            formData.append(`arquivo_${index}`, file);
+        });
+        
+        // Adicionar store_id
+        const storeIdMeta = document.querySelector('meta[name="store-id"]').getAttribute('content');
+        formData.append('store_id', storeIdMeta);
+        
+        // Enviar para o processador
+        const response = await fetch('processar-ajuda.php', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        
+        const result = await response.json();
+        
+        if (result.success) {
+            successMessage.style.display = 'block';
+            document.getElementById('helpForm').reset();
+            selectedFiles = [];
+            updateFileDisplay();
+            // Reset campos condicionais
+            fotosField.classList.remove('show');
+            pixField.classList.remove('show');
+            pixInput.required = false;
+        } else {
+            showError(result.message || 'Erro ao enviar solicitação.');
+        }
+        
+    } catch (error) {
+        console.error('Erro:', error);
+        
+        // Mostra erro mais específico
+        let errorMessage = 'Erro de conexão. Tente novamente.';
+        if (error.message) {
+            if (error.message.includes('HTTP')) {
+                errorMessage = 'Erro no servidor: ' + error.message;
+            } else if (error.message.includes('fetch')) {
+                errorMessage = 'Erro de conexão. Verifique sua internet.';
+            } else {
+                errorMessage = error.message;
+            }
+        }
+        
+        showError(errorMessage);
+    } finally {
+        btnSend.classList.remove('loading');
+        btnSend.disabled = false;
+    }
+}
+
+// Event listeners para interceptação do formulário
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('helpForm');
+    const submitBtn = document.getElementById('btn-send');
+    
+    // Listener no formulário
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            processarEnvioFormulario(e);
+        });
+    }
+    
+    // Listener prioritário no botão
+    if (submitBtn) {
+        submitBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            e.stopImmediatePropagation();
+            processarEnvioFormulario(e);
+        }, true);
+    }
+});
+
+function showError(message) {
+    const errorMessage = document.getElementById('error-message');
+    const errorText = document.getElementById('error-text');
+    errorText.textContent = message;
+    errorMessage.style.display = 'block';
+}
+
+// Configuração dos eventos do popup de validação
+document.addEventListener('DOMContentLoaded', function() {
+    const popupOverlay = document.getElementById('validation-popup-overlay');
+    if (popupOverlay) {
+        // Fechar popup ao clicar no overlay (fora do popup)
+        popupOverlay.addEventListener('click', function(event) {
+            if (event.target === popupOverlay) {
+                closeValidationPopup();
+            }
+        });
+        
+        // Fechar popup com tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape' && popupOverlay.classList.contains('show')) {
+                closeValidationPopup();
+            }
+        });
+    }
+});
+
+// Menu flutuante (mesmo código das outras páginas)
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('btn-menu-flutuante');
+    const menuContainer = document.querySelector('.menu-flutuante-container');
+    
+    if (menuBtn && menuContainer) {
+        menuBtn.addEventListener('click', function() {
+            menuContainer.classList.toggle('menu-aberto');
+        });
+        
+        // Fecha o menu ao clicar fora
+        document.addEventListener('click', function(e) {
+            if (!menuContainer.contains(e.target)) {
+                menuContainer.classList.remove('menu-aberto');
+            }
+        });
+    }
+});
+
+// Inicialização do seletor DDI
+document.addEventListener('DOMContentLoaded', function() {
+    if (typeof window.PhoneDDISelector !== 'undefined') {
+        const phoneContainer = document.getElementById('phone-container-celular');
+        if (phoneContainer) {
+            phoneContainer.className = 'phone-input-container phone-input-full-width';
+            
+            window.phoneDDI = new window.PhoneDDISelector('phone-container-celular', {
+                placeholder: '(11) 99999-9999',
+                defaultCountry: 'BR',
+                onPhoneChange: function(displayValue, formattedNumber, isValid) {
+                    // Atualizar validação em tempo real
+                    const errorElement = document.getElementById('celular-error');
+                    if (errorElement) {
+                        if (displayValue && !isValid) {
+                            errorElement.style.display = 'block';
+                        } else {
+                            errorElement.style.display = 'none';
+                        }
+                    }
+                }
+            });
+        }
+    }
+});
+
+// Configuração automática da interceptação do submit
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        const submitBtn = document.getElementById('btn-send');
+        if (submitBtn) {
+            submitBtn.removeAttribute('form');
+            submitBtn.type = 'button';
+            submitBtn.onclick = processarEnvioFormulario;
+        }
+    }, 500);
+});
+</script>
+
+<script src="js/phone-ddi-selector.js"></script>
+<script src="js/field-feedback.js"></script>
+<script src="js/custom-dropdown.js"></script>
+</body>
+</html>

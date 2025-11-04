@@ -1,0 +1,125 @@
+/* ===============================================
+   NEUTRALIZADOR DE AUTOPREENCHIMENTO
+   Remove o visual padrão do navegador mantendo a funcionalidade
+   Adaptado da new-store para forms de experiência
+   =============================================== */
+
+/* ========== NEUTRALIZAÇÃO BÁSICA ========== */
+/* Remove o fundo amarelo/azul padrão do navegador APENAS quando não há feedback ativo */
+input:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+input:-webkit-autofill:hover:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+input:-webkit-autofill:focus:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+input:-webkit-autofill:active:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+select:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+select:-webkit-autofill:hover:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+select:-webkit-autofill:focus:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+textarea:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+textarea:-webkit-autofill:hover:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+textarea:-webkit-autofill:focus:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    /* Sobrescreve o fundo padrão com branco neutro APENAS sem feedback */
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #333 !important;
+    background-color: white !important;
+    border-color: #dee2e6 !important;
+    
+    /* Transição reduzida para permitir mudanças de feedback */
+    transition: background-color 0.3s ease !important;
+    
+    /* Garante que outros estilos não sejam sobrescritos */
+    background-image: none !important;
+}
+
+/* ========== COMPATIBILIDADE COM OUTROS NAVEGADORES ========== */
+/* Firefox e outros navegadores que usam :autofill APENAS quando não há feedback ativo */
+input:autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+select:autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+textarea:autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    background-color: white !important;
+    border-color: #dee2e6 !important;
+    color: #333 !important;
+}
+
+/* ========== NEUTRALIZAÇÃO PARA CAMPOS ESPECÍFICOS ========== */
+/* Campos de texto comuns APENAS quando não há feedback ativo */
+input[type="text"]:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+input[type="email"]:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+input[type="tel"]:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+input[type="url"]:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+input[type="search"]:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #333 !important;
+}
+
+/* Campos de senha APENAS quando não há feedback ativo */
+input[type="password"]:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #333 !important;
+}
+
+/* ========== ANIMAÇÕES DE DETECÇÃO ========== */
+/* Detecta quando o autopreenchimento inicia/para (para uso futuro com JS) */
+@keyframes onAutoFillStart {
+    from { opacity: 1; }
+    to { opacity: 1; }
+}
+
+@keyframes onAutoFillCancel {
+    from { opacity: 1; }
+    to { opacity: 1; }
+}
+
+input:-webkit-autofill {
+    animation-duration: 0.001s;
+    animation-name: onAutoFillStart;
+    animation-fill-mode: both;
+}
+
+input:not(:-webkit-autofill) {
+    animation-duration: 0.001s;
+    animation-name: onAutoFillCancel;
+    animation-fill-mode: both;
+}
+
+/* ========== CASOS ESPECIAIS ========== */
+/* Campos dentro de formulários com classes específicas APENAS quando não há feedback ativo */
+.form-group input:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+.pesquisa-form input:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #333 !important;
+    background-color: white !important;
+}
+
+/* ========== GARANTIA DE FUNCIONALIDADE ========== */
+/* Garante que o autopreenchimento funcione mesmo com nossa neutralização */
+input:-webkit-autofill {
+    /* Mantém o comportamento de autopreenchimento */
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* ========== RESET DE PROPRIEDADES PROBLEMÁTICAS ========== */
+/* Remove qualquer background-image que possa interferir APENAS quando não há feedback ativo */
+input:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+select:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+textarea:-webkit-autofill:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    background-image: none !important;
+    background-attachment: initial !important;
+    background-size: initial !important;
+    background-repeat: initial !important;
+    background-position: initial !important;
+    background-origin: initial !important;
+    background-clip: initial !important;
+}
+
+/* ========== NOTA DE DESENVOLVIMENTO ========== */
+/*
+Este arquivo neutraliza completamente o visual padrão do autopreenchimento
+do navegador, mantendo toda a funcionalidade intacta.
+
+Funcionalidade preservada:
+- Sugestões do navegador funcionam normalmente
+- Autocompletar funciona normalmente
+- Apenas o VISUAL foi neutralizado quando não há feedback ativo
+
+Integrado com sistema unificado de feedback visual.
+*/

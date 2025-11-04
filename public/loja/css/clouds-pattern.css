@@ -1,0 +1,159 @@
+/* ========== SISTEMA DE NUVENS INFINITAS ========== */
+/* Pattern de nuvens para seções específicas da new-store */
+/* Baseado no sistema das páginas de menu com profundidade em camadas */
+/*
+ * ESTRUTURA:
+ * 1. Animações (@keyframes)
+ * 2. Container de nuvens (.clouds-container)
+ * 3. Nuvens individuais (.cloud, .cloud.flipped, camadas)
+ * 4. Tipos de nuvens (.cloud-1, .cloud-2, .cloud-3)
+ * 5. Seções que recebem o pattern (.hero-clouds-wrapper, .hero-extension-section, .checkout-section)
+ * 6. Z-index e hierarquia de conteúdo
+ * 7. Responsividade
+ * 
+ * JavaScript: clouds-manager.js gerencia a criação dinâmica das nuvens
+ */
+
+/* Animação infinita das nuvens - movimento horizontal */
+@keyframes cloud-float {
+  from {
+    transform: translateX(-300px);
+  }
+  to {
+    transform: translateX(calc(100vw + 300px));
+  }
+}
+
+/* Container de nuvens - será inserido via JavaScript nas seções específicas */
+.clouds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1; /* Acima do fundo, abaixo do conteúdo */
+  overflow: visible; /* Permite que nuvens se estendam além da área visível inicial */
+}
+
+/* Estilo base para todas as nuvens */
+.cloud {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: cloud-float 60s linear infinite; /* Velocidade base: 60s */
+  
+  /* Filtros em vez de opacity para evitar soma de transparências nas interseções */
+  opacity: 1; /* Sem transparência! */
+  filter: brightness(0.6) contrast(0.75) saturate(0.6) grayscale(0.3);
+  mix-blend-mode: lighten; /* Modo de mesclagem que clareia ao sobrepor */
+}
+
+/* Nuvens invertidas horizontalmente */
+.cloud.flipped {
+  transform: scaleX(-1);
+}
+
+/* ========== CAMADAS DE PROFUNDIDADE COM VELOCIDADES DIFERENTES ========== */
+
+.cloud.layer-front {
+  z-index: 3; /* Camada frontal - mais próxima */
+  animation-duration: 51s; /* 15% mais rápida que base (60s * 0.85) */
+  filter: brightness(0.62) contrast(0.77) saturate(0.65) grayscale(0.25); /* Mais nítida */
+}
+
+.cloud.layer-mid {
+  z-index: 2; /* Camada média */
+  animation-duration: 60s; /* Velocidade base */
+  filter: brightness(0.6) contrast(0.75) saturate(0.6) grayscale(0.3); /* Normal */
+}
+
+.cloud.layer-back {
+  z-index: 1; /* Camada de fundo - mais distante */
+  animation-duration: 72s; /* 20% mais lenta que base (60s * 1.2) */
+  filter: brightness(0.58) contrast(0.73) saturate(0.55) grayscale(0.35); /* Mais desbotada */
+}
+
+/* ========== TIPOS DE NUVENS ========== */
+
+.cloud-1 {
+  background-image: url('../../imagens/nuvem-1.png');
+}
+
+.cloud-2 {
+  background-image: url('../../imagens/nuvem-2.png');
+}
+
+.cloud-3 {
+  background-image: url('../../imagens/nuvem-3.png');
+}
+
+/* ========== SEÇÕES COM PATTERN DE NUVENS ========== */
+
+/* Wrapper para pattern contínuo do hero (engloba hero + hero-extension + school-banner) */
+.hero-clouds-wrapper {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: #191b2a; /* Cor de fundo azul escuro */
+}
+
+/* Hero section dentro do wrapper - transparente para mostrar as nuvens */
+.store-home-page .hero-section {
+  background: transparent; /* Transparente para mostrar as nuvens do wrapper */
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Conteúdo da hero-section acima das nuvens */
+.hero-section .site-header,
+.hero-section .hero-content {
+  position: relative;
+  z-index: 3;
+}
+
+/* Extensão da seção hero - parte azul escura antes da faixa da escola */
+.hero-extension-section {
+  background-color: transparent; /* Transparente para mostrar as nuvens do wrapper */
+  padding: 40px 0 20px 0;
+  position: relative;
+}
+
+/* Checkout recebe pattern separadamente (com nuvens extras para cobrir o banner) */
+.checkout-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container de nuvens do checkout - altura fixa expandida para incluir o banner escondido */
+.checkout-section .clouds-container {
+  height: auto; /* Remove height: 100% */
+  min-height: 150vh; /* Altura generosa para cobrir seção + banner */
+}
+
+/* Garantir que o conteúdo específico fique acima das nuvens */
+.hero-section > *:not(.clouds-container),
+.checkout-section > *:not(.clouds-container) {
+  position: relative;
+  z-index: 2;
+}
+
+/* ========== RESPONSIVIDADE ========== */
+/* O JavaScript (clouds-manager.js) ajusta animationDuration, filter e transform baseado no viewport */
+
+/* Ajustes mobile */
+@media (max-width: 768px) {
+  /* Hero extension com padding reduzido */
+  .hero-extension-section {
+    padding: 20px 0 10px 0;
+  }
+  
+  /* Checkout container expandido para mobile */
+  .checkout-section .clouds-container {
+    min-height: 180vh; /* Mobile precisa de mais altura proporcional */
+  }
+}

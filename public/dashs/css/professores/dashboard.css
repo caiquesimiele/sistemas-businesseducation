@@ -1,0 +1,4460 @@
+/* RESET E BASE - PADRONIZADO COM LOJA */
+* {
+    box-sizing: border-box;
+}
+
+/* Garantir que nenhum elemento exceda a largura da tela */
+*, *::before, *::after {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* === SISTEMA MASTER DE ESPAÇAMENTOS - BANNER COLADO + BLOCOS RESPIRÁVEIS PROFESSORES === */
+:root {
+    /* Espaçamentos fundamentais - BANNER COLADO, BLOCOS RESPIRÁVEIS */
+    --spacing-banner-bottom: 0;                /* Banner → Título: COLADO */
+    --spacing-content-lateral: 0.75rem;        /* Conteúdo ↔ Filtro: COMPACTO */
+    --spacing-content-lateral-mobile: 0.5rem;  /* Mobile: ULTRA COMPACTO */
+    --spacing-blocks-vertical: 0.7rem;         /* Entre blocos: RESPIRÁVEL */
+    --spacing-gutter-x: 0.5rem;               /* Bootstrap X: COMPACTO */
+    --spacing-gutter-y: 0.7rem;               /* Bootstrap Y: RESPIRÁVEL */
+    
+    /* Espaçamentos específicos - BANNER MÍNIMO, BLOCOS RESPIRÁVEIS */
+    --spacing-main-container: 0.3rem 0;            /* Container: COMPACTO */
+    --spacing-chart-container: 0.5rem;            /* Charts: COMPACTO */
+    --spacing-filter-lateral: 30px;                /* Filtro: REDUZIDO */
+    
+    /* Espaçamentos de componentes - BANNER MÍNIMO, BLOCOS RESPIRÁVEIS */
+    --spacing-rate-card: 0.6rem 0.4rem;           /* Rate cards: COMPACTO */
+    --spacing-rate-card-mobile: 0.4rem 0.3rem;    /* Rate cards mobile: COMPACTO */
+    --spacing-sidebar-content: 0.6rem;            /* Sidebar: COMPACTO */
+    --spacing-section-container: 0.6rem;          /* Seções: COMPACTO */
+    --spacing-highlights: 1rem 0.6rem;            /* Highlights: COMPACTO */
+    
+    /* Espaçamentos específicos para banner colado + blocos respiráveis */
+    --spacing-first-row: 0;                       /* Primeiro row após banner: COLADO */
+    --spacing-banner-top: 0;                      /* Banner padding-top: ZERO */
+    --spacing-between-rows: 0.7rem;               /* Entre rows de conteúdo: RESPIRÁVEL */
+}
+
+/* Bootstrap container-fluid específico */
+.container-fluid {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+}
+
+html {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    background: #056BF1;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Foguetes removidos - agora usando rocket-animated.css */
+
+/* Header Simplificado */
+.simple-header {
+    background: #121F4B;
+    border-bottom: 3px solid #FF692B;
+    padding: 0.5rem 2rem;
+    margin-bottom: 0; /* PADRONIZADO COM LOJA */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
+}
+
+.business-logo {
+    height: 50px;
+    width: auto;
+    filter: brightness(1.1);
+}
+
+/* Layout do header - desktop */
+.header-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 1rem; /* Espaçamento entre logo e indicador de ano-projeto */
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+/* Indicador do Ano-Projeto - desktop */
+.project-year-indicator {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: default;
+    user-select: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    height: 36px;
+}
+
+.project-year-indicator i {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.project-year-indicator:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn-pais {
+    background: #FF692B;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-right: 0;
+    cursor: pointer;
+    width: auto;
+    height: 36px;
+    gap: 6px;
+}
+
+.btn-pais:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    text-decoration: none;
+}
+
+/* Botão de Refresh - Laranja e Redondo */
+.btn-refresh {
+    background: #FF692B;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%; /* Redondo */
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-right: 0;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+}
+
+.btn-refresh:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-refresh:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-refresh.refreshing {
+    background: #FF692B;
+    cursor: not-allowed;
+}
+
+.btn-refresh.refreshing i {
+    animation: spin 1s linear infinite;
+}
+
+/* Botão de PDF - Cor laranja como o refresh */
+.btn-pdf {
+    background: #FF692B;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 50%; /* Redondo como o refresh */
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-right: 0;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+}
+
+.btn-pdf:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.btn-pdf:disabled {
+    background: #6c757d;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-pdf.generating {
+    background: #FF8C42; /* Laranja mais claro durante processamento */
+    cursor: not-allowed;
+}
+
+.btn-pdf.generating i {
+    animation: spin 1s linear infinite;
+}
+
+/* Otimizações para captura em PDF - DASHBOARD DE PESQUISA PROFESSORES */
+@media print, screen {
+    /* Garantir que backgrounds sejam preservados */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+    
+    /* Garantir visibilidade de elementos para html2canvas */
+    .chart-container,
+    .kpi-card,
+    .section-container,
+    .dashboard-content,
+    .banner-info {
+        position: relative !important;
+        transform: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Containers de gráficos - fundo branco igual aos KPIs */
+    .chart-container {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Banner info - gradiente laranja */
+    .banner-info {
+        background: linear-gradient(135deg, #FF692B 0%, #FF8C42 100%) !important;
+        color: #ffffff !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Cards KPI - fundo branco */
+    .kpi-card {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        border-radius: 15px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    }
+    
+    /* Títulos dos gráficos - texto escuro no fundo branco */
+    .chart-title {
+        color: #333333 !important;
+        font-weight: bold !important;
+    }
+    
+    /* Títulos dos banners - branco no fundo laranja */
+    .banner-title {
+        color: #ffffff !important;
+        font-weight: bold !important;
+    }
+    
+    /* Perguntas dos gráficos - texto cinza no fundo branco */
+    .chart-question {
+        color: #666666 !important;
+    }
+    
+    /* Subtítulos dos banners - branco transparente no fundo laranja */
+    .banner-subtitle {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+    
+    /* Valores KPI - texto escuro */
+    .kpi-value {
+        color: #333333 !important;
+        font-weight: bold !important;
+    }
+    
+    /* Labels KPI - cinza */
+    .kpi-label {
+        color: #666666 !important;
+    }
+    
+    /* Títulos de seção - texto branco */
+    .section-title {
+        color: #ffffff !important;
+        font-weight: bold !important;
+    }
+    
+    /* Ícones dos títulos de seção - brancos */
+    .section-title i,
+    h2.section-title i {
+        color: #ffffff !important;
+    }
+    
+    /* Canvas dos gráficos */
+    canvas {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Evitar quebras de elementos */
+    .chart-container,
+    .kpi-card,
+    .banner-info {
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+    }
+}
+
+.btn-refresh .refresh-text {
+    display: none;
+}
+
+.btn-logout {
+    background: white !important;
+    color: #121F4B !important;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    margin-right: 0;
+    cursor: pointer;
+    width: auto;
+    height: 36px;
+    gap: 6px;
+}
+
+.btn-logout:hover {
+    background: #f8f9fa !important;
+    color: #121F4B !important;
+    transform: translateY(-3px);
+    text-decoration: none;
+}
+
+/* Texto dos botões - sempre visível */
+.btn-text {
+    display: inline;
+}
+
+/* Ajustes específicos para mobile */
+@media (max-width: 768px) {
+    .simple-header {
+        padding: 0.3rem 1rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 0;
+        position: relative;
+    }
+    
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        flex-shrink: 1;
+    }
+    
+    .btn-pais,
+    .btn-logout,
+    .btn-refresh,
+    .btn-pdf {
+        padding: 0.3rem 0.5rem !important;
+        font-size: 0.7rem !important;
+        margin-right: 0 !important;
+        gap: 0.3rem !important;
+        border-radius: 5px !important;
+        white-space: nowrap !important;
+    }
+    
+    .btn-pais,
+    .btn-logout {
+        height: 32px !important;
+        padding: 0.4rem 0.8rem !important;
+        font-size: 0.75rem !important;
+        border-radius: 6px !important;
+    }
+    
+    .btn-refresh,
+    .btn-pdf {
+        width: 32px !important;
+        height: 32px !important;
+        padding: 0.2rem !important;
+        font-size: 0.8rem !important;
+    }
+
+    /* Indicador do Ano-Projeto - mobile override */
+    .project-year-indicator {
+        gap: 6px !important;
+        padding: 6px 10px !important;
+        font-size: 12px !important;
+        border-radius: 4px !important;
+    }
+
+    .project-year-indicator i {
+        font-size: 14px !important;
+    }
+    
+    .business-logo {
+        height: 35px;
+    }
+    
+    .btn-pais,
+    .btn-logout,
+    .btn-refresh {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        gap: 0.4rem;
+        border-radius: 7px;
+    }
+    
+    .btn-refresh {
+        margin-right: 0.3rem;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .btn-pais {
+        margin-right: 0.3rem;
+    }
+    
+    .btn-logout {
+        margin-right: 0;
+    }
+    
+    /* ===== BLOCO DE TÍTULO - REGRA ÚNICA E DEFINITIVA ===== */
+    
+    /* Container filho controla o layout */
+    .simple-layout-container,
+    html body .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-4 .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-8 .rate-card.highlight-orange .simple-layout-container {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;      /* BLOCO centralizado */
+        gap: 0.8rem !important;
+        padding: 1rem !important;
+        margin: 0 auto !important;
+        width: auto !important;
+        max-width: 90% !important;
+        height: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    .logo-section {
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-shrink: 0 !important;               /* Logo mantém tamanho */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;  /* Logo alinhado à esquerda */
+    }
+    
+    .text-section {
+        margin: 0 !important;
+        padding: 0 !important;
+        flex-grow: 1 !important;                /* Texto ocupa espaço restante */
+        display: flex !important;
+        flex-direction: column !important;      /* Título e subtítulo em coluna */
+        justify-content: center !important;     /* Centralizado verticalmente */
+        align-items: flex-start !important;     /* Texto alinhado à esquerda */
+        text-align: left !important;            /* FORÇA texto à esquerda */
+    }
+    
+    .dashboard-title-main {
+        margin: 0 !important;
+        line-height: 1.2 !important;
+        font-size: 1.1rem !important;
+        text-align: left !important;            /* FORÇA título à esquerda */
+    }
+    
+    .maintainer-name-sub {
+        margin: 0 !important;
+        line-height: 1.2 !important;
+        font-size: 0.8rem !important;
+        text-align: left !important;            /* FORÇA subtítulo à esquerda */
+    }
+    
+    .highlight-logo-simple {
+        margin: 0 !important;
+        height: 25px !important;
+    }
+}
+
+/* ===== CORREÇÃO FINAL: PROFESSORES MOBILE - LAYOUT HORIZONTAL COMPLETO ===== */
+@media (max-width: 768px) {
+    /* Container: logo + texto horizontal, conjunto centralizado */
+    html body .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-4 .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-8 .rate-card.highlight-orange .simple-layout-container {
+        display: flex !important;
+        flex-direction: row !important;          /* Logo à esquerda + texto à direita */
+        align-items: center !important;          /* Centralizado verticalmente */
+        justify-content: center !important;      /* Conjunto centralizado */
+        gap: 0.8rem !important;                  /* Gap entre logo e texto */
+        width: auto !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;               /* Centralizado horizontalmente */
+        padding: 0.8rem !important;
+        height: auto !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Logo: fixo à esquerda */
+    html body .rate-card.highlight-orange .logo-section,
+    html body .col-md-4 .rate-card.highlight-orange .logo-section,
+    html body .col-md-8 .rate-card.highlight-orange .logo-section {
+        flex-shrink: 0 !important;               /* Logo não encolhe */
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;      /* Logo centralizado na sua área */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Texto: à direita do logo, alinhado à esquerda */
+    html body .rate-card.highlight-orange .text-section,
+    html body .col-md-4 .rate-card.highlight-orange .text-section,
+    html body .col-md-8 .rate-card.highlight-orange .text-section {
+        flex: 1 !important;                      /* Ocupa espaço restante */
+        display: flex !important;
+        flex-direction: column !important;       /* Título em cima, subtítulo embaixo */
+        justify-content: center !important;      /* Centralizado verticalmente */
+        align-items: flex-start !important;      /* Texto alinhado à esquerda */
+        text-align: left !important;             /* Força alinhamento à esquerda */
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    
+    /* Título e subtítulo: alinhados à esquerda */
+    html body .rate-card.highlight-orange .dashboard-title-main,
+    html body .rate-card.highlight-orange .maintainer-name-sub {
+        text-align: left !important;             /* FORÇA texto à esquerda */
+        margin: 0 !important;
+        line-height: 1.2 !important;
+    }
+}
+
+/* === MAIN CONTAINER MASTER - ESTRUTURA BOOTSTRAP COMPENSADA === */
+.main-container {
+    padding: var(--spacing-main-container) !important;
+    position: relative !important; /* ADICIONADO: posicionamento para filtro flutuante */
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    min-height: calc(100vh - 100px);
+    box-sizing: border-box;
+}
+
+/* RESET BOOTSTRAP PARA STICKY FUNCIONAR - LIMPO E DIRETO */
+.row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    position: relative !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    z-index: 1;
+    overflow: visible !important;
+}
+
+.col-md-3 {
+    position: relative !important;
+    flex: 0 0 auto !important;
+    width: 20% !important;
+    max-width: 20% !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+}
+
+.col-md-9 {
+    position: relative !important;
+    flex: 0 0 auto !important;
+    width: 80% !important;
+    max-width: 80% !important;
+    box-sizing: border-box !important;
+    z-index: 1;
+    overflow: visible !important;
+}
+
+/* SIDEBAR STICKY - PADRONIZADO COM LOJA */
+.sidebar-sticky {
+    /* PROPRIEDADES STICKY PRINCIPAIS */
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 20px !important;
+    z-index: 999 !important;
+    
+    /* LAYOUT */
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    
+    /* ALTURA E SCROLL INTERNO */
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+    overflow-x: visible !important;
+    
+    /* ESTILO VISUAL IGUAL À LOJA */
+    background: white;
+    border-radius: 14px;
+    padding: 0.8rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(18, 31, 75, 0.1);
+    margin: 0.5rem 0;
+}
+
+/* GARANTIR STICKY EM DESKTOP */
+@media (min-width: 769px) {
+    .sidebar-sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 20px !important;
+        z-index: 999 !important;
+        max-height: calc(100vh - 40px) !important;
+        overflow-y: auto !important;
+        overflow-x: visible !important;
+    }
+    
+    /* FORÇAR CONTAINERS PAIS A NÃO INTERFERIREM COM STICKY */
+    .container-fluid,
+    .main-container,
+    .row,
+    .col-md-3 {
+        overflow: visible !important;
+        contain: none !important;
+        transform: none !important;
+    }
+    
+    /* Scrollbar customizado para o filtro */
+    .sidebar-sticky::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .sidebar-sticky::-webkit-scrollbar-track {
+        background: rgba(18, 31, 75, 0.1);
+        border-radius: 2px;
+    }
+    
+    .sidebar-sticky::-webkit-scrollbar-thumb {
+        background: rgba(18, 31, 75, 0.3);
+        border-radius: 2px;
+    }
+    
+    .sidebar-sticky::-webkit-scrollbar-thumb:hover {
+        background: rgba(18, 31, 75, 0.5);
+    }
+    
+    /* FORÇAS ADICIONAIS PARA GARANTIR STICKY */
+    html body .container-fluid {
+        overflow: visible !important;
+    }
+    
+    html body .main-container {
+        overflow: visible !important;
+    }
+    
+    html body .row {
+        overflow: visible !important;
+    }
+    
+    html body .col-md-3 {
+        overflow: visible !important;
+    }
+    
+    html body .col-md-3 .sidebar-sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 20px !important;
+        z-index: 999 !important;
+        display: block !important;
+        contain: none !important;
+        transform: none !important;
+        will-change: auto !important;
+    }
+}
+
+.sidebar-sticky .sidebar-title {
+    color: #121F4B;
+}
+
+.sidebar-sticky .sidebar-subtitle {
+    color: rgba(18, 31, 75, 0.7);
+}
+
+.sidebar-sticky .sidebar-logo {
+    filter: brightness(1) saturate(100%) invert(0);
+}
+
+.sidebar-sticky .filter-group label {
+    color: white;
+    font-weight: 600;
+    opacity: 1;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-sticky .form-select,
+.sidebar-sticky .form-control {
+    background: #f8f9fa;
+    border-color: rgba(18, 31, 75, 0.3);
+    color: #121F4B;
+    font-weight: 500;
+}
+
+.sidebar-sticky .form-control::placeholder {
+    color: rgba(18, 31, 75, 0.6) !important;
+    font-weight: 500;
+}
+
+.sidebar-sticky .form-select:focus,
+.sidebar-sticky .form-control:focus {
+    background: white;
+    border-color: #FF692B;
+    color: #121F4B;
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 43, 0.25);
+}
+
+.sidebar-sticky .form-select option {
+    background: white;
+    color: #121F4B;
+}
+
+.sidebar-sticky .btn-filter {
+    background: linear-gradient(135deg, #FF692B 0%, #ff7943 100%);
+    color: white;
+    border: 1px solid #FF692B;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* HOVER DOS BOTÕES - PADRONIZADO COM LOJA */
+.sidebar-sticky .btn-filter:hover,
+.sidebar-sticky .filters-container .btn-filter:hover {
+    background: linear-gradient(135deg, #ff7943 0%, #FF692B 100%) !important;
+    border-color: #FF692B !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(255, 105, 43, 0.4) !important;
+}
+
+/* SCROLLBAR CUSTOMIZADA IGUAL À LOJA */
+.sidebar-sticky::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar-sticky::-webkit-scrollbar-track {
+    background: rgba(18, 31, 75, 0.1);
+    border-radius: 2px;
+}
+
+.sidebar-sticky::-webkit-scrollbar-thumb {
+    background: rgba(18, 31, 75, 0.3);
+    border-radius: 2px;
+}
+
+.sidebar-sticky::-webkit-scrollbar-thumb:hover {
+    background: rgba(18, 31, 75, 0.5);
+}
+
+.sidebar-sticky .simple-sidebar-header {
+    background: none;
+    margin-bottom: 1rem;
+}
+
+/* === SECTION CONTAINER BLOCOS RESPIRÁVEIS === */
+.section-container {
+    background: #121F4B;
+    border-radius: 14px;
+    padding: 2rem; /* Margem interna igual ao dashboard da loja */
+    margin-bottom: var(--spacing-blocks-vertical);
+    margin-top: 0.7rem !important; /* Espaço RESPIRÁVEL superior */
+    color: white;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.8rem;
+    text-align: left;
+    padding-left: 1rem;
+    line-height: 1.2;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 7px;
+    padding: 1rem;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    position: relative;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    border-color: rgba(5, 107, 241, 0.3);
+}
+
+/* Sidebar Header Simples */
+.simple-sidebar-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.8rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-logo {
+    height: 70px;
+    width: auto;
+    filter: brightness(0) saturate(100%) invert(1);
+    margin-bottom: 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.sidebar-title {
+    color: white;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.3;
+    text-align: center;
+    padding: 0 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.sidebar-subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+    text-align: center;
+    padding: 0 0.5rem;
+    font-style: italic;
+    opacity: 0.85;
+    transition: all 0.3s ease;
+}
+
+/* Filtros Mobile Toggle */
+.mobile-filter-toggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050;
+    background: linear-gradient(135deg, #FF692B 0%, #ff7943 100%);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 8px 25px rgba(255, 105, 43, 0.4);
+    color: white;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* Botão de fechar filtro mobile */
+.mobile-filter-close {
+    display: none;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1051;
+    background: rgba(18, 31, 75, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    color: #121F4B;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .mobile-filter-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-filter-toggle:hover {
+        box-shadow: 0 12px 35px rgba(255, 105, 43, 0.6);
+    }
+    
+    /* CORREÇÃO MOBILE: Card pai centraliza conteúdo - MÁXIMA ESPECIFICIDADE */
+    html body .rate-card.highlight-orange,
+    html body .col-md-4 .rate-card.highlight-orange,
+    html body .col-md-8 .rate-card.highlight-orange {
+        display: flex !important;                 /* FLEX para centralização */
+        align-items: center !important;           /* CENTRALIZA VERTICALMENTE */
+        justify-content: center !important;       /* CENTRALIZA HORIZONTALMENTE */
+        height: 180px !important;
+        min-height: 180px !important;
+    }
+    
+    /* MOBILE: Container interno mantém layout horizontal */
+    .simple-layout-container,
+    html body .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-4 .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-8 .rate-card.highlight-orange .simple-layout-container {
+        display: flex !important;
+        flex-direction: row !important;          /* Logo + texto horizontal */
+        align-items: center !important;          /* Centralizado verticalmente */
+        justify-content: center !important;      /* BLOCO centralizado */
+        gap: 0.6rem !important;                  /* Gap menor no mobile */
+        padding: 0.8rem !important;
+        margin: 0 auto !important;
+        width: auto !important;
+        max-width: 95% !important;
+        height: auto !important;                 /* Altura automática */
+        box-sizing: border-box !important;
+    }
+}
+    
+    /* Mostrar botão de fechar no mobile */
+    .mobile-filter-close {
+        display: block !important;
+    }
+    
+    .mobile-filter-close:hover {
+        background: white;
+        color: #FF692B;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        transform: scale(1.1);
+    }
+    
+    /* Posição do botão de fechar no contexto do filtro mobile */
+    .col-md-3 .mobile-filter-close {
+        position: fixed !important;
+        top: 1rem !important;
+        right: 1rem !important;
+        z-index: 1052 !important;
+        background: rgba(18, 31, 75, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+}
+
+/* Containers adaptativos baseados no conteúdo */
+.chart-container-rate {
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* === REGRA ANTIGA REMOVIDA - SISTEMA UNIFICADO IMPLEMENTADO === */
+
+/* === RESTAURAÇÃO DAS REGRAS CLAMP BASE PARA ESTABILIDADE === */
+.chart-container-bar {
+    min-height: clamp(380px, 40vh, 480px) !important;
+    height: clamp(380px, 40vh, 480px) !important;
+    padding: clamp(60px, 6vw, 80px) clamp(15px, 3vw, 25px) clamp(80px, 8vw, 100px) clamp(15px, 3vw, 25px) !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: height 0.3s ease !important;
+}
+
+.chart-container-bar-wide {
+    min-height: clamp(400px, 42vh, 520px) !important;
+    height: clamp(400px, 42vh, 520px) !important;
+    padding: clamp(60px, 6vw, 80px) clamp(15px, 3vw, 25px) clamp(90px, 9vw, 110px) clamp(15px, 3vw, 25px) !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: height 0.3s ease !important;
+}
+
+/* === RESPONSIVIDADE INTELIGENTE POR BREAKPOINTS === */
+
+/* Large screens (> 1200px) - Usar espaço extra */
+/* === REGRAS ANTIGAS REMOVIDAS - SISTEMA UNIFICADO IMPLEMENTADO ACIMA === */
+
+/* Garantir que datalabels nunca sejam cortados */
+.chart-container-bar canvas,
+.chart-container-bar-wide canvas {
+    max-height: calc(100% - 160px) !important;
+    overflow: visible !important;
+}
+
+/* Força containers de barras a nunca cortarem conteúdo */
+.chart-container-bar,
+.chart-container-bar-wide {
+    overflow: visible !important;
+    contain: none !important;
+}
+
+/* Override específico para elementos Chart.js */
+.chart-container-bar .chartjs-render-monitor,
+.chart-container-bar-wide .chartjs-render-monitor,
+.chart-container-bar canvas,
+.chart-container-bar-wide canvas {
+    overflow: visible !important;
+    clip: auto !important;
+    clip-path: none !important;
+}
+
+/* CORREÇÃO AGRESSIVA: Forçar dimensões corretas para prevenir achatamento */
+.chart-container-bar-wide {
+    min-height: 400px !important;
+    height: auto !important;
+    aspect-ratio: none !important;
+}
+
+.chart-container-bar-wide canvas {
+    min-height: 240px !important;
+    height: auto !important;
+    max-height: none !important;
+    aspect-ratio: none !important;
+}
+
+/* Mobile: Ajustar altura mínima */
+@media (max-width: 768px) {
+    .chart-container-bar-wide {
+        min-height: 360px !important;
+    }
+    
+    .chart-container-bar-wide canvas {
+        min-height: 200px !important;
+    }
+}
+
+/* === INDICADORES VISUAIS DE ADAPTAÇÃO === */
+
+.chart-container.smart-adapted::before {
+    content: "📱 Adaptado";
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    background: #FF692B;
+    color: white;
+    font-size: 0.7rem;
+    padding: 2px 6px;
+    border-radius: 7px;
+    opacity: 0.8;
+    z-index: 100;
+    font-weight: 600;
+}
+
+/* Debug helper (removível em produção) */
+.chart-container.debug-space::after {
+    content: attr(data-space-info);
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    font-size: 0.65rem;
+    padding: 2px 6px;
+    border-radius: 2px;
+    font-family: monospace;
+}
+
+/* === MELHORIAS PARA ACESSIBILIDADE === */
+
+@media (prefers-reduced-motion: reduce) {
+    .chart-container,
+    .chart-container canvas,
+    .chart-container.adapting {
+        transition: none !important;
+    }
+}
+
+/* Melhor contraste em modo escuro */
+@media (prefers-color-scheme: dark) {
+    .chart-container {
+        box-shadow: 0 15px 35px rgba(255,255,255,0.1);
+    }
+}
+
+.chart-title {
+    color: #121F4B;
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    padding: 0 0.5rem;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chart-question {
+    color: #121F4B;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+    text-align: left;
+    padding: 0 0.5rem;
+    line-height: 1.4;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Garante que os títulos dos gráficos não sejam cortados no mobile */
+@media (max-width: 768px) {
+    .chart-title {
+        padding: 0 1rem !important;
+        margin-bottom: 0.8rem !important;
+        font-size: 1rem !important;
+    }
+    
+    .chart-question {
+        padding: 0 1rem !important;
+        margin-bottom: 0.8rem !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+.rate-card {
+    background: white;
+    border-radius: 7px;
+    padding: 2rem 1.5rem; /* Margem interna igual ao dashboard da loja */
+    text-align: left;
+    color: #121F4B;
+    transition: all 0.3s ease;
+    height: 200px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    margin: 1rem 0;
+    box-sizing: border-box;
+}
+
+.rate-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #E65100, #FF6F00);
+}
+
+.rate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    background: #D84315;
+}
+
+.rate-card:hover .rate-value {
+    color: white !important;
+}
+
+.rate-card:hover .rate-title {
+    color: white !important;
+}
+
+.rate-card:hover .rate-label {
+    color: white !important;
+    opacity: 0.9;
+}
+
+.rate-title {
+    color: #121F4B;
+    font-size: 1.35rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 0.3rem;
+    text-align: left;
+    padding: 0 0.5rem;
+    line-height: 1.3;
+    order: 1;
+}
+
+.rate-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #121F4B;
+    opacity: 0.7;
+    line-height: 1.3;
+    padding: 0 0.5rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    order: 2;
+    transition: all 0.3s ease;
+}
+
+.rate-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #121F4B !important;
+    margin-bottom: 0;
+    line-height: 1;
+    padding: 0 0.5rem;
+    transition: all 0.3s ease;
+    order: 3;
+}
+
+/* === ANIMAÇÃO DE LOADING === */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.filters-container {
+    display: contents !important;
+    background: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.filters-container h5 {
+    color: #000000 !important;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-size: 1.1rem;
+    text-shadow: none !important;
+}
+
+.filter-group {
+    margin-bottom: 0.8rem;
+}
+
+.filter-group label {
+    color: #121F4B !important;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    text-shadow: none !important;
+}
+
+.form-select, .form-control {
+    border: 2px solid #121F4B !important;
+    background: white;
+    color: #121F4B;
+    font-weight: 500;
+    border-radius: 2px;
+    padding: 0.75rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+    opacity: 1;
+}
+
+.form-select:focus, .form-control:focus {
+    background: rgba(18, 31, 75, 0.15);
+    border-color: #FF692B;
+    color: white;
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 43, 0.25);
+}
+
+.form-select option {
+    background: #163E64;
+    color: white;
+}
+
+.btn-filter {
+    background: linear-gradient(135deg, #FF692B 0%, #ff7943 100%);
+    color: white;
+    border: none;
+    border-radius: 2px;
+    padding: 0.6rem 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-filter:hover {
+    background: linear-gradient(135deg, #ff7943 0%, #FF692B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 105, 43, 0.4);
+}
+
+.rate-card {
+    background: white;
+    border-radius: 14px;
+    padding: 2rem 1.5rem; /* Margem interna igual ao dashboard da loja */
+    text-align: center;
+    color: #121F4B;
+    transition: all 0.3s ease;
+    min-height: 230px;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 12px 32px rgba(18, 31, 75, 0.3);
+    margin: 1rem 0;
+    box-sizing: border-box;
+}
+
+.responses-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(18, 31, 75, 0.4);
+    z-index: 10;
+}
+
+.responses-card:hover .responses-number {
+    transform: scale(1.1);
+}
+
+.responses-card:hover .responses-label {
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.responses-number {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.responses-label {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.5px;
+}
+
+/* === LAYOUT UNIFICADO E OTIMIZADO - IDÊNTICO À LOJA === */
+
+/* Container principal - CENTRALIZADO HORIZONTAL E VERTICAL - ESPECIFICIDADE MÁXIMA */
+.simple-layout-container,
+html body .rate-card.highlight-orange .simple-layout-container,
+html body .col-md-4 .rate-card.highlight-orange .simple-layout-container,
+html body .col-md-8 .rate-card.highlight-orange .simple-layout-container,
+.rate-card .simple-layout-container,
+.col-md-4 .rate-card .simple-layout-container,
+.col-md-8 .rate-card .simple-layout-container,
+.container .simple-layout-container,
+.row .simple-layout-container,
+.row.gx-3.gy-3 .simple-layout-container,
+.gx-3.gy-3 .simple-layout-container {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important; /* CENTRALIZADO */
+    height: 100% !important;
+    width: auto !important; /* AUTO para não ocupar 100% e permitir centralização */
+    max-width: 90% !important; /* Máximo 90% */
+    gap: 8px !important; /* Gap visível entre logo e texto */
+    padding: 1rem !important; /* MARGENS IGUAIS */
+    min-height: 210px !important;
+    max-height: 210px !important;
+    box-sizing: border-box !important;
+    border: none !important;
+    margin: 0 auto !important; /* MARGIN AUTO para centralização horizontal */
+    --bs-gutter-x: 0 !important; /* ANULA Bootstrap */
+    --bs-gutter-y: 0 !important; /* ANULA Bootstrap */
+}
+
+/* ALTURA UNIFORME GARANTIDA - BLOCO DE TÍTULO = HIGHLIGHTS - MÁXIMA ESPECIFICIDADE - CENTRALIZADO */
+.rate-card.highlight-orange,
+html body .rate-card.highlight-orange,
+html body .col-md-4 .rate-card.highlight-orange,
+html body .col-md-8 .rate-card.highlight-orange {
+    height: 210px !important;
+    min-height: 210px !important;
+    max-height: 210px !important;
+    background: #121F4B !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 15px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important; /* PAI CENTRALIZADO */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Mobile - altura igual aos highlights - MÁXIMA ESPECIFICIDADE */
+@media (max-width: 768px) {
+    .rate-card.highlight-orange,
+    html body .col-md-4 .rate-card.highlight-orange,
+    html body .col-md-8 .rate-card.highlight-orange {
+        height: 180px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
+        background: #121F4B !important;
+    }
+}
+
+/* BLOCO UNIFICADO LOGO+TEXTO - CENTRALIZADO E DINÂMICO - ESPECIFICIDADE MÁXIMA */
+.logo-section,
+html body .logo-section,
+html body .rate-card.highlight-orange .logo-section,
+html body .col-md-4 .rate-card.highlight-orange .logo-section,
+html body .col-md-8 .rate-card.highlight-orange .logo-section,
+html body .simple-layout-container .logo-section {
+    flex: none !important;
+    width: auto !important; /* DINÂMICO baseado no logo */
+    min-width: 60px !important; /* Mínimo para o logo */
+    max-width: 25% !important; /* Máximo 25% do container */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-right: 8px !important; /* Espaçamento visual entre logo e texto */
+}
+
+.highlight-logo-simple {
+    height: 80px !important; /* LOGO MAIOR para preencher */
+    width: auto !important;
+    filter: brightness(0) invert(1) !important;
+    max-width: 100% !important;
+}
+
+/* Textos - DINÂMICO e FLEXÍVEL - ESPECIFICIDADE MÁXIMA */
+.text-section,
+html body .text-section,
+html body .rate-card.highlight-orange .text-section,
+html body .col-md-4 .rate-card.highlight-orange .text-section,
+html body .col-md-8 .rate-card.highlight-orange .text-section,
+html body .simple-layout-container .text-section {
+    flex: 1 !important; /* FLEXÍVEL para ocupar espaço restante */
+    min-width: 0 !important; /* Permite encolhimento se necessário */
+    max-width: none !important; /* SEM LIMITAÇÃO - usa todo espaço disponível */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* CENTRO VERTICAL - alinhado com logo */
+    align-items: flex-start !important; /* Texto alinhado à esquerda dentro da seção */
+    text-align: left !important; /* FORÇAR TEXTO À ESQUERDA */
+    gap: 0.4rem !important; /* ESPAÇAMENTO ENTRE TÍTULO E SUBTÍTULO */
+    height: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Títulos e subtítulos - ALINHAMENTO À ESQUERDA GARANTIDO */
+.text-section .dashboard-title-main,
+.text-section .maintainer-name-sub,
+html body .text-section .dashboard-title-main,
+html body .text-section .maintainer-name-sub {
+    text-align: left !important;
+    align-self: flex-start !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* REMOVIDO: white-space: nowrap - permite quebra natural quando necessário */
+    /* REMOVIDO: text-overflow: ellipsis - sem reticências desnecessárias */
+}
+
+/* Dashboard de Professores - título otimizado */
+.dashboard-title-main {
+    font-size: 1.8rem !important; /* TÍTULO MAIOR */
+    font-weight: 700 !important;
+    color: white !important;
+    line-height: 1.1 !important;
+    margin: 0 !important; /* REMOVIDO: eliminando separação */
+}
+
+/* Nome da mantenedora - subtítulo otimizado */
+.maintainer-name-sub {
+    font-size: 1.1rem !important; /* SUBTÍTULO MAIOR */
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.2 !important;
+    margin: 0 !important; /* REMOVIDO: eliminando separação */
+}
+
+/* Mobile - layout HORIZONTAL otimizado - MÁXIMA ESPECIFICIDADE */
+@media (max-width: 767px) {
+    .simple-layout-container,
+    html body .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-4 .rate-card.highlight-orange .simple-layout-container,
+    html body .col-md-8 .rate-card.highlight-orange .simple-layout-container {
+        flex-direction: row !important;         /* HORIZONTAL: logo à esquerda + texto à direita */
+        align-items: center !important;         /* Centralizado verticalmente */
+        justify-content: center !important;     /* Conjunto centralizado */
+        text-align: left !important;
+        gap: 0.8rem !important;                 /* GAP entre logo e texto */
+        padding: 1rem !important;               /* Padding otimizado */
+        min-height: auto !important;            /* Altura automática */
+        width: auto !important;
+        max-width: 90% !important;
+        margin: 0 auto !important;              /* Centralizado horizontalmente */
+        box-sizing: border-box !important;
+    }
+    
+    .logo-section {
+        flex: none !important;
+        height: auto !important;
+    }
+    
+    .text-section {
+        flex: none !important;
+        align-items: center !important;
+        height: auto !important;
+    }
+    
+    .highlight-logo-simple {
+        height: 60px !important; /* LOGO MAIOR NO MOBILE */
+    }
+    
+    .dashboard-title-main {
+        font-size: 1.4rem !important; /* TÍTULO MAIOR NO MOBILE */
+    }
+    
+    .maintainer-name-sub {
+        font-size: 1rem !important; /* SUBTÍTULO MAIOR NO MOBILE */
+    }
+}
+
+.text-response-card {
+    background: white;
+    border-radius: 2px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+    color: #121F4B;
+    border-left: 4px solid #FF692B;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* .text-response-card::before - REFLEXO REMOVIDO */
+
+.text-response-card:hover {
+    transform: translateX(5px);
+    border-left-color: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.response-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.8rem;
+    color: #121F4B;
+}
+
+.response-author {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+    position: relative;
+    padding-left: 1rem;
+}
+
+.response-author::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: #FF692B;
+}
+
+.demo-warning {
+    background: linear-gradient(135deg, #ff9800 0%, #ff7043 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 7px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(255, 152, 0, 0.3);
+}
+
+/* Scrollbar para áreas de texto */
+.chart-container-text div[style*="overflow-y"] {
+    scrollbar-width: thin;
+    scrollbar-color: #FF692B rgba(255, 255, 255, 0.1);
+}
+
+.chart-container-text div[style*="overflow-y"]::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chart-container-text div[style*="overflow-y"]::-webkit-scrollbar-track {
+    background: rgba(18, 31, 75, 0.1);
+    border-radius: 2px;
+}
+
+.chart-container-text div[style*="overflow-y"]::-webkit-scrollbar-thumb {
+    background: #FF692B;
+    border-radius: 2px;
+}
+
+.chart-container-text div[style*="overflow-y"]::-webkit-scrollbar-thumb:hover {
+    background: #ff7943;
+}
+
+/* Filtro mobile com design igual ao desktop */
+.filters-sidebar {
+    position: static;
+    background: white;
+    margin: 0;
+    border-radius: 14px;
+    padding: 1.5rem;
+    width: calc(100vw - 2rem);
+    max-width: none;
+    height: calc(100vh - 2rem);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(18, 31, 75, 0.1);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.simple-sidebar-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 1rem 1rem 1rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.sidebar-logo {
+    height: 50px;
+    margin-bottom: 0.5rem;
+    filter: brightness(1.2);
+}
+
+.sidebar-title {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.sidebar-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.filters-content {
+    padding: 0 0.3rem 0.8rem 0.3rem;
+    background: transparent;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.filters-content h5 {
+    margin-bottom: 0.5rem;
+}
+
+.rate-card {
+    min-height: 150px;
+    min-width: 180px;
+    padding: 1.5rem 1rem;
+}
+
+.responses-number {
+    font-size: 2rem;
+}
+
+/* Pergunta do Gráfico */
+.chart-question {
+    color: #121F4B;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 1rem;
+    text-align: left;
+    line-height: 1.4;
+    padding: 0 0.5rem;
+    opacity: 0.85;
+}
+
+/* === BOOTSTRAP GUTTERS MASTER - BANNER ZERADO === */
+.row.gx-3.gy-3 {
+    --bs-gutter-x: var(--spacing-gutter-x) !important;
+    --bs-gutter-y: var(--spacing-gutter-y) !important;
+    margin-bottom: var(--spacing-blocks-vertical) !important;
+}
+
+/* === BANNER ROW - FORÇA GUTTER ZERO === */
+.dashboard-content > .row:first-of-type + .row.gx-3.gy-3 {
+    --bs-gutter-y: 0 !important; /* ZERO GUTTER para highlights após banner */
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    row-gap: 0 !important; /* FORÇA row-gap zero */
+}
+
+/* === BANNER COL - FORÇA GUTTER ZERO === */
+.dashboard-content > .row:first-of-type + .row.gx-3.gy-3 > .col-md-4,
+.dashboard-content > .row:first-of-type + .row.gx-3.gy-3 > .col-md-8 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* === BANNER ROW - FORÇA ZERO TOTAL === */
+.dashboard-content > .row:first-of-type {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* === BANNER COL - FORÇA ZERO TOTAL === */
+.dashboard-content > .row:first-of-type .col-12 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* === RESET DE MARGEM PARA PRIMEIRO ROW === */
+.dashboard-content > .row:first-of-type {
+    margin-top: 0 !important; /* Banner não precisa de margin-top */
+}
+
+/* === BANNER COLADO: CONTAINER DO BANNER === */
+.dashboard-content > .row:first-of-type + .row.gx-3.gy-3 {
+    margin-top: 0 !important; /* Remove margin extra após banner - COLADO */
+}
+
+/* === BANNER COLADO: FORÇA ZERO SPACING === */
+.dashboard-banner {
+    margin-bottom: 0 !important; /* Banner sem margin inferior */
+    padding-bottom: 0 !important; /* Banner sem padding inferior */
+}
+
+/* === BANNER COLADO: HIGHLIGHTS SEM MARGIN SUPERIOR === */
+.dashboard-content > .row:nth-child(2) {
+    margin-top: 0 !important; /* Segundo row (highlights) sem margin superior */
+    padding-top: 0 !important; /* Segundo row (highlights) sem padding superior */
+    --bs-gutter-y: 0 !important; /* FORÇA Bootstrap gutter zero */
+    row-gap: 0 !important; /* FORÇA row-gap zero */
+    transform: translateY(-2px) !important; /* FORÇA aproximação visual */
+}
+
+/* === BLOCOS RESPIRÁVEIS: HIGHLIGHTS → SEÇÕES === */
+.row.gx-3.gy-3:has(.rate-card.highlight-orange) + h2 {
+    margin-top: 0.7rem !important; /* Espaço RESPIRÁVEL entre highlights e títulos */
+}
+
+/* === BLOCOS RESPIRÁVEIS: HIGHLIGHTS → GRAFICOS === */
+.row.gx-3.gy-3:has(.rate-card.highlight-orange) + .section-container {
+    margin-top: 0.7rem !important; /* Espaço RESPIRÁVEL entre highlights e gráficos */
+}
+
+/* === BLOCOS RESPIRÁVEIS: HIGHLIGHTS GERAIS === */
+.row.gx-3.gy-3 .rate-card {
+    margin-bottom: 0 !important; /* Remove margin de todos os rate cards */
+}
+
+/* === BLOCOS RESPIRÁVEIS: TÍTULOS DE SEÇÕES === */
+.section-container h2 {
+    margin-top: 0.7rem !important;
+    margin-bottom: 0.7rem !important;
+}
+
+/* === BLOCOS RESPIRÁVEIS: QUALQUER ELEMENTO APÓS HIGHLIGHTS === */
+.row.gx-3.gy-3 + * {
+    margin-top: 0.7rem !important; /* Espaçamento RESPIRÁVEL após qualquer row de highlights */
+}
+
+/* REMOVIDO: margin-bottom específico para uniformizar com loja */
+
+/* REMOVIDO: padding específico - usando padrões por tipo de chart como na loja */
+
+.chart-container-pie {
+    height: 750px !important;
+    padding: clamp(30px, 5vw, 50px) !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    transition: height 0.3s ease !important;
+}
+
+/* REMOVIDO: Definições fixas conflitantes que sobrescreviam as dinâmicas clamp() */
+
+.chart-container canvas {
+    max-height: calc(100% - 120px) !important;
+    max-width: calc(100% - 10px) !important;
+    margin: 10px auto !important;
+}
+
+.chart-container-pie canvas {
+    max-height: calc(100% - 120px) !important;
+    max-width: calc(100% - 10px) !important;
+    margin: 10px auto !important;
+}
+
+/* REMOVIDO: Canvas rules conflitantes - usando apenas as dinâmicas */
+
+/* Altura fixa para gráficos de barras - MÁXIMA ESPECIFICIDADE DESKTOP */
+@media (min-width: 769px) {
+    html body .chart-container-bar {
+        min-height: 360px !important;
+        height: 360px !important;
+        padding: 20px 20px 90px 20px !important;
+    }
+
+    html body .chart-container-bar-wide {
+        min-height: 380px !important;
+        height: 380px !important;
+        padding: 20px 20px 100px 20px !important;
+    }
+}
+
+/* REGRA CRÍTICA: Altura fixa FORA de media query como no dashboard que funciona */
+.chart-container-bar-wide {
+    min-height: 380px !important;
+    height: 380px !important;
+    padding: 20px 20px 100px 20px !important;
+}
+
+.chart-container-text {
+    min-height: 280px !important;
+    padding: 20px !important;
+}
+
+.chart-container-bar canvas,
+.chart-container-bar-wide canvas {
+    max-height: calc(100% - 100px) !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 10px auto !important;
+}
+
+/* Regra movida para posição correta acima - REMOVIDO PARA EVITAR DUPLICAÇÃO */
+
+/* Área principal do dashboard */
+.col-md-9 {
+    padding-left: 1rem;
+    padding-right: 0;
+}
+
+@media (max-width: 767px) {
+    .col-md-9 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Datalabels personalizados para valores nos gráficos */
+.chart-data-label {
+    position: absolute;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 4px 8px;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+/* Responsividade melhorada */
+@media (max-width: 1200px) {
+    .main-container {
+        max-width: 98%;
+        padding: 1.5rem 0;
+    }
+    
+    .chart-question {
+        font-size: 0.8rem;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1rem;
+    }
+    
+    .dashboard-header .subtitle {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        max-width: 100%;
+        width: 100%;
+        padding: 0.5rem 0.25rem;
+        box-sizing: border-box;
+    }
+    
+    .dashboard-header {
+        position: static;
+        margin-bottom: 1rem;
+        padding: 1rem;
+        top: 0;
+    }
+    
+    .dashboard-header h1 {
+        font-size: 1.1rem;
+    }
+    
+    .dashboard-header .subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .dashboard-header .logo {
+        height: 30px;
+    }
+    
+    .dashboard-header .d-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .dashboard-header .d-flex .logo {
+        margin: 0 auto 0.5rem auto !important;
+    }
+    
+    .col-md-3 {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: white;
+        z-index: 1040;
+        padding: 0;
+        margin: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-width: 100%;
+        flex: none;
+        box-sizing: border-box;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+    }
+    
+    .col-md-9 {
+        width: 100% !important;
+        flex: 0 0 auto !important;
+        max-width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+    
+    .col-md-3.show {
+        display: block;
+        transform: translateX(0);
+        opacity: 1;
+    }
+    
+    /* Sobrepor elementos para garantir que o filtro mobile apareça sobre tudo */
+    .col-md-3.show {
+        z-index: 1045 !important;
+    }
+    
+    .col-md-3.show .mobile-filter-close {
+        z-index: 1046 !important;
+    }
+    
+    /* Botão de fechar posicionado sobre o header */
+    .col-md-3 .mobile-filter-close {
+        position: fixed !important;
+        top: 1rem !important;
+        right: 1rem !important;
+        z-index: 1052 !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        backdrop-filter: blur(10px) !important;
+    }
+}
+
+@media (min-width: 769px) {
+    /* Desktop filtro compacto */
+    body .col-md-3 .filters-container {
+        padding: 0.6rem 0.8rem !important;
+        margin: 0 auto !important;
+    }
+    
+    /* Desktop container branco mínimo - MANTÉM STICKY */
+    body .col-md-3 .sidebar-sticky {
+        padding: 0.8rem !important;
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 20px !important;
+        z-index: 999 !important;
+    }
+    
+    /* ESPAÇAMENTOS HARMONIOSOS - FORÇA MÁXIMA */
+    html body .container-fluid {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row .col-md-3 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row .col-md-9 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row .col-md-9 .section-container,
+    html body .container-fluid .row .col-md-9 .responses-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* === FORÇA ABSOLUTA FINAL - SOBRESCREVE ABSOLUTAMENTE TUDO === */
+html body .container-fluid .row .col-md-3.show .sidebar-sticky .filters-sidebar .filters-content .filters-container {
+    width: calc(100% - 0.6rem) !important;
+    margin: 0.1rem auto !important;
+    padding: 1rem 1.3rem !important;
+    background: linear-gradient(135deg, #121F4B 0%, #1a2b5f 100%) !important;
+}
+
+html body .container-fluid .row .col-md-9 .section-container {
+    width: calc(100% - 1rem) !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+}
+
+html body .container-fluid .row .col-md-9 .responses-card {
+    width: calc(100% - 1rem) !important;
+    margin-left: 0.5rem !important;
+    margin-right: 0.5rem !important;
+}
+
+html body .section-container .chart-container.chart-container-pie,
+html body .col-md-6 .chart-container.chart-container-pie {
+    height: 750px !important;
+    min-height: 750px !important;
+    padding: 40px 20px 45px 20px !important;
+    overflow: visible !important;
+}
+
+html body .btn-filter:hover,
+html body .sidebar-sticky .btn-filter:hover,
+html body .filters-container .btn-filter:hover {
+    background: linear-gradient(135deg, #ff7943 0%, #FF692B 100%) !important;
+    border-color: #FF692B !important;
+    box-shadow: 0 5px 15px rgba(255, 105, 43, 0.4) !important;
+}
+
+    /* ESPAÇAMENTOS EQUILIBRADOS - FORÇA ABSOLUTA */
+@media (min-width: 769px) {
+    html body .container-fluid {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    html body .container-fluid .row .col-md-3 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row .col-md-9 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row .col-md-9 .section-container {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row .col-md-9 .responses-card {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 0.5rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    html body .main-container {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+    }
+    
+    /* Harmonia visual perfeita */
+    html body .container-fluid .row .col-md-3,
+    html body .container-fluid .row .col-md-9 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+    
+    html body .container-fluid .row .col-md-9 .section-container,
+    html body .container-fluid .row .col-md-9 .responses-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Primeira seção do desktop com espaçamento uniformizado */
+    html body .container-fluid .row .col-md-9 .section-container:first-of-type {
+        margin-top: 0.5rem !important;
+    }
+    
+    /* Total de Respostas desktop com espaçamento uniformizado */
+    html body .container-fluid .row .col-md-9 .responses-card:first-of-type {
+        margin-top: 0.5rem !important;
+    }
+}
+
+/* CENTRALIZAÇÃO PERFEITA DO FILTRO MOBILE - FORÇA ABSOLUTA */
+@media (max-width: 768px) {
+    /* Container principal do filtro mobile */
+    html body .col-md-3.show {
+        padding: 0 !important;
+        margin: 0 !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        left: 0 !important;
+        right: 0 !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Filtro sidebar mobile */
+    html body .col-md-3.show .filters-sidebar {
+        padding: 0.5rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Conteúdo dos filtros mobile */
+    html body .col-md-3.show .filters-content {
+        padding: 0 0.5rem 1rem 0.5rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Container azul centralizado */
+    html body .col-md-3.show .filters-container {
+        margin: 0.5rem auto !important;
+        margin-left: 0.5rem !important;
+        margin-right: 0.5rem !important;
+        width: calc(100% - 1rem) !important;
+        max-width: calc(100% - 1rem) !important;
+        padding: 1rem 1.3rem !important;
+        box-sizing: border-box !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    
+    /* Sidebar sticky mobile */
+    html body .col-md-3.show .sidebar-sticky {
+        padding: 0.5rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Section container mobile padding igual ao dashboard da loja */
+    .section-container {
+        padding: 1.5rem; /* Reduzido mas maior que o anterior 1rem */
+    }
+    
+    /* Chart container mobile igual ao dashboard de pais - REGRA CRÍTICA AUSENTE */
+    .chart-container {
+        padding: 1rem 1.5rem !important;
+        min-height: auto !important;
+        overflow: visible !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    /* GRÁFICOS PIZZA MOBILE - MÁXIMA ESPECIFICIDADE - AUSENTE NO DASHBOARD PROFESSORES */
+    .section-container .chart-container.chart-container-pie,
+    .col-md-6 .chart-container.chart-container-pie,
+    div.chart-container.chart-container-pie {
+        height: clamp(550px, 65vh, 650px) !important;
+        padding: 35px 20px 45px 20px !important;
+        overflow: visible !important;
+        min-height: 550px !important;
+    }
+    
+    .chart-container-bar {
+        min-height: 380px !important;
+        height: 380px !important;
+        padding: 15px 20px 40px 20px !important;
+        overflow: hidden !important;
+    }
+    
+    .chart-container-bar-wide {
+        min-height: 360px !important;
+        height: 360px !important;
+        padding: 15px 20px 45px 20px !important;
+        overflow: hidden !important;
+    }
+    
+    .chart-container-text {
+        min-height: 280px !important;
+        padding: 15px 20px !important;
+    }
+    
+    .chart-container canvas {
+        max-height: calc(100% - 80px) !important;
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+    
+    /* CANVAS GRÁFICOS PIZZA MOBILE - MÁXIMA ESPECIFICIDADE */
+    .chart-container.chart-container-pie canvas,
+    .section-container .chart-container-pie canvas,
+    div.chart-container-pie canvas {
+        max-height: calc(100% - 120px) !important;
+        max-width: calc(100% - 10px) !important;
+        width: auto !important;
+        margin: 15px auto !important;
+        overflow: visible !important;
+    }
+    
+    .chart-container-bar canvas,
+    .chart-container-bar-wide canvas {
+        max-height: calc(100% - 80px) !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 10px auto !important;
+    }
+}
+
+/* REGRAS CRÍTICAS FALTANTES - COPIADAS DO DASHBOARD QUE FUNCIONA */
+div.chart-container.chart-container-bar-wide {
+    padding-bottom: 70px !important;
+    min-height: 380px !important;
+}
+
+@media (max-width: 768px) {
+    .chart-container.chart-container-bar,
+    div.chart-container.chart-container-bar,
+    .chart-container.chart-container-bar-wide,
+    div.chart-container.chart-container-bar-wide {
+        padding-bottom: 45px !important;
+        min-height: 320px !important;
+    }
+}
+
+/* ALTURA PADRONIZADA DOS RATE-CARDS - MÁXIMA ESPECIFICIDADE */
+/* Desktop */
+@media (min-width: 769px) {
+    .rate-card {
+        height: 210px !important;
+        min-height: 210px !important;
+        max-height: 210px !important;
+    }
+}
+
+/* Tablet */
+@media (min-width: 577px) and (max-width: 768px) {
+    .rate-card {
+        height: 190px !important;
+        min-height: 190px !important;
+        max-height: 190px !important;
+    }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+    .rate-card {
+        height: 180px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
+    }
+}
+
+/* Garantir que o conteúdo se ajuste corretamente */
+html body .rate-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    box-sizing: border-box !important;
+}
+
+html body .rate-card .rate-title {
+    flex: 0 0 auto !important;
+    margin-bottom: 0.5rem !important;
+}
+
+html body .rate-card .rate-label {
+    flex: 1 1 auto !important;
+    margin-bottom: 0.5rem !important;
+}
+
+html body .rate-card .rate-value {
+    flex: 0 0 auto !important;
+    margin-bottom: 0 !important;
+}
+
+/* DISTRIBUIÇÃO PERFEITA DO CONTEÚDO NOS RATE-CARDS */
+/* === RATE CARD MASTER - ESPAÇAMENTO COMPACTO === */
+html body .rate-card {
+    padding: 1.5rem 1.3rem !important; /* Desktop padding igual ao dashboard da loja */
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+}
+
+html body .rate-card .rate-title {
+    font-size: 1.25rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.3rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+}
+
+html body .rate-card .rate-label {
+    font-size: 0.8rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 0.8rem !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+}
+
+html body .rate-card .rate-value {
+    font-size: 2.8rem !important;
+    line-height: 1 !important;
+    margin-top: auto !important;
+    margin-bottom: 0 !important;
+}
+
+/* Responsividade do conteúdo */
+@media (max-width: 768px) {
+    /* === RATE CARD MOBILE MASTER === */
+    html body .rate-card {
+        padding: 1.2rem 1rem !important; /* Mobile padding igual ao dashboard da loja */
+    }
+    
+    html body .rate-card .rate-title {
+        font-size: 1.1rem !important;
+    }
+    
+    html body .rate-card .rate-label {
+        font-size: 0.75rem !important;
+    }
+    
+    html body .rate-card .rate-value {
+        font-size: 2.4rem !important;
+    }
+}
+
+/* ALTURA UNIFORME GARANTIDA - FORÇA MÁXIMA */
+html body .section-container .row .col-md-4 .rate-card,
+html body .section-container .rate-card,
+html body .rate-card {
+    height: 210px !important;
+    min-height: 210px !important;
+    max-height: 210px !important;
+}
+
+@media (max-width: 768px) {
+    html body .section-container .row .col-md-4 .rate-card,
+    html body .section-container .rate-card,
+    html body .rate-card {
+        height: 180px !important;
+        min-height: 180px !important;
+        max-height: 180px !important;
+    }
+}
+
+/* Garantir que todos os cards em uma linha tenham a mesma altura */
+html body .section-container .row {
+    align-items: stretch !important;
+}
+
+html body .section-container .row .col-md-4 {
+    display: flex !important;
+    align-items: stretch !important;
+}
+
+html body .section-container .row .col-md-4 .rate-card {
+    width: 100% !important;
+    flex: 1 !important;
+}
+
+/* GRÁFICOS PIZZA TAMANHO IDEAL - FORÇA ABSOLUTA */
+@media (min-width: 769px) {
+    html body .section-container .chart-container.chart-container-pie,
+    html body .col-md-6 .chart-container.chart-container-pie,
+    html body .chart-container.chart-container-pie,
+    div.chart-container.chart-container-pie {
+        height: 750px !important;
+        min-height: 750px !important;
+        max-height: 750px !important;
+        padding: 40px 20px 45px 20px !important;
+        overflow: visible !important;
+    }
+}
+
+@media (min-width: 1201px) {
+    html body .section-container .chart-container.chart-container-pie,
+    html body .col-md-6 .chart-container.chart-container-pie,
+    html body .chart-container.chart-container-pie,
+    div.chart-container.chart-container-pie {
+        height: 850px !important;
+        min-height: 850px !important;
+        max-height: 850px !important;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    html body .section-container .chart-container.chart-container-pie,
+    html body .col-md-6 .chart-container.chart-container-pie,
+    html body .chart-container.chart-container-pie,
+    div.chart-container.chart-container-pie {
+        height: 800px !important;
+        min-height: 800px !important;
+        max-height: 800px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    html body .section-container .chart-container.chart-container-pie,
+    html body .col-md-6 .chart-container.chart-container-pie,
+    html body .chart-container.chart-container-pie,
+    div.chart-container.chart-container-pie {
+        height: 700px !important;
+        min-height: 700px !important;
+        max-height: 700px !important;
+    }
+}
+
+/* MOBILE COM GRÁFICOS PIZZA MAIORES */
+@media (max-width: 768px) {
+    html body .section-container .chart-container.chart-container-pie,
+    html body .col-md-6 .chart-container.chart-container-pie,
+    html body .chart-container.chart-container-pie,
+    div.chart-container.chart-container-pie {
+        height: clamp(550px, 65vh, 650px) !important;
+        min-height: 550px !important;
+        max-height: 650px !important;
+        padding: 30px 15px 80px 15px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+        position: relative !important;
+        z-index: 1 !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    html body .chart-container.chart-container-pie canvas {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    html body .chart-container.chart-container-pie .chart-title,
+    html body .chart-container.chart-container-pie .chart-question {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+
+/* Garantir que os canvas se ajustem aos containers maiores */
+html body .chart-container.chart-container-pie canvas,
+html body .section-container .chart-container-pie canvas {
+    max-height: calc(100% - 120px) !important;
+    max-width: calc(100% - 10px) !important;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+/* AJUSTES FINAIS PARA GRÁFICOS PIZZA 200% MAIORES */
+html body .chart-container.chart-container-pie {
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+html body .chart-container.chart-container-pie .chart-title {
+    margin-bottom: 1rem !important;
+    font-size: 1.4rem !important;
+}
+
+html body .chart-container.chart-container-pie .chart-question {
+    margin-bottom: 1.5rem !important;
+    font-size: 1rem !important;
+}
+
+/* Garantir que containers se adaptem aos gráficos maiores */
+@media (min-width: 769px) {
+    html body .section-container {
+        overflow: visible !important;
+        min-height: auto !important;
+    }
+    
+    html body .section-container .row .col-md-6 {
+        overflow: visible !important;
+        min-height: auto !important;
+    }
+}
+
+/* Garantir scroll suave quando necessário */
+@media (max-width: 768px) {
+    html body .section-container {
+        overflow-x: hidden !important;
+        overflow-y: visible !important;
+    }
+}
+
+@media (min-width: 769px) {
+    
+    html body .container-fluid .row .col-md-3 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        width: 20% !important;
+        max-width: 20% !important;
+    }
+    
+    html body .container-fluid .row .col-md-9 {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+        width: 80% !important;
+        max-width: 80% !important;
+    }
+}
+
+/* Melhorias nos títulos dos gráficos pizza - margem de segurança no mobile */
+@media (max-width: 768px) {
+    .chart-container.chart-container-pie .chart-title {
+        margin-top: 20px !important;
+        margin-bottom: 10px !important;
+        padding-top: 15px !important;
+        font-size: 1.1rem !important;
+    }
+    
+    .chart-container.chart-container-pie .chart-question {
+        margin-bottom: 15px !important;
+        font-size: 0.85rem !important;
+        padding: 0 10px !important;
+    }
+}
+
+/* Quebra de texto nas legendas */
+.chart-container canvas {
+    /* Garantir que as legendas quebrem o texto adequadamente */
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+
+
+/* Legendas HTML customizadas - layout em colunas */
+.chart-container .custom-legend {
+    margin-top: 15px !important;
+    padding: 10px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 8px !important;
+    align-items: start !important;
+}
+
+.chart-container .custom-legend .legend-item {
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 8px 12px !important;
+    cursor: pointer !important;
+    border-radius: 6px !important;
+    transition: all 0.2s ease !important;
+    min-height: 40px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+
+.chart-container .custom-legend .legend-item:hover {
+    background-color: rgba(18, 31, 75, 0.08) !important;
+    transform: translateX(2px) !important;
+}
+
+.chart-container .custom-legend .legend-item span {
+    flex: 1 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 1.3 !important;
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+    white-space: pre-line !important;
+    margin-left: 0 !important;
+    color: #121F4B !important;
+    text-align: left !important;
+}
+
+.chart-container .custom-legend .legend-item .legend-color {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
+    min-height: 16px !important;
+    max-height: 16px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    margin-right: 12px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+/* Estilo para legendas com tachado */
+.chart-container .custom-legend .legend-item.legend-hidden {
+    opacity: 0.5 !important;
+    background-color: rgba(153, 153, 153, 0.1) !important;
+}
+
+.chart-container .custom-legend .legend-item.legend-hidden span {
+    color: #666666 !important;
+    text-decoration: line-through !important;
+    font-style: italic !important;
+}
+
+
+
+/* Responsividade das legendas customizadas */
+@media (max-width: 768px) {
+    .chart-container .custom-legend {
+        padding: 8px 4px !important;
+        margin-top: 12px !important;
+        grid-template-columns: 1fr !important; /* Uma coluna no mobile */
+        gap: 6px !important;
+    }
+    
+    .chart-container .custom-legend .legend-item {
+        min-height: 36px !important;
+        padding: 6px 10px !important;
+    }
+    
+    .chart-container .custom-legend .legend-item span {
+        font-size: 14px !important;
+        line-height: 1.3 !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .chart-container .custom-legend {
+        grid-template-columns: repeat(2, 1fr) !important; /* Duas colunas em tablets */
+    }
+}
+
+@media (min-width: 1201px) {
+    .chart-container .custom-legend {
+        grid-template-columns: repeat(3, 1fr) !important; /* Três colunas em desktop */
+    }
+}
+
+/* === SISTEMA LIMPO E ESTÁVEL PARA GRÁFICOS PIZZA === */
+
+/* Corrigir bolinhas distorcidas - solução definitiva */
+.chart-container .custom-legend .legend-item .legend-color {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    max-width: 16px !important;
+    min-height: 16px !important;
+    max-height: 16px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    margin-right: 12px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    border: 2px solid rgba(0,0,0,0.1);
+}
+
+/* Container principal com Flexbox */
+.chart-container.chart-container-pie {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+}
+
+/* Título e Pergunta fixos */
+.chart-container.chart-container-pie .chart-title,
+.chart-container.chart-container-pie .chart-question {
+    flex-shrink: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    padding: 0 1.5rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Canvas adaptativo sem altura fixa */
+.chart-container.chart-container-pie canvas {
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    margin: 1rem auto !important;
+    display: block !important;
+}
+
+/* Legendas com scroll */
+.chart-container .custom-legend {
+    flex-shrink: 0 !important;
+    margin-top: 15px !important;
+    padding: 10px !important;
+    width: 100% !important;
+    max-height: 250px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) !important;
+    gap: 8px !important;
+}
+
+/* Regras removidas - causavam conflitos */
+
+/* Responsividade mobile - ajustado para containers maiores */
+@media (max-width: 768px) {
+    .chart-container .custom-legend {
+        grid-template-columns: 1fr !important;
+        max-height: 300px !important;
+        padding: 15px !important;
+    }
+    
+    /* Garantir que canvas ocupe espaço adequado no mobile */
+    .chart-container.chart-container-pie canvas {
+        min-height: 280px !important;
+        max-height: 450px !important;
+    }
+    
+    /* Ajustes específicos para mobile - tudo dentro dos containers */
+    .chart-container.chart-container-pie {
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+    
+    /* Títulos e perguntas com espaço controlado no mobile */
+    .chart-container.chart-container-pie .chart-title {
+        font-size: 1.1rem !important;
+        margin-bottom: 0.5rem !important;
+        padding: 0 1rem !important;
+        line-height: 1.3 !important;
+        max-height: 60px !important;
+        overflow: hidden !important;
+    }
+    
+    .chart-container.chart-container-pie .chart-question {
+        font-size: 0.9rem !important;
+        margin-bottom: 1rem !important;
+        padding: 0 1rem !important;
+        line-height: 1.4 !important;
+        max-height: 80px !important;
+        overflow: hidden !important;
+    }
+    
+    /* Legendas com espaçamento otimizado no mobile */
+    .chart-container .custom-legend .legend-item {
+        padding: 6px 8px !important;
+        margin: 2px 0 !important;
+        min-height: 32px !important;
+    }
+    
+    .chart-container .custom-legend .legend-item span {
+        font-size: 13px !important;
+        line-height: 1.2 !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .chart-container .custom-legend {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (min-width: 1201px) {
+    .chart-container .custom-legend {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+/* Scroll suave para legendas grandes */
+.chart-container .custom-legend::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1) !important;
+    border-radius: 3px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-thumb {
+    background: #FF692B !important;
+    border-radius: 3px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-thumb:hover {
+    background: #e55a26 !important;
+}
+
+/* Regras duplicadas removidas */
+
+
+/* Scroll suave para legendas grandes */
+.chart-container .custom-legend::-webkit-scrollbar {
+    width: 6px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1) !important;
+    border-radius: 3px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-thumb {
+    background: #FF692B !important;
+    border-radius: 3px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-thumb:hover {
+    background: #e55a26 !important;
+}
+
+/* === SISTEMA UNIFICADO E DEFINITIVO PARA GRÁFICOS PIZZA === */
+
+/* Container principal - altura baseada em viewport e breakpoints */
+@media (min-width: 1201px) {
+    .chart-container.chart-container-pie { 
+        height: 650px !important;
+        min-height: 650px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    .chart-container.chart-container-pie { 
+        height: 600px !important;
+        min-height: 600px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    .chart-container.chart-container-pie {
+        height: 550px !important;
+        min-height: 550px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .chart-container.chart-container-pie {
+        height: 500px !important;
+        min-height: 500px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .chart-container.chart-container-pie {
+        height: 450px !important;
+        min-height: 450px !important;
+        padding: 1rem !important;
+    }
+}
+
+/* Layout Flexbox otimizado */
+.chart-container.chart-container-pie {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Título - espaço fixo otimizado */
+.chart-container.chart-container-pie .chart-title {
+    flex-shrink: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+    font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+    line-height: 1.2 !important;
+    max-height: 40px !important;
+    overflow: hidden !important;
+    padding: 0 0.5rem !important;
+}
+
+/* Pergunta - espaço fixo otimizado */
+.chart-container.chart-container-pie .chart-question {
+    flex-shrink: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+    margin-bottom: 0.75rem !important;
+    font-size: clamp(0.8rem, 2vw, 0.95rem) !important;
+    line-height: 1.3 !important;
+    max-height: 50px !important;
+    overflow: hidden !important;
+    padding: 0 1.5rem !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+}
+
+/* Canvas - espaço calculado dinamicamente com aspect ratio preservado */
+.chart-container.chart-container-pie canvas {
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0.5rem auto !important;
+    display: block !important;
+    min-height: 180px !important;
+    max-height: calc(100% - 160px) !important;
+    aspect-ratio: 1 / 1 !important;
+}
+
+/* Legendas - espaço fixo com scroll */
+.chart-container .custom-legend {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    max-height: 120px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    margin-top: 0.5rem !important;
+    padding: 0.5rem !important;
+    box-sizing: border-box !important;
+    display: grid !important;
+    gap: 4px !important;
+}
+
+/* Responsividade das legendas */
+@media (min-width: 1201px) {
+    .chart-container .custom-legend {
+        grid-template-columns: repeat(3, 1fr) !important;
+        max-height: 140px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .chart-container .custom-legend {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-height: 130px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container .custom-legend {
+        grid-template-columns: 1fr !important;
+        max-height: 110px !important;
+        padding: 0.4rem !important;
+    }
+    
+    /* Ajustes específicos do canvas no mobile */
+    .chart-container.chart-container-pie canvas {
+        max-height: calc(100% - 140px) !important;
+        min-height: 160px !important;
+    }
+    
+    /* Ajustes dos textos no mobile */
+    .chart-container.chart-container-pie .chart-title {
+        font-size: 0.95rem !important;
+        max-height: 35px !important;
+    }
+    
+    .chart-container.chart-container-pie .chart-question {
+        font-size: 0.8rem !important;
+        max-height: 45px !important;
+    }
+}
+
+/* Itens das legendas otimizados */
+.chart-container .custom-legend .legend-item {
+    display: flex !important;
+    align-items: center !important;
+    padding: 3px 5px !important;
+    margin: 1px 0 !important;
+    cursor: pointer !important;
+    border-radius: 3px !important;
+    transition: all 0.2s ease !important;
+    min-height: 24px !important;
+    box-sizing: border-box !important;
+}
+
+.chart-container .custom-legend .legend-item:hover {
+    background-color: rgba(18, 31, 75, 0.08) !important;
+}
+
+.chart-container .custom-legend .legend-item span {
+    flex: 1 !important;
+    font-size: clamp(10px, 1.5vw, 12px) !important;
+    font-weight: 500 !important;
+    line-height: 1.2 !important;
+    word-wrap: break-word !important;
+    white-space: pre-line !important;
+    color: #121F4B !important;
+    margin-left: 0 !important;
+}
+
+/* Bolinhas das legendas - sempre perfeitas */
+.chart-container .custom-legend .legend-item .legend-color {
+    width: 12px !important;
+    height: 12px !important;
+    min-width: 12px !important;
+    max-width: 12px !important;
+    min-height: 12px !important;
+    max-height: 12px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    margin-right: 6px !important;
+    display: block !important;
+    border: 1px solid rgba(0,0,0,0.15) !important;
+    box-sizing: border-box !important;
+}
+
+/* Scroll customizado para legendas */
+.chart-container .custom-legend::-webkit-scrollbar {
+    width: 3px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.1) !important;
+    border-radius: 2px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-thumb {
+    background: #FF692B !important;
+    border-radius: 2px !important;
+}
+
+.chart-container .custom-legend::-webkit-scrollbar-thumb:hover {
+    background: #e55a26 !important;
+}
+
+/* Estados das legendas */
+.chart-container .custom-legend .legend-item.legend-hidden {
+    opacity: 0.5 !important;
+    background-color: rgba(153, 153, 153, 0.1) !important;
+}
+
+.chart-container .custom-legend .legend-item.legend-hidden span {
+    color: #666666 !important;
+    text-decoration: line-through !important;
+    font-style: italic !important;
+}
+
+/* === SOLUÇÃO DEFINITIVA - MÁXIMA ESPECIFICIDADE === */
+/* Estas regras sobrescrevem TODAS as duplicadas acima */
+
+/* Forçar aplicação do sistema unificado com especificidade máxima */
+html body .chart-container.chart-container-pie,
+html body .section-container .chart-container.chart-container-pie,
+html body .col-md-6 .chart-container.chart-container-pie,
+html body .container-fluid .row .col-md-9 .chart-container.chart-container-pie {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Alturas definitivas com máxima especificidade */
+@media (min-width: 1201px) {
+    html body .chart-container.chart-container-pie,
+    html body .section-container .chart-container.chart-container-pie {
+        height: 650px !important;
+        min-height: 650px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (min-width: 993px) and (max-width: 1200px) {
+    html body .chart-container.chart-container-pie,
+    html body .section-container .chart-container.chart-container-pie {
+        height: 600px !important;
+        min-height: 600px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+    html body .chart-container.chart-container-pie,
+    html body .section-container .chart-container.chart-container-pie {
+        height: 550px !important;
+        min-height: 550px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    html body .chart-container.chart-container-pie,
+    html body .section-container .chart-container.chart-container-pie {
+        height: 500px !important;
+        min-height: 500px !important;
+        padding: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    html body .chart-container.chart-container-pie,
+    html body .section-container .chart-container.chart-container-pie {
+        height: 450px !important;
+        min-height: 450px !important;
+        padding: 1rem !important;
+    }
+}
+
+/* Canvas definitivo com máxima especificidade - CORRIGIDO PARA EVITAR DISTORÇÃO */
+html body .chart-container.chart-container-pie canvas,
+html body .section-container .chart-container.chart-container-pie canvas {
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0.5rem auto !important;
+    display: block !important;
+    min-height: 180px !important;
+    max-height: calc(100% - 160px) !important;
+    aspect-ratio: 1 / 1 !important;
+}
+
+/* Legendas definitivas com máxima especificidade */
+html body .chart-container .custom-legend,
+html body .section-container .chart-container .custom-legend {
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    max-height: 120px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    margin-top: 0.5rem !important;
+    padding: 0.5rem !important;
+    box-sizing: border-box !important;
+    display: grid !important;
+    gap: 4px !important;
+}
+
+/* Responsividade final com máxima especificidade */
+@media (min-width: 1201px) {
+    html body .chart-container .custom-legend {
+        grid-template-columns: repeat(3, 1fr) !important;
+        max-height: 140px !important;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    html body .chart-container .custom-legend {
+        grid-template-columns: repeat(2, 1fr) !important;
+        max-height: 130px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    html body .chart-container .custom-legend {
+        grid-template-columns: 1fr !important;
+        max-height: 110px !important;
+        padding: 0.4rem !important;
+    }
+    
+    html body .chart-container.chart-container-pie canvas {
+        max-height: calc(100% - 140px) !important;
+        min-height: 160px !important;
+        width: auto !important;
+        aspect-ratio: 1 / 1 !important;
+    }
+    
+    html body .chart-container.chart-container-pie .chart-title {
+        font-size: 0.95rem !important;
+        max-height: 35px !important;
+        flex-shrink: 0 !important;
+        text-align: left !important;
+        width: 100% !important;
+        margin-bottom: 0.5rem !important;
+        line-height: 1.2 !important;
+        overflow: hidden !important;
+        padding: 0 1rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+    
+    html body .chart-container.chart-container-pie .chart-question {
+        font-size: 0.8rem !important;
+        max-height: 45px !important;
+        flex-shrink: 0 !important;
+        text-align: left !important;
+        width: 100% !important;
+        margin-bottom: 0.75rem !important;
+        line-height: 1.3 !important;
+        overflow: hidden !important;
+        padding: 0 1rem !important;
+        word-wrap: break-word !important;
+        overflow-wrap: break-word !important;
+    }
+}
+
+/* === FILTRO FLUTUANTE - MÁXIMA ESPECIFICIDADE === */
+/* Garante que o filtro seja sempre flutuante/sticky */
+html body .col-md-3 .sidebar-sticky,
+html body .container-fluid .row .col-md-3 .sidebar-sticky,
+html body .main-container .row .col-md-3 .sidebar-sticky {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 20px !important;
+    z-index: 999 !important;
+    display: block !important;
+    overflow: visible !important;
+    max-height: calc(100vh - 40px) !important;
+    overflow-y: auto !important;
+    background: white !important;
+    border-radius: 20px !important;
+    padding: 0.8rem !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+    border: 2px solid rgba(18, 31, 75, 0.1) !important;
+    margin: 0.5rem 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Garantir sticky em todas as telas desktop - ANULAR REGRAS DE MOBILE */
+@media (min-width: 769px) {
+    html body .col-md-3 .sidebar-sticky,
+    html body .container-fluid .row .col-md-3 .sidebar-sticky,
+    html body .main-container .row .col-md-3 .sidebar-sticky,
+    html body .col-md-3:not(.show) .sidebar-sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 20px !important;
+        z-index: 999 !important;
+        max-height: calc(100vh - 40px) !important;
+        overflow-y: auto !important;
+        
+        /* ANULAR REGRAS DE MOBILE QUE QUEBRAM STICKY */
+        height: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        background: white !important;
+        border-radius: 20px !important;
+        padding: 0.8rem !important;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+        border: 2px solid rgba(18, 31, 75, 0.1) !important;
+        margin: 0.5rem 0 !important;
+        
+        /* IMPORTANTE: REMOVER TRANSFORMS QUE QUEBRAM STICKY */
+        transform: none !important;
+        opacity: 1 !important;
+        display: block !important;
+        overflow-x: visible !important;
+    }
+    
+    /* OVERRIDE CRÍTICO - ANULAR position: static DO MOBILE */
+    html body .col-md-3 .sidebar-sticky {
+        position: sticky !important;
+        top: 20px !important;
+        z-index: 999 !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+/* REGRA DE EMERGÊNCIA - MÁXIMA ESPECIFICIDADE PARA DESKTOP */
+@media (min-width: 769px) {
+    html body .container-fluid .main-container .row .col-md-3 .sidebar-sticky {
+        position: sticky !important;
+        top: 20px !important;
+        z-index: 999 !important;
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
+/* ===== SOLUÇÃO DEFINITIVA - FORÇA OVERFLOW VISIBLE EM TODOS OS CONTAINERS ===== */
+@media (min-width: 769px) {
+    /* FORÇAR OVERFLOW VISIBLE EM TODOS OS CONTAINERS PAIS */
+    html, 
+    html body,
+    html body .container-fluid,
+    html body .main-container,
+    html body .row,
+    html body .col-md-3 {
+        overflow: visible !important;
+        contain: none !important;
+        transform: none !important;
+        will-change: auto !important;
+    }
+    
+    /* STICKY FINAL - MÁXIMA ESPECIFICIDADE */
+    html body .container-fluid .main-container .row .col-md-3 .sidebar-sticky {
+        position: -webkit-sticky !important;
+        position: sticky !important;
+        top: 20px !important;
+        z-index: 999 !important;
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+        contain: none !important;
+        will-change: auto !important;
+        max-height: calc(100vh - 40px) !important;
+        overflow-y: auto !important;
+        overflow-x: visible !important;
+    }
+}
+
+/* Sistema de Filtro Lateral Deslizante - Copiado exatamente da loja */
+.sidebar-filter-container {
+    position: fixed;
+    top: 84px !important;
+    left: 0;
+    height: calc(100vh - 100px) !important;
+    z-index: 1100 !important;
+    display: flex;
+    align-items: stretch;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Painel do filtro - estrutura simples com lingueta integrada */
+.sidebar-filter-panel {
+    width: calc(50vw + 40px); /* Inclui a lingueta na largura */
+    max-width: 540px; /* 500px + 40px da lingueta */
+    min-width: 390px; /* 350px + 40px da lingueta */
+    height: 100%;
+    background: white; /* Alterado para branco */
+    transform: translateX(calc(-100% + 40px)); /* Deixa só a lingueta (40px direitos) visível */
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+    pointer-events: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    /* Bordas arredondadas apenas do lado direito */
+    border-radius: 0 20px 20px 0;
+    border: none; /* Remover borda para lingueta transparente */
+}
+
+/* Lingueta criada como pseudo-elemento - FLUTUANTE IDÊNTICA À LOJA */
+.sidebar-filter-panel::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: var(--floating-icon-top, 50%);
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border-radius: 0 20px 20px 0 !important;
+    cursor: pointer;
+    pointer-events: auto;
+    z-index: 1001;
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(0,0,0,0.7)"><path d="M4.25 6.5a.75.75 0 0 0 0 1.5h15.5a.75.75 0 0 0 0-1.5H4.25zM6 12a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H6.75A.75.75 0 0 1 6 12zm3.5 5.25a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 24px 24px;
+    border: none;
+    box-shadow: none;
+}
+
+/* CORREÇÃO: Remover hover da lingueta para padronizar com loja */
+/* .sidebar-filter-panel:hover::after removido */
+
+/* MANTÉM ícone de filtro original */
+.sidebar-filter-container.open .sidebar-filter-panel::after {
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(0,0,0,0.7)"><path d="M4.25 6.5a.75.75 0 0 0 0 1.5h15.5a.75.75 0 0 0 0-1.5H4.25zM6 12a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H6.75A.75.75 0 0 1 6 12zm3.5 5.25a.75.75 0 0 0 0 1.5h5a.75.75 0 0 0 0-1.5h-5z"/></svg>');
+}
+
+/* X SEPARADO no topo direito da aba quando aberta */
+.sidebar-filter-container.open .sidebar-filter-panel::before {
+    content: '×';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.7);
+    cursor: pointer;
+    z-index: 1001;
+    transition: all 0.2s ease;
+}
+
+.sidebar-filter-container.open .sidebar-filter-panel::before:hover {
+    background: rgba(255,255,255,1);
+    color: rgba(0,0,0,0.9);
+    transform: scale(1.1);
+}
+
+/* REMOVER a lingueta separada - não é mais necessária */
+.sidebar-filter-tab {
+    display: none !important;
+}
+
+/* Estado aberto - todo o painel desliza para a direita */
+.sidebar-filter-container.open .sidebar-filter-panel {
+    transform: translateX(0);
+}
+
+/* Conteúdo do filtro - padding para não ficar embaixo da lingueta */
+/* === SIDEBAR CONTENT MASTER - COMPACTO === */
+.sidebar-filter-content {
+    padding: var(--spacing-sidebar-content);
+    padding-right: 4rem; /* Espaço para a lingueta na direita */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header do filtro */
+.sidebar-filter-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-filter-title {
+    color: black; /* Alterado para preto */
+    font-size: 1.95rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar-filter-close {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sidebar-filter-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Área de filtros */
+.sidebar-filter-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* Reduzido de 1rem para 0.5rem */
+}
+
+/* Labels dos filtros - branco e maior */
+.sidebar-filter-form .filter-label {
+    color: black; /* Alterado para preto */
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Campos dos filtros - branco com texto preto */
+.sidebar-filter-form .custom-dropdown {
+    margin-bottom: 0.25rem; /* Reduzido de 0.5rem para 0.25rem */
+}
+
+.sidebar-filter-form .dropdown-trigger {
+    background: white;
+    color: black; /* Texto preto */
+    border: 2px solid #e0e0e0; /* Contorno */
+    border-radius: 14px;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    position: relative;
+}
+
+.sidebar-filter-form .dropdown-trigger:hover {
+    border-color: #056BF1; /* Contorno azul no hover */
+    background: #f8f9ff; /* Fundo levemente azul no hover */
+}
+
+.sidebar-filter-form .dropdown-text {
+    color: black; /* Texto preto */
+    font-weight: 500;
+}
+
+.sidebar-filter-form .dropdown-trigger i {
+    color: black; /* Ícone preto */
+}
+
+/* Dropdown content - fundo branco */
+.sidebar-filter-form .dropdown-content {
+    background: white;
+    border: 2px solid #e0e0e0; /* Contorno */
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    color: black; /* Texto preto */
+}
+
+.sidebar-filter-form .dropdown-option {
+    color: black; /* Texto preto */
+    background: white;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-filter-form .dropdown-option:last-child {
+    border-bottom: none !important;
+}
+
+/* Hover cinza claro */
+.sidebar-filter-form .dropdown-option:hover {
+    background: #f5f5f5 !important;
+    color: #333 !important;
+}
+
+.sidebar-filter-form .dropdown-option.selected,
+.sidebar-filter-form .dropdown-option[data-selected="true"] {
+    background: #056BF1;
+    color: white;
+}
+
+.sidebar-filter-form .dropdown-option .option-check {
+    color: #056BF1;
+}
+
+.sidebar-filter-form .filter-hint {
+    color: black; /* Alterado para preto */
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    font-style: italic;
+}
+
+/* Botões de ação do filtro */
+.sidebar-filter-actions {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem; /* Adicionar margem inferior como no dashboard de pais */
+    padding-top: 1rem;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.sidebar-filter-actions .btn {
+    border-radius: 7px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.sidebar-filter-actions .btn-filter {
+    background: #1a365d !important; /* Azul escuro */
+    color: white !important;
+    border: 2px solid #1a365d !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.25) !important;
+}
+
+.sidebar-filter-actions .btn-filter:hover {
+    background: #2c5282 !important; /* Azul escuro mais claro no hover */
+    color: white !important;
+    border: 2px solid #2c5282 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(26, 54, 93, 0.4) !important;
+}
+
+.sidebar-filter-form .btn-clear {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 14px;
+    font-weight: 600;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.25);
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.sidebar-filter-form .btn-clear:hover {
+    background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(220, 53, 69, 0.5);
+}
+
+/* Overlay para escurecer o fundo */
+.sidebar-filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.sidebar-filter-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* === WRAPPER MASTER - ESTRUTURA BOOTSTRAP COMPENSADA === */
+.main-content-wrapper {
+    margin-left: var(--spacing-filter-lateral) !important; /* Espaço master para a lingueta */
+    margin-right: 1.5rem !important; /* ADICIONADO: Espaço direito para compensar Bootstrap */
+    padding-left: 1rem !important; /* ADICIONADO: Padding interno para separar do filtro */
+    transition: margin-left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main-content-wrapper.filter-open {
+    margin-left: 0 !important; /* Remove espaço quando aberto (sobreposição) */
+    padding-left: var(--spacing-content-lateral) !important; /* Mantém padding interno */
+}
+
+/* Mobile responsivo */
+@media (max-width: 768px) {
+    .sidebar-filter-panel {
+        width: 100vw;
+        max-width: none;
+        min-width: none;
+        transform: translateX(-100%);
+    }
+    
+    .sidebar-filter-panel::after {
+        width: 36px;
+        border-radius: 0 14px 14px 0 !important;
+        background-size: 20px 20px;
+    }
+    
+    .sidebar-filter-tab {
+        display: none !important;
+    }
+    
+    .sidebar-filter-content {
+        padding: 1rem;
+    }
+    
+    .sidebar-filter-actions {
+        padding: 1rem 0;
+        margin-bottom: 1rem; /* Margem inferior também no mobile */
+    }
+    
+    .sidebar-filter-title {
+        font-size: 1.5rem;
+    }
+    
+    .sidebar-filter-form .filter-label {
+        font-size: 1.1rem;
+    }
+    
+    .main-content-wrapper {
+        transform: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar-filter-panel {
+        border-radius: 0;
+    }
+    
+    .sidebar-filter-tab {
+        display: none !important;
+    }
+    
+    .sidebar-filter-title {
+        font-size: 1.3rem;
+    }
+    
+    .sidebar-filter-form .filter-label {
+        font-size: 1rem;
+    }
+}
+
+/* Indicador de filtros ativos */
+.sidebar-filter-tab .filter-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-filter-tab .filter-indicator.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Botão mobile de filtro */
+.mobile-filter-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #056BF1 0%, #0550D1 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 15px rgba(5, 107, 241, 0.3);
+    cursor: pointer;
+    z-index: 1002;
+    transition: all 0.3s ease;
+}
+
+.mobile-filter-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(5, 107, 241, 0.4);
+}
+
+@media (max-width: 480px) {
+    .mobile-filter-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        bottom: 20px;
+        right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+    }
+}
+
+/* Ocultar colunas antigas de filtro */
+.col-md-3 {
+    display: none !important;
+}
+
+.col-md-9 {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Prevenir scroll quando filtro aberto */
+body.filter-open {
+    overflow: hidden;
+}
+
+/* Scrollbar customizada removida para padronizar com loja */
+.sidebar-filter-panel::-webkit-scrollbar {
+    width: 0px;
+    display: none;
+}
+
+.sidebar-filter-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar-filter-panel::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+}
+
+.sidebar-filter-panel::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+/* Botão Filtrar - forçar azul escuro */
+.sidebar-filter-actions .btn-filter,
+.sidebar-filter-form .btn-filter,
+button.btn-filter,
+input[type="submit"].btn-filter,
+form .btn-filter,
+div .btn-filter {
+    background: #1a365d !important; /* Azul escuro */
+    color: white !important;
+    border: 2px solid #1a365d !important;
+    border-radius: 12px !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 12px rgba(26, 54, 93, 0.25) !important;
+}
+
+.sidebar-filter-actions .btn-filter:hover,
+.sidebar-filter-form .btn-filter:hover,
+button.btn-filter:hover,
+input[type="submit"].btn-filter:hover,
+form .btn-filter:hover,
+div .btn-filter:hover {
+    background: #2c5282 !important; /* Azul escuro mais claro no hover */
+    color: white !important;
+    border: 2px solid #2c5282 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(26, 54, 93, 0.4) !important;
+}
+
+/* Sistema de Dropdowns Customizados - Copiado da loja */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.dropdown-trigger {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 7px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    color: #333;
+}
+
+.dropdown-trigger:hover {
+    border-color: #056BF1;
+    background: #f8f9ff;
+}
+
+.dropdown-trigger.active {
+    border-color: #056BF1;
+    background: #f8f9ff;
+}
+
+.dropdown-text {
+    flex: 1;
+    text-align: left;
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dropdown-trigger i {
+    transition: transform 0.3s ease;
+    color: #666;
+}
+
+.dropdown-trigger.active i {
+    transform: rotate(180deg);
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-top: none;
+    border-radius: 0 0 15px 15px;
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    color: #333;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-option:last-child {
+    border-bottom: none;
+}
+
+.dropdown-option:hover {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.dropdown-option.selected {
+    background: #056BF1;
+    color: white;
+}
+
+.dropdown-option.selected:hover {
+    background: #0550D1;
+    color: white;
+}
+
+.dropdown-option.disabled {
+    color: #999;
+    cursor: not-allowed;
+}
+
+.dropdown-option.disabled:hover {
+    background: transparent;
+    color: #999;
+}
+
+.option-text {
+    flex: 1;
+    text-align: left;
+}
+
+.option-check {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-option.selected .option-check {
+    opacity: 1;
+}
+
+/* Scrollbar para dropdown */
+.dropdown-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Labels dos filtros */
+.filter-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.filter-hint {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.25rem;
+    font-style: italic;
+}
+
+.filter-group {
+    margin-bottom: 1rem;
+}
+
+/* Mobile responsivo */
+@media (max-width: 768px) {
+    .dropdown-content {
+        max-height: 150px;
+    }
+    
+    .dropdown-option {
+        padding: 0.6rem 0.8rem;
+    }
+    
+    .dropdown-trigger {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Forçar estilos de seleção */
+.dropdown-option[data-selected="true"] {
+    background: #056BF1 !important;
+    color: white !important;
+}
+
+.dropdown-option[data-selected="true"]:hover {
+    background: #0550D1 !important;
+    color: white !important;
+}
+
+.dropdown-option[data-selected="true"] .option-check {
+    opacity: 1 !important;
+    color: white !important;
+}
+
+.dropdown-option.selected {
+    background: #056BF1 !important;
+    color: white !important;
+}
+
+.dropdown-option.selected:hover {
+    background: #0550D1 !important;
+    color: white !important;
+}
+
+.dropdown-option.selected .option-check {
+    opacity: 1 !important;
+    color: white !important;
+}
+
+.dropdown-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    text-align: left;
+    flex: 1;
+    margin-right: 0.5rem;
+}
+
+/* === BANNER MASTER - TOTALMENTE COLADO === */
+.dashboard-banner {
+    width: 100%;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    line-height: 0 !important;
+    text-align: center;
+}
+
+/* === BANNER COLADO: ROW APÓS BANNER === */
+.dashboard-banner + .row.gx-3.gy-3 {
+    margin-top: var(--spacing-first-row) !important; /* BANNER COLADO aos highlights */
+}
+
+/* === BLOCOS RESPIRÁVEIS: HIGHLIGHTS → GRÁFICOS === */
+.rate-card.highlight-orange {
+    margin-bottom: 0 !important; /* Remove margin do bloco de título */
+}
+
+/* === BLOCOS RESPIRÁVEIS: ENTRE SEÇÕES === */
+h2 + .row.gx-3.gy-3 {
+    margin-top: 0.7rem !important; /* Espaço RESPIRÁVEL após títulos de seção */
+}
+
+/* === ALINHAMENTO FINO: ROWS SUBSEQUENTES === */
+.row.gx-3.gy-3 + .row.gx-3.gy-3 {
+    margin-top: var(--spacing-between-rows) !important; /* Espaço consistente entre blocos */
+}
+
+/* === ALINHAMENTO FINO: BLOCO TÍTULO HIGHLIGHT === */
+.rate-card.highlight-orange {
+    margin-bottom: 0 !important; /* Remove margin extra do bloco de título */
+}
+
+.banner-image {
+    width: 100%;
+    height: auto;
+    max-height: none !important; /* Remove limitação de altura */
+    object-fit: contain !important; /* Mantém proporção sem cortar */
+    border-radius: 7px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin: 0 !important;
+    padding: 0 !important;
+    vertical-align: top !important;
+    line-height: 0 !important;
+    display: block;
+}
+
+/* === REMOVIDO - CONFLITO COM DEFINIÇÃO PRINCIPAL === */
+
+/* Hover removido do bloco de título conforme solicitado */
+
+.rate-card.highlight-orange .dashboard-title-main,
+.rate-card.highlight-orange .maintainer-name-sub {
+    color: white !important;
+}
+
+.rate-card.highlight-orange .highlight-logo-simple {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Total de Respostas - azul escuro sem borda branca */
+.responses-card {
+    background: #121F4B !important;
+    color: white !important;
+    border: none !important;
+    padding: 2rem 1.5rem !important; /* Margem interna igual ao dashboard da loja */
+    border-radius: 25px !important;
+    min-height: 280px !important;
+    position: relative !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 12px 32px rgba(18, 31, 75, 0.3) !important;
+}
+
+.responses-card:hover {
+    background: #233773 !important;
+    color: white !important;
+    border: none !important;
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(18, 31, 75, 0.4) !important;
+}
+
+.responses-card .responses-number,
+.responses-card .responses-label {
+    color: white !important;
+}
+
+.responses-card:hover .responses-number,
+.responses-card:hover .responses-label {
+    color: white !important;
+}
+
+/* REMOVIDO: regras específicas conflitantes - usando padrão da loja */
+
+/* REMOVIDO: conflito - deixando comportamento natural como na loja */
+
+/* REMOVIDO: chart-container margin para uniformizar com loja */
+
+.chart-container-pie {
+    background: white;
+    border-radius: 7px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* REMOVIDO: Definições extras que não existem no dashboard de pais e causam conflito */
+
+/* Adicionar CSS específico para ajustes solicitados */
+
+/* REMOVIDO: definição duplicada - usando apenas a principal */
+
+/* === CORREÇÃO DEFINITIVA DOS EIXOS HORIZONTAIS DOS GRÁFICOS DE BARRA === */
+/* Força espaço suficiente para eixos horizontais com máxima especificidade - REGRA CRÍTICA AUSENTE */
+.chart-container.chart-container-bar,
+div.chart-container.chart-container-bar,
+.chart-container.chart-container-bar-wide,
+div.chart-container.chart-container-bar-wide {
+    padding-bottom: 70px !important;
+    min-height: 380px !important;
+}
+
+@media (max-width: 768px) {
+    .chart-container.chart-container-bar,
+    div.chart-container.chart-container-bar,
+    .chart-container.chart-container-bar-wide,
+    div.chart-container.chart-container-bar-wide {
+        padding-bottom: 45px !important;
+        min-height: 320px !important;
+    }
+}
+
+/* === REMOVIDO - CONFLITO COM DEFINIÇÃO PRINCIPAL === */
+
+/* Hover removido do bloco de título conforme solicitado */
+
+.rate-card.highlight-orange .dashboard-title-main,
+.rate-card.highlight-orange .maintainer-name-sub,
+.rate-card.highlight-orange .highlight-logo-simple {
+    color: white !important;
+}
+
+.rate-card.highlight-orange .highlight-logo-simple {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* Total de Respostas - azul escuro sem borda branca */
+.responses-card {
+    background: #121F4B !important;
+    color: white !important;
+    border: none !important;
+    padding: 2rem 1.5rem !important; /* Margem interna igual ao dashboard da loja */
+    border-radius: 25px !important;
+    min-height: 280px !important;
+    position: relative !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 12px 32px rgba(18, 31, 75, 0.3) !important;
+}
+
+.responses-card:hover {
+    background: #233773 !important;
+    color: white !important;
+    border: none !important;
+    transform: translateY(-8px) !important;
+    box-shadow: 0 20px 40px rgba(18, 31, 75, 0.4) !important;
+}
+
+.responses-card .responses-number,
+.responses-card .responses-label {
+    color: white !important;
+}
+
+.responses-card:hover .responses-number,
+.responses-card:hover .responses-label {
+    color: white !important;
+}
+
+/* Botão Sair - Branco com texto azul escuro */
+.btn-logout {
+    background: white !important;
+    color: #121F4B !important;
+    border: 2px solid #121F4B !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-logout:hover {
+    background: #f8f9fa !important;
+    color: #121F4B !important;
+    border: 2px solid #121F4B !important;
+    transform: translateY(-3px);
+}
+
+/* === DASHBOARD CONTENT MASTER - COMPENSAÇÃO BOOTSTRAP === */
+.dashboard-content {
+    padding: 0 !important; /* REMOVIDO: padding lateral (agora no wrapper) */
+    width: 100% !important; /* ADICIONADO: ocupar toda largura do wrapper */
+    box-sizing: border-box !important; /* ADICIONADO: box-sizing correto */
+}
+
+/* === MOBILE RESPONSIVO - COMPENSAÇÃO BOOTSTRAP === */
+@media (max-width: 768px) {
+    .main-content-wrapper {
+        margin-left: 0 !important; /* MOBILE: sem margin do filtro */
+        margin-right: 0 !important; /* MOBILE: sem margin direito */
+        padding-left: var(--spacing-content-lateral-mobile) !important; /* MOBILE: padding mínimo */
+        padding-right: var(--spacing-content-lateral-mobile) !important; /* MOBILE: padding mínimo */
+    }
+    
+    .dashboard-content {
+        padding: 0 !important; /* MOBILE: sem padding adicional */
+    }
+}
+
+/* Remover hover do bloco de título */
+.rate-card.highlight-orange:hover {
+    /* hover removido */
+}
+
+.rate-card:hover::before {
+    background: #fff !important;
+}
+
+/* SEGUNDA REGRA CRÍTICA FALTANTE - STYLING BASE */
+.chart-container-bar-wide {
+    background: white;
+    border-radius: 7px;
+    padding: 1.5rem;
+}
+
+.chart-container-text {
+    background: white;
+    border-radius: 7px;
+    padding: 1.5rem;
+}
+
+.option-check {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-option.selected .option-check {
+    opacity: 1;
+}
+
+/* Campo de pesquisa dentro do dropdown */
+.dropdown-search-container {
+    position: relative;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    background: #f8f9fa;
+}
+
+.dropdown-search-input {
+    width: 100%;
+    padding: 0.5rem 2rem 0.5rem 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    background: white;
+    color: #333;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.dropdown-search-input:focus {
+    border-color: #056BF1;
+    box-shadow: 0 0 0 2px rgba(5, 107, 241, 0.1);
+}
+
+.dropdown-search-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.dropdown-search-icon {
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/* Opções filtradas */
+.dropdown-option.filtered-out {
+    display: none;
+}
+
+.dropdown-option.no-results {
+    padding: 1rem;
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    cursor: default;
+}
+
+.dropdown-option.no-results:hover {
+    background: transparent;
+}
+
+
+/* Ajustes específicos para mobile - Header e Botões */
+@media (max-width: 768px) {
+    .header-logo {
+        gap: 0.5rem !important; /* Espaçamento menor entre logo e indicador em mobile */
+    }
+    
+}
+
+/* Animação de rotação para botões */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+

@@ -1,0 +1,108 @@
+/* Estilos para o fundo com foguetes */
+@keyframes rocket-float {
+    from {
+        background-position: center 0;
+    }
+    to {
+        background-position: center -800px;
+    }
+}
+
+@keyframes rocket-float-mobile {
+    from {
+        background-position: center 0;
+    }
+    to {
+        background-position: center -600px;
+    }
+}
+
+@keyframes rocket-float-small {
+    from {
+        background-position: center 0;
+    }
+    to {
+        background-position: center -500px;
+    }
+}
+
+@keyframes rocket-float-landscape {
+    from {
+        background-position: center 0;
+    }
+    to {
+        background-position: center -700px;
+    }
+}
+
+/* Pattern aplicado apenas nas páginas de pedidos (mantém foguetes) */
+body:not(.store-home-page)::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -2;
+    background-color: #191b2a;
+    background-image: url("../pedidos/pattern/rocket-pattern.svg");
+    background-repeat: repeat;
+    background-size: 800px 800px;
+    background-position: center 0;
+    animation: rocket-float 40s linear infinite;
+}
+
+/* Seções específicas com fundo azul escuro e nuvens */
+.hero-section {
+    background-color: #191b2a;
+    position: relative;
+    z-index: 1;
+}
+
+.school-banner-section {
+    background: linear-gradient(to bottom, #191b2a 50%, #121F4B 50%);
+    position: relative;
+    z-index: 1;
+}
+
+/* Seções de carrinho e resumo de pagamento também terão o fundo azul */
+.checkout-section,
+.payment-summary-section,
+.cart-section {
+    background-color: #191b2a;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ajustes para telas intermediárias (769px-1399px) */
+@media (min-width: 769px) and (max-width: 1399px) {
+    body:not(.store-home-page)::before {
+        background-size: 700px 700px !important;
+        animation: rocket-float-landscape 40s linear infinite !important;
+    }
+}
+
+/* Ajustes mobile para seções específicas */
+@media (max-width: 768px) {
+    body:not(.store-home-page)::before {
+        background-size: 600px 600px !important;
+        animation: rocket-float-mobile 40s linear infinite !important;
+    }
+}
+
+/* Ajustes para telas pequenas - seções específicas */
+@media (max-width: 480px) {
+    body:not(.store-home-page)::before {
+        background-size: 500px 500px !important;
+        animation: rocket-float-small 40s linear infinite !important;
+    }
+}
+
+/* Ajuste para dispositivos com orientação landscape - seções específicas */
+@media (max-width: 768px) and (orientation: landscape) {
+    body:not(.store-home-page)::before {
+        background-size: 700px 700px !important;
+        animation: rocket-float-landscape 40s linear infinite !important;
+    }
+}

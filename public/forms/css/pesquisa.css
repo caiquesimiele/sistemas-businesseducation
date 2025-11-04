@@ -1,0 +1,2036 @@
+/* CSS para formulário de pesquisa - EXATAMENTE IGUAL AO B2C */
+
+/* Reset e configurações básicas */
+* {
+    box-sizing: border-box;
+}
+
+/* Importar fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* BODY IGUAL AO B2C - sem os foguetes aqui */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 40px 0;
+    /* Fundo branco sólido para evitar problemas com dropdowns */
+    background-color: white;
+    color: #121F4B;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Container principal - IGUAL AO B2C */
+.pesquisa-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Banners responsivos - LÓGICA PRÓPRIA */
+.banner-responsive {
+    display: block;
+    width: 100%; /* Mobile: mesma largura do formulário */
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 2rem;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+/* Faixa Desperte - Muito menor que o banner principal */
+.banner-responsive[src*="Faixa Desperte"] {
+    width: 85%; /* Mobile: 15% menor que o banner principal */
+}
+
+/* Desktop - Banners menores */
+@media (min-width: 769px) {
+    .banner-responsive {
+        width: 60%; /* Desktop: muito menor que o formulário */
+        max-width: 60%;
+    }
+    
+    .banner-responsive[src*="Faixa Desperte"] {
+        width: 45%; /* Desktop: 60% - 15% = 45% */
+    }
+}
+
+/* Banners com alta resolução */
+.banner-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.banner-topo,
+.banner-desperte {
+    width: 70%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+    border-radius: 0;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: high-quality;
+    image-rendering: crisp-edges;
+    object-fit: contain;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+/* Banners como background para evitar detecção pelo Open Graph */
+.banner-desperte-bg {
+    width: 100%;
+    height: auto;
+    min-height: 120px;
+    background-image: url('../../../../imagens/Faixa Desperte Azul.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto 1rem;
+}
+
+.banner-topo-bg {
+    width: 100%;
+    height: auto;
+    min-height: 200px;
+    background-image: url('../../../../imagens/Banner de Pesquisa Pais.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto 1rem;
+}
+
+/* Container de boas-vindas separado */
+.welcome-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    margin: 0 auto 2rem;
+    max-width: 1000px;
+    overflow: hidden;
+}
+
+.welcome-section {
+    background: linear-gradient(135deg, #121F4B 0%, #1a2d66 100%);
+    color: white;
+    padding: 3rem;
+    text-align: center;
+}
+
+.intro-header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 1.2;
+    margin: 0 0 1rem 0;
+    color: white;
+}
+
+.intro-header h1 i {
+    color: #FFA726;
+    margin-right: 0.5rem;
+}
+
+.tempo-estimado {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    padding: 0.8rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-top: 1.5rem;
+    color: white;
+}
+
+.tempo-estimado i {
+    margin-right: 0.5rem;
+    color: #FFA726;
+}
+
+.intro-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.95);
+    text-align: left;
+}
+
+.intro-text p {
+    margin: 0 0 1rem 0;
+}
+
+.intro-text p:first-child {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+/* Container do formulário principal */
+.pesquisa-form-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0;
+    overflow: hidden;
+    /* Criar novo contexto de empilhamento para isolar do fundo */
+    position: relative;
+    z-index: 10;
+}
+
+.pesquisa-form {
+    padding: 3rem;
+}
+
+/* Estilos gerais - SIMPLIFICADO */
+.form-section {
+    background: transparent;
+    border-radius: 0;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+    border: none;
+}
+
+.section-title {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #121F4B;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.section-title i {
+    margin-right: 0.5rem;
+    color: #FF662B;
+}
+
+/* Container principal das perguntas */
+.form-group {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: 1px solid #e9ecef;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.pergunta-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #121F4B;
+    display: block;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.pergunta-label.required::after {
+    content: " *";
+    color: #dc3545;
+}
+
+.pergunta-label.optional .optional-text {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Botões de escolha (estilo B2C - pix/cartão) */
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.choice-btn {
+    flex: 1;
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #121F4B;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.choice-btn:hover {
+    background: #121F4B;
+    color: white;
+    border-color: #121F4B;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(18, 31, 75, 0.2);
+}
+
+.choice-btn:active,
+.choice-btn:focus {
+    background: #121F4B !important;
+    color: white !important;
+    border-color: #121F4B !important;
+    transform: translateY(-1px) !important;
+    outline: none;
+}
+
+.choice-btn.selected {
+    background: #121F4B;
+    color: white;
+    border-color: #121F4B;
+}
+
+.choice-btn.selected:hover {
+    background: white;
+    color: #121F4B;
+    border-color: #121F4B;
+}
+
+.choice-btn.selected:active,
+.choice-btn.selected:focus {
+    background: #121F4B !important;
+    color: white !important;
+    border-color: #121F4B !important;
+    outline: none;
+}
+
+/* Botões de escolha verticais (para pergunta 7) */
+.choice-options-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.choice-btn-vertical {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #121F4B;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.choice-btn-vertical:hover {
+    background: #121F4B;
+    color: white;
+    border-color: #121F4B;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(18, 31, 75, 0.2);
+}
+
+.choice-btn-vertical:active,
+.choice-btn-vertical:focus {
+    background: #121F4B !important;
+    color: white !important;
+    border-color: #121F4B !important;
+    transform: translateY(-1px) !important;
+    outline: none;
+}
+
+.choice-btn-vertical.selected {
+    background: #121F4B;
+    color: white;
+    border-color: #121F4B;
+}
+
+.choice-btn-vertical.selected:hover {
+    background: white;
+    color: #121F4B;
+    border-color: #121F4B;
+}
+
+.choice-btn-vertical.selected:active,
+.choice-btn-vertical.selected:focus {
+    background: #121F4B !important;
+    color: white !important;
+    border-color: #121F4B !important;
+    outline: none;
+}
+
+/* Destaque especial para pergunta 13 */
+.question-highlight {
+    background-color: #121F4B !important;
+    color: white !important;
+    padding: 2rem !important;
+    border-radius: 12px !important;
+    margin: 2rem 0 !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.question-highlight .pergunta-label {
+    color: white !important;
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+}
+
+.question-highlight .pergunta-label strong {
+    color: white !important;
+}
+
+/* Forçar override de qualquer estilo conflitante */
+.form-group.question-highlight {
+    background-color: #121F4B !important;
+    color: white !important;
+}
+
+/* Botões destacados da pergunta 13 */
+.choice-btn-highlight {
+    background-color: white !important;
+    color: #121F4B !important;
+    border: 2px solid white !important;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.choice-btn-highlight:hover {
+    background-color: #ff662b !important;
+    color: white !important;
+    border-color: #ff662b !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 102, 43, 0.3);
+}
+
+.choice-btn.choice-btn-highlight.selected {
+    background-color: #ff662b !important;
+    color: white !important;
+    border-color: #ff662b !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(255, 102, 43, 0.3);
+}
+
+.choice-btn.choice-btn-highlight.selected:hover {
+    background-color: #e55a24 !important;
+    color: white !important;
+    border-color: #e55a24 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(255, 102, 43, 0.4);
+}
+
+.choice-btn.choice-btn-highlight.selected:active,
+.choice-btn.choice-btn-highlight.selected:focus {
+    background-color: #ff662b !important;
+    color: white !important;
+    border-color: #ff662b !important;
+    outline: none;
+}
+
+/* Botões de escala (circulares) */
+.scale-buttons {
+    display: flex;
+    gap: 0.6rem;
+    justify-content: center;
+    margin: 2rem 0;
+    flex-wrap: nowrap;
+    position: relative;
+    width: 100%;
+    min-height: 60px;
+    align-items: center;
+    overflow: visible;
+}
+
+.scale-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #dee2e6;
+    background: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #121F4B;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: visible;
+}
+
+.scale-btn:hover {
+    background: #121F4B;
+    color: white;
+    border-color: #121F4B;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(18, 31, 75, 0.3);
+}
+
+.scale-btn:active,
+.scale-btn:focus {
+    background: #121F4B !important;
+    color: white !important;
+    border-color: #121F4B !important;
+    transform: scale(1.05) !important;
+    outline: none;
+}
+
+.scale-btn.selected {
+    background: #121F4B;
+    color: white;
+    border-color: #121F4B;
+    transform: scale(1.05);
+}
+
+.scale-btn.selected:hover {
+    background: white;
+    color: #121F4B;
+    border-color: #121F4B;
+}
+
+.scale-btn.selected:active,
+.scale-btn.selected:focus {
+    background: #121F4B !important;
+    color: white !important;
+    border-color: #121F4B !important;
+    outline: none;
+}
+
+.scale-10 .scale-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 1rem;
+}
+
+.scale-10 .scale-btn.extreme {
+    font-size: 0.95rem;
+    min-width: 105px;
+}
+
+.scale-labels {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+    position: relative;
+    height: 0;
+}
+
+.scale-labels span:first-child {
+    position: absolute;
+    left: 0;
+    top: -52px;
+    white-space: nowrap;
+}
+
+.scale-labels span:last-child {
+    position: absolute;
+    right: 0;
+    top: -52px;
+    white-space: nowrap;
+}
+
+/* Botões de extremos retangulares com texto */
+.scale-btn.extreme {
+    width: auto !important;
+    min-width: 140px !important;
+    max-width: none !important;
+    height: 50px !important;
+    border-radius: 25px;
+    padding: 0 20px !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    white-space: nowrap !important;
+    flex-shrink: 0;
+    overflow: visible !important;
+    box-sizing: border-box;
+    line-height: 1.2 !important;
+}
+
+.scale-btn.extreme:hover {
+    transform: scale(1.02);
+    background: #121F4B;
+    color: white;
+    border-color: #121F4B;
+}
+
+.scale-btn.extreme:active,
+.scale-btn.extreme:focus {
+    background: #121F4B !important;
+    color: white !important;
+    border-color: #121F4B !important;
+    transform: scale(1.0) !important;
+    outline: none;
+}
+
+/* Radio buttons customizados (para perguntas com mais opções) */
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    padding: 1rem;
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.radio-option:hover {
+    border-color: #121F4B;
+    background: #f8f9ff;
+}
+
+.radio-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-custom {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #dee2e6;
+    margin-right: 1rem;
+    position: relative;
+    flex-shrink: 0;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    margin-top: 2px;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom {
+    border-color: #121F4B;
+    background: #121F4B;
+}
+
+.radio-option input[type="radio"]:checked + .radio-custom::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+}
+
+.radio-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #121F4B;
+    line-height: 1.4;
+}
+
+/* Textareas */
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #121F4B;
+    resize: vertical;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #121F4B;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1);
+}
+
+/* Inputs de texto */
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #121F4B;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: #121F4B;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1);
+}
+
+/* DROPDOWN CUSTOMIZADO - Substituindo select nativo problemático */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.dropdown-selected {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    background: white;
+    color: #121F4B;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: border-color 0.15s ease;
+    box-sizing: border-box;
+}
+
+.dropdown-selected:hover {
+    border-color: #121F4B;
+}
+
+.dropdown-selected.active {
+    border-color: #121F4B;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1);
+}
+
+.dropdown-arrow {
+    transition: transform 0.15s ease;
+}
+
+.dropdown-selected.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #121F4B;
+    border-radius: 10px;
+    margin-top: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-options.show {
+    display: block;
+}
+
+.dropdown-option {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    color: #121F4B;
+}
+
+.dropdown-option:hover {
+    background-color: #f8f9fa;
+}
+
+.dropdown-option.selected {
+    background-color: #121F4B;
+    color: white;
+}
+
+/* Estilos para campos select nativos (caso ainda existam) */
+select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #dee2e6;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #121F4B;
+    box-sizing: border-box;
+    background: white;
+}
+
+select:focus {
+    outline: none;
+    border-color: #121F4B;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1);
+    /* Garantir que o fundo permaneça branco no foco */
+    background: white !important;
+    background-color: white !important;
+}
+
+select option {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 0.5rem;
+    background: white;
+    color: #121F4B;
+}
+
+/* Removido - usar dropdown nativo do navegador */
+
+/* Estilos específicos para evitar conflitos do Bootstrap */
+select.form-select,
+select[class*="form-"] {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+    /* Remover qualquer transição do Bootstrap */
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+}
+
+/* Estilos para evitar fundo escuro em todos os estados possíveis */
+select:focus,
+select:active,
+select:hover,
+select:visited,
+select:link {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+}
+
+/* Estilos para evitar fundo escuro nas opções em todos os estados */
+select option:focus,
+select option:active,
+select option:hover,
+select option:visited,
+select option:link {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+}
+
+/* Estilos para opções em hover */
+select option:hover {
+    background: #f8f9fa !important;
+    background-color: #f8f9fa !important;
+    color: #121F4B !important;
+}
+
+/* Estilos adicionais para evitar conflitos do Bootstrap */
+select.form-select {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+}
+
+/* Estilos para evitar fundo escuro em diferentes estados */
+select:disabled,
+select[disabled] {
+    background: #f8f9fa !important;
+    background-color: #f8f9fa !important;
+    color: #6c757d !important;
+}
+
+/* Estilos para evitar fundo escuro durante a abertura (estado open) */
+select:focus:not([size]):not([multiple]) {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+}
+
+/* Estilos para evitar fundo escuro em diferentes navegadores */
+select::-ms-expand {
+    display: none;
+}
+
+/* Estilos para evitar fundo escuro no Firefox */
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #121F4B;
+}
+
+/* Estilos para evitar fundo escuro no Safari */
+select::-webkit-select-placeholder {
+    color: #6c757d;
+}
+
+/* Estilos para evitar fundo escuro em dispositivos móveis */
+@media (max-width: 768px) {
+    select {
+        background: white !important;
+        background-color: white !important;
+        color: #121F4B !important;
+        /* Remover qualquer transição que possa causar piscada */
+        transition: none !important;
+        -webkit-transition: none !important;
+        -moz-transition: none !important;
+        -o-transition: none !important;
+    }
+    
+    select:focus,
+    select:active,
+    select:hover {
+        background: white !important;
+        background-color: white !important;
+        color: #121F4B !important;
+    }
+}
+
+/* Estilos específicos para evitar conflitos do Bootstrap */
+select.form-select,
+select[class*="form-"] {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+    /* Remover qualquer transição do Bootstrap */
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+}
+
+/* Estilos para evitar fundo escuro em todos os estados possíveis */
+select:focus,
+select:active,
+select:hover,
+select:visited,
+select:link {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+}
+
+/* Estilos para evitar fundo escuro nas opções em todos os estados */
+select option:focus,
+select option:active,
+select option:hover,
+select option:visited,
+select option:link {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+}
+
+/* Estilos para opções selecionadas */
+select option:checked,
+select option:selected {
+    background: #121F4B !important;
+    background-color: #121F4B !important;
+    color: white !important;
+}
+
+/* Estilos para garantir que os dropdowns não sejam afetados por fundos externos */
+select:focus,
+select:active,
+select:hover,
+select:visited,
+select:link {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+    /* Garantir que o fundo seja sempre branco */
+    background-image: none !important;
+}
+
+/* Estilos específicos para o dropdown aberto */
+select:focus {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+    /* Remover qualquer fundo de imagem que possa estar interferindo */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 1rem center !important;
+    background-size: 1rem !important;
+}
+
+/* Estilos para as opções do dropdown */
+select option {
+    background: white !important;
+    background-color: white !important;
+    color: #121F4B !important;
+    /* Garantir que não haja fundos transparentes */
+    background-image: none !important;
+}
+
+/* Estilos para opções em hover */
+select option:hover {
+    background: #f8f9fa !important;
+    background-color: #f8f9fa !important;
+    color: #121F4B !important;
+}
+
+/* PERGUNTA COM IMAGEM - Layout responsivo */
+.pergunta-com-imagem {
+    position: relative;
+}
+
+.pergunta-imagem-container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+    padding: 0.4rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.pergunta-imagem {
+    max-width: 200px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+.pergunta-opcoes-container {
+    width: 100%;
+}
+
+/* Adaptações para diferentes tipos de pergunta */
+.pergunta-opcoes-container .choice-options-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.pergunta-opcoes-container .button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.pergunta-opcoes-container textarea {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 1rem;
+}
+
+/* PERGUNTA COM IMAGEM ABAIXO - Layout com imagem usando largura total */
+.pergunta-com-imagem-abaixo {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.pergunta-imagem-container-abaixo {
+    width: fit-content;
+    max-width: 100%;
+    margin: 2rem auto 0 auto;
+    padding: 0.4rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pergunta-imagem-abaixo {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: none;
+}
+
+/* Desktop: Layout horizontal - imagem ao lado das opções */
+@media (min-width: 769px) {
+    .pergunta-com-imagem {
+        display: flex;
+        flex-direction: row;
+        gap: 1.5rem;
+        align-items: center;
+        min-height: 280px;
+    }
+    
+    .pergunta-conteudo-container {
+        flex: 0 0 62%;
+        width: 62%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-self: stretch;
+    }
+    
+    .pergunta-imagem-container {
+        flex: 0 0 35%;
+        width: 35%;
+        max-width: 320px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0.4rem;
+        align-self: center;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        aspect-ratio: auto;
+    }
+    
+    .pergunta-imagem {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        max-height: 280px;
+        object-fit: contain;
+        border-radius: 6px;
+        box-shadow: none;
+    }
+    
+    .pergunta-opcoes-container {
+        padding-right: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+    
+    .pergunta-opcoes-container .scale-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .pergunta-opcoes-container .scale-buttons .scale-row {
+        display: flex;
+        gap: 0.5rem;
+        justify-content: flex-start;
+    }
+    
+    .pergunta-opcoes-container .scale-btn.extreme {
+        min-width: 120px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Seções condicionais - CONTAINERS SEPARADOS */
+.conditional-section {
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+    transform: translateY(-20px);
+    margin-top: 0;
+}
+
+.conditional-section.show {
+    opacity: 1;
+    height: auto;
+    overflow: visible;
+    transform: translateY(0);
+    margin-top: 1rem;
+}
+
+.conditional-section .form-group {
+    background: #f0f2f5;
+    border: 1px solid #dee2e6;
+    margin-bottom: 1.5rem;
+}
+
+.conditional-field {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.conditional-field.show {
+    opacity: 1;
+    max-height: none;
+}
+
+/* Campos de explicação para notas baixas */
+.explanation-field {
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.explanation-field[style*="display: block"] {
+    opacity: 1;
+    max-height: 200px;
+}
+
+.explanation-field textarea {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.75rem;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #121F4B;
+    resize: vertical;
+    transition: border-color 0.15s ease;
+    box-sizing: border-box;
+}
+
+.explanation-field textarea:focus {
+    outline: none;
+    border-color: #FF662B;
+    box-shadow: 0 0 0 0.2rem rgba(255, 102, 43, 0.25);
+}
+
+.explanation-field textarea::placeholder {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Botão de envio */
+.submit-btn {
+    background: linear-gradient(135deg, #FF662B 0%, #FF8A50 100%);
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 2rem auto 0;
+    box-shadow: 0 8px 25px rgba(255, 102, 43, 0.3);
+    min-width: 200px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 35px rgba(255, 102, 43, 0.4);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.submit-btn i {
+    font-size: 1.2rem;
+}
+
+/* Mensagens de feedback */
+.message {
+    padding: 1rem 1.5rem;
+    border-radius: 10px;
+    margin: 1rem 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    display: none;
+}
+
+.message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Popup de validação */
+.validation-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 31, 75, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.validation-popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.validation-popup {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(18, 31, 75, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: scale(0.7) translateY(-50px);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.validation-popup-overlay.show .validation-popup {
+    transform: scale(1) translateY(0);
+}
+
+.validation-popup-header {
+    background: linear-gradient(135deg, #121F4B 0%, #1a2b6b 100%);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 16px 16px 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.validation-popup-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.validation-popup-header .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #FF662B;
+}
+
+.validation-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.validation-popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.validation-popup-body {
+    padding: 2rem;
+}
+
+.validation-popup-message {
+    color: #121F4B;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.missing-questions-list {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.missing-questions-list h4 {
+    color: #121F4B;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.missing-questions-list h4 .icon {
+    color: #FF662B;
+    font-size: 1.2rem;
+}
+
+.missing-questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+}
+
+.missing-question-item {
+    background: white;
+    border: 2px solid #FF662B;
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+    color: #121F4B;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.missing-question-item:hover {
+    background: #FF662B;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 102, 43, 0.3);
+}
+
+.validation-popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.validation-popup-btn {
+    background: linear-gradient(135deg, #FF662B 0%, #FF8A50 100%);
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.validation-popup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 102, 43, 0.4);
+}
+
+.validation-popup-btn.secondary {
+    background: #6c757d;
+}
+
+.validation-popup-btn.secondary:hover {
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+}
+
+/* Responsividade do popup */
+@media (max-width: 768px) {
+    .validation-popup {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .validation-popup-header {
+        padding: 1.25rem;
+    }
+    
+    .validation-popup-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .validation-popup-body {
+        padding: 1.5rem;
+    }
+    
+    .missing-questions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.5rem;
+    }
+    
+    .validation-popup-actions {
+        flex-direction: column;
+    }
+    
+    .validation-popup-btn {
+        min-width: 100%;
+    }
+}
+
+/* Desktop - Largura original restaurada */
+@media (min-width: 769px) {
+    .pesquisa-container {
+        max-width: 1000px;
+    }
+    
+    .welcome-container {
+        max-width: 1000px;
+    }
+    
+    .pesquisa-form-container {
+        max-width: 1200px;
+    }
+}
+
+/* Responsividade para dropdown customizado */
+@media (max-width: 768px) {
+    .dropdown-options {
+        max-height: 200px;
+    }
+    
+    .dropdown-option {
+        padding: 1rem;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .dropdown-option:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Mobile: Imagem entre pergunta e opções */
+@media (max-width: 768px) {
+    .pergunta-com-imagem {
+        flex-direction: column !important;
+        gap: 0 !important;
+    }
+    
+    .pergunta-conteudo-container {
+        flex: none !important;
+        width: 100% !important;
+        order: 1;
+    }
+    
+    .pergunta-imagem-container {
+        flex: none !important;
+        width: 100% !important;
+        position: relative !important;
+        order: 2;
+        margin: 1.5rem 0;
+        display: flex;
+        justify-content: center;
+        padding: 0.4rem !important;
+    }
+    
+    .pergunta-imagem {
+        max-width: 240px;
+        width: 100%;
+        max-height: none !important;
+        border-radius: 6px !important;
+        box-shadow: none !important;
+    }
+    
+    .pergunta-opcoes-container {
+        order: 3;
+        padding-right: 0;
+        width: 100% !important;
+    }
+    
+    /* No mobile, manter layout padrão de uma linha */
+    .pergunta-opcoes-container .scale-buttons {
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+        gap: 0.6rem !important;
+    }
+    
+    .pergunta-opcoes-container .scale-buttons .scale-row {
+        display: contents !important;
+    }
+    
+    /* Mobile: Adaptações para diferentes tipos de pergunta */
+    .pergunta-opcoes-container .choice-options-vertical {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .pergunta-opcoes-container .button-group {
+        flex-direction: column !important;
+        gap: 1rem !important;
+    }
+    
+    .pergunta-opcoes-container textarea {
+        width: 100% !important;
+        min-height: 100px !important;
+    }
+    
+    /* Mobile: Perguntas com imagem abaixo mantêm mesmo layout */
+    .pergunta-com-imagem-abaixo {
+        flex-direction: column !important;
+    }
+    
+    .pergunta-imagem-container-abaixo {
+        width: fit-content !important;
+        max-width: 100% !important;
+        margin: 1.5rem auto 0 auto !important;
+        padding: 0.4rem !important;
+    }
+    
+    .pergunta-imagem-abaixo {
+        max-height: 250px !important;
+    }
+    
+    .pergunta-com-imagem .pergunta-label {
+        order: 1;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Responsividade - IGUAL AO B2C */
+@media (max-width: 768px) {
+    body {
+        padding: 8px;
+    }
+    
+    .pesquisa-container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+    
+    .welcome-container {
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+    
+    .welcome-section {
+        width: 100%;
+        margin: 0;
+        padding: 1.5rem 1rem;
+    }
+    
+    .pesquisa-form-container {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .pesquisa-form {
+        width: 100%;
+        margin: 0;
+        padding: 1rem;
+    }
+    
+    .form-group {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-section {
+        padding: 0.5rem 0;
+        margin-bottom: 0.5rem;
+    }
+    
+    .intro-text p:first-child {
+        font-size: 2rem;
+    }
+    
+    .intro-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .choice-btn {
+        flex: none;
+        min-width: auto;
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+        min-height: 50px;
+        touch-action: manipulation;
+    }
+    
+    .choice-btn-vertical {
+        padding: 1rem 1.2rem;
+        font-size: 1rem;
+        min-height: 50px;
+        touch-action: manipulation;
+    }
+    
+    .scale-buttons {
+        gap: 0.6rem;
+        margin: 1.5rem 0.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        overflow-x: auto;
+        width: calc(100% - 1rem);
+    }
+    
+    .scale-btn.extreme {
+        min-width: 140px !important;
+        max-width: none !important;
+        font-size: 0.85rem;
+        padding: 0 12px !important;
+        height: 50px !important;
+        border-radius: 25px;
+        white-space: nowrap !important;
+        touch-action: manipulation;
+        flex-shrink: 0;
+        overflow: visible !important;
+        box-sizing: border-box;
+        line-height: 1.2 !important;
+    }
+    
+    .scale-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 0.85rem !important;
+        touch-action: manipulation;
+    }
+    
+    .scale-10 .scale-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 0.85rem !important;
+    }
+    
+    .scale-10 .scale-btn:not(.extreme) {
+        font-size: 0.85rem !important;
+    }
+    
+    .scale-labels span:first-child {
+        left: 0;
+        top: -28px;
+        font-size: 0.8rem;
+    }
+    
+    .scale-labels span:last-child {
+        right: 0;
+        top: -28px;
+        font-size: 0.8rem;
+    }
+    
+    /* Escalas 1-10 reorganizadas apenas no mobile */
+    .scale-10 .scale-row-single {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    .scale-10 .scale-row-middle {
+        display: flex !important;
+        justify-content: center !important;
+        gap: 0.4rem !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
+        margin: 0.5rem 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .pesquisa-container {
+        width: 100%;
+    }
+    
+    .welcome-container {
+        width: 100%;
+        margin: 0 0 1rem 0;
+    }
+    
+    .welcome-section {
+        width: 100%;
+        padding: 1rem 0.75rem;
+    }
+    
+    .pesquisa-form-container {
+        width: 100%;
+    }
+    
+    .pesquisa-form {
+        width: 100%;
+        padding: 0.75rem;
+    }
+    
+    .form-group {
+        padding: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .pesquisa-form-container h1 {
+        font-size: 1.5rem;
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+
+    .pesquisa-form input,
+    .pesquisa-form select,
+    .pesquisa-form textarea {
+        font-size: 16px; /* Evita zoom no iOS */
+    }
+
+    .banner-desperte {
+        width: 95%;
+    }
+
+    .banner-topo {
+        width: 100%;
+    }
+
+    .banner-desperte-bg {
+        height: auto;
+        min-height: 80px;
+    }
+
+    .banner-topo-bg {
+        height: auto;
+        min-height: 120px;
+    }
+
+    .intro-title {
+        font-size: 1.2rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+    
+    .intro-text p:first-child {
+        font-size: 1.8rem;
+    }
+
+    .scale-buttons {
+        justify-content: center;
+        gap: 0.4rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+        padding: 0;
+        overflow-x: auto;
+        width: 100%;
+    }
+    
+    .scale-btn.extreme {
+        min-width: 130px !important;
+        max-width: none !important;
+        font-size: 0.75rem;
+        padding: 0 10px !important;
+        height: 45px !important;
+        border-radius: 22px;
+        white-space: nowrap !important;
+        touch-action: manipulation;
+        flex-shrink: 0;
+        overflow: visible !important;
+        box-sizing: border-box;
+        line-height: 1.2 !important;
+    }
+    
+    .scale-labels span:first-child {
+        left: 0;
+        top: -28px;
+        font-size: 0.75rem;
+    }
+    
+    .scale-labels span:last-child {
+        right: 0;
+        top: -28px;
+        font-size: 0.75rem;
+    }
+
+    .scale-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 0.75rem !important;
+        touch-action: manipulation;
+    }
+
+    .scale-10 .scale-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 0.75rem !important;
+    }
+    
+    .scale-10 .scale-btn:not(.extreme) {
+        font-size: 0.75rem !important;
+    }
+
+    .scale-10 .scale-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .scale-10 .scale-row {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        width: 100%;
+    }
+
+    .scale-10 .scale-row-single {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .scale-10 .scale-row-middle {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .radio-option {
+        padding: 8px 10px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .radio-custom {
+        width: 18px;
+        height: 18px;
+    }
+
+    .radio-custom::after {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Ajustes específicos para telas muito pequenas */
+@media (max-width: 360px) {
+    body {
+        padding: 3px;
+    }
+    
+    .pesquisa-container {
+        width: 100%;
+    }
+    
+    .welcome-container {
+        width: 100%;
+        margin: 0 0 0.5rem 0;
+    }
+    
+    .welcome-section {
+        width: 100%;
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .pesquisa-form-container {
+        width: 100%;
+    }
+    
+    .pesquisa-form {
+        width: 100%;
+        padding: 0.5rem;
+    }
+    
+    .form-group {
+        padding: 0.5rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .scale-buttons {
+        gap: 0.2rem;
+        margin: 1.5rem 0;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+        overflow-x: auto;
+        width: 100%;
+    }
+    
+    .scale-btn.extreme {
+        min-width: 120px !important;
+        max-width: none !important;
+        font-size: 0.65rem;
+        padding: 0 8px !important;
+        height: 40px !important;
+        border-radius: 20px;
+        white-space: nowrap !important;
+        touch-action: manipulation;
+        flex-shrink: 0;
+        overflow: visible !important;
+        box-sizing: border-box;
+        line-height: 1.2 !important;
+    }
+    
+    .scale-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.65rem !important;
+        touch-action: manipulation;
+    }
+
+    .scale-10 .scale-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 0.65rem !important;
+    }
+    
+    .scale-10 .scale-btn:not(.extreme) {
+        font-size: 0.65rem !important;
+    }
+
+    .scale-10 .scale-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    .scale-10 .scale-row {
+        display: flex;
+        justify-content: center;
+        gap: 0.3rem;
+        width: 100%;
+    }
+
+    .scale-10 .scale-row-single {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .scale-10 .scale-row-middle {
+        display: flex;
+        justify-content: center;
+        gap: 0.3rem;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    
+    .scale-labels span:first-child,
+    .scale-labels span:last-child {
+        top: -25px;
+        font-size: 0.7rem;
+    }
+    
+    .choice-btn {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        min-height: 45px;
+        touch-action: manipulation;
+    }
+    
+    .choice-btn-vertical {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+        min-height: 45px;
+        touch-action: manipulation;
+    }
+    
+    .pergunta-label {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+} 

@@ -1,0 +1,42 @@
+# Dependências
+node_modules/
+package-lock.json
+
+# Dados sensíveis
+.env
+.env.staging
+.env.production
+.env.local
+
+# Dados (não versionar)
+data/
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporários
+*.tmp
+*.temp
+*.cache
+
+# Build
+dist/
+build/
+*.min.js
+*.min.css
+
+# Uploads
+uploads/
+temp/
+

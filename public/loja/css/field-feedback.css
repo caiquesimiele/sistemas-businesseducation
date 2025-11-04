@@ -1,0 +1,357 @@
+/* ===============================================
+   SISTEMA UNIFICADO DE FEEDBACK VISUAL PARA CAMPOS
+   Google-style visual feedback for form fields
+   =============================================== */
+
+/* ========== ESTADOS BASE DOS CAMPOS ========== */
+
+/* Campo válido - azul Google-style SÓLIDO */
+.campo-valido,
+input.campo-valido:not(#pix-code),
+select.campo-valido,
+textarea.campo-valido,
+.phone-input-container.campo-valido,
+.dropdown-selected.campo-valido,
+.custom-dropdown .dropdown-selected.campo-valido {
+    background-color: #f5f9ff !important;
+    border-color: #4285f4 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.campo-valido:focus,
+input.campo-valido:focus:not(#pix-code),
+select.campo-valido:focus,
+textarea.campo-valido:focus,
+.dropdown-selected.campo-valido:focus,
+.dropdown-selected.campo-valido.active,
+.custom-dropdown .dropdown-selected.campo-valido:focus,
+.custom-dropdown .dropdown-selected.campo-valido.active {
+    background-color: #eef4ff !important;
+    border-color: #4285f4 !important;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1) !important;
+    outline: none !important;
+}
+
+.phone-input-container.campo-valido:focus-within {
+    background-color: #eef4ff !important;
+    border-color: #4285f4 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Campo inválido - vermelho suave SÓLIDO */
+.campo-invalido,
+input.campo-invalido:not(#pix-code),
+select.campo-invalido,
+textarea.campo-invalido,
+.phone-input-container.campo-invalido,
+.dropdown-selected.campo-invalido,
+.custom-dropdown .dropdown-selected.campo-invalido {
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.campo-invalido:focus,
+input.campo-invalido:focus:not(#pix-code),
+select.campo-invalido:focus,
+textarea.campo-invalido:focus,
+.dropdown-selected.campo-invalido:focus,
+.dropdown-selected.campo-invalido.active,
+.custom-dropdown .dropdown-selected.campo-invalido:focus,
+.custom-dropdown .dropdown-selected.campo-invalido.active {
+    background-color: #fde8e7 !important;
+    border-color: #f44336 !important;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+    outline: none !important;
+}
+
+.phone-input-container.campo-invalido:focus-within {
+    background-color: #fde8e7 !important;
+    border-color: #f44336 !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* Campo neutro - estado inicial */
+.campo-neutro,
+input.campo-neutro:not(#pix-code),
+select.campo-neutro,
+textarea.campo-neutro,
+.phone-input-container.campo-neutro,
+.dropdown-selected.campo-neutro,
+.custom-dropdown .dropdown-selected.campo-neutro {
+    background-color: white !important;
+    border-color: #ccc !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.campo-neutro:focus,
+input.campo-neutro:focus:not(#pix-code),
+select.campo-neutro:focus,
+textarea.campo-neutro:focus,
+.dropdown-selected.campo-neutro:focus,
+.dropdown-selected.campo-neutro.active,
+.custom-dropdown .dropdown-selected.campo-neutro:focus,
+.custom-dropdown .dropdown-selected.campo-neutro.active {
+    background-color: white !important;
+    border-color: #121F4B !important;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1) !important;
+    outline: none !important;
+}
+
+.phone-input-container.campo-neutro:focus-within {
+    background-color: white !important;
+    border-color: #121F4B !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+/* ========== COMPONENTES ESPECÍFICOS ========== */
+/* As regras específicas foram consolidadas nas regras base acima */
+
+/* Custom Dropdown - Regras especiais para contextos específicos (campos-filhos, etc.) */
+#campos-filhos .custom-dropdown .dropdown-selected.campo-valido,
+#campos-filhos .dropdown-selected.campo-valido,
+.filho-container .dropdown-selected.campo-valido,
+.col .dropdown-selected.campo-valido,
+.form-section .dropdown-selected.campo-valido {
+    background: #f5f9ff !important;
+    background-color: #f5f9ff !important;
+    border-color: #4285f4 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+#campos-filhos .custom-dropdown .dropdown-selected.campo-invalido,
+#campos-filhos .dropdown-selected.campo-invalido,
+.filho-container .dropdown-selected.campo-invalido,
+.col .dropdown-selected.campo-invalido,
+.form-section .dropdown-selected.campo-invalido {
+    background: #fef0ef !important;
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+#campos-filhos .custom-dropdown .dropdown-selected.campo-neutro,
+#campos-filhos .dropdown-selected.campo-neutro,
+.filho-container .dropdown-selected.campo-neutro,
+.col .dropdown-selected.campo-neutro,
+.form-section .dropdown-selected.campo-neutro {
+    background: white !important;
+    background-color: white !important;
+    border-color: #ccc !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Estados hover/focus para dropdowns - ALTA ESPECIFICIDADE */
+.custom-dropdown .dropdown-selected.campo-valido:hover,
+.custom-dropdown .dropdown-selected.campo-valido.active,
+.dropdown-selected.campo-valido:hover,
+.dropdown-selected.campo-valido.active,
+#campos-filhos .dropdown-selected.campo-valido:hover,
+#campos-filhos .dropdown-selected.campo-valido.active,
+.filho-container .dropdown-selected.campo-valido:hover,
+.filho-container .dropdown-selected.campo-valido.active {
+    border-color: rgba(66, 133, 244, 0.5) !important;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1) !important;
+    background-image: none !important;
+}
+
+.custom-dropdown .dropdown-selected.campo-invalido:hover,
+.custom-dropdown .dropdown-selected.campo-invalido.active,
+.dropdown-selected.campo-invalido:hover,
+.dropdown-selected.campo-invalido.active,
+#campos-filhos .dropdown-selected.campo-invalido:hover,
+#campos-filhos .dropdown-selected.campo-invalido.active,
+.filho-container .dropdown-selected.campo-invalido:hover,
+.filho-container .dropdown-selected.campo-invalido.active {
+    border-color: #f44336 !important;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+    background-image: none !important;
+}
+
+.custom-dropdown .dropdown-selected.campo-neutro:hover,
+.custom-dropdown .dropdown-selected.campo-neutro.active,
+.dropdown-selected.campo-neutro:hover,
+.dropdown-selected.campo-neutro.active,
+#campos-filhos .dropdown-selected.campo-neutro:hover,
+#campos-filhos .dropdown-selected.campo-neutro.active,
+.filho-container .dropdown-selected.campo-neutro:hover,
+.filho-container .dropdown-selected.campo-neutro.active {
+    border-color: #121F4B !important;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1) !important;
+    background-image: none !important;
+}
+
+/* ========== COMPATIBILIDADE COM AUTOPREENCHIMENTO ========== */
+
+/* Sobrescreve as cores neutras do autofill-neutralizer quando há feedback ativo */
+input.campo-valido:not(#pix-code):-webkit-autofill,
+input.campo-valido:not(#pix-code):-webkit-autofill:hover,
+input.campo-valido:not(#pix-code):-webkit-autofill:focus,
+select.campo-valido:-webkit-autofill,
+textarea.campo-valido:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #f5f9ff inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #4285f4 !important;
+    background-color: #f5f9ff !important;
+    transition: background-color 0.3s ease !important;
+}
+
+input.campo-invalido:not(#pix-code):-webkit-autofill,
+input.campo-invalido:not(#pix-code):-webkit-autofill:hover,
+input.campo-invalido:not(#pix-code):-webkit-autofill:focus,
+select.campo-invalido:-webkit-autofill,
+textarea.campo-invalido:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #fef0ef inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #f44336 !important;
+    background-color: #fef0ef !important;
+    transition: background-color 0.3s ease !important;
+}
+
+input.campo-neutro:not(#pix-code):-webkit-autofill,
+input.campo-neutro:not(#pix-code):-webkit-autofill:hover,
+input.campo-neutro:not(#pix-code):-webkit-autofill:focus,
+select.campo-neutro:-webkit-autofill,
+textarea.campo-neutro:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #ccc !important;
+    background-color: white !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* ========== ESPECIFICIDADE ALTA PARA PÁGINAS ESPECÍFICAS ========== */
+
+/* Para formulário de ajuda - garante que funciona mesmo com especificidade alta */
+.help-form input.campo-valido,
+.help-form select.campo-valido,
+.help-form textarea.campo-valido,
+.help-form .custom-dropdown .dropdown-selected.campo-valido {
+    background: #f5f9ff !important;
+    background-color: #f5f9ff !important;
+    border-color: #4285f4 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.help-form input.campo-invalido,
+.help-form select.campo-invalido,
+.help-form textarea.campo-invalido,
+.help-form .custom-dropdown .dropdown-selected.campo-invalido {
+    background: #fef0ef !important;
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.help-form input.campo-neutro,
+.help-form select.campo-neutro,
+.help-form textarea.campo-neutro,
+.help-form .custom-dropdown .dropdown-selected.campo-neutro {
+    background: white !important;
+    background-color: white !important;
+    border-color: #ccc !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+/* ========== ESTADOS DE FOCUS ESPECÍFICOS ========== */
+
+.help-form input:focus.campo-valido,
+.help-form select:focus.campo-valido,
+.help-form textarea:focus.campo-valido {
+    background-color: #eef4ff !important;
+    border-color: #4285f4 !important;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1) !important;
+    outline: none !important;
+}
+
+.help-form input:focus.campo-invalido,
+.help-form select:focus.campo-invalido,
+.help-form textarea:focus.campo-invalido {
+    background-color: #fde8e7 !important;
+    border-color: #f44336 !important;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+    outline: none !important;
+}
+
+.help-form input:focus.campo-neutro,
+.help-form select:focus.campo-neutro,
+.help-form textarea:focus.campo-neutro {
+    background-color: white !important;
+    border-color: #121F4B !important;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1) !important;
+    outline: none !important;
+}
+
+/* ========== COMPATIBILIDADE COM SISTEMA EXISTENTE ========== */
+
+/* Mantém compatibilidade com classe .invalid existente */
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #dc3545 !important;
+}
+
+/* Quando um campo tem tanto .invalid quanto .campo-invalido, prioriza o novo sistema */
+input.invalid.campo-invalido,
+select.invalid.campo-invalido,
+textarea.invalid.campo-invalido {
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+}
+
+/* ========== RESET DE PROPRIEDADES PROBLEMÁTICAS ========== */
+
+/* Garante que background-images não interfiram */
+.campo-valido,
+.campo-invalido,
+.campo-neutro {
+    background-image: none !important;
+    background-attachment: initial !important;
+    background-size: initial !important;
+    background-repeat: initial !important;
+    background-position: initial !important;
+    background-origin: initial !important;
+    background-clip: initial !important;
+}
+
+/* ========== NOTAS DE DESENVOLVIMENTO ========== */
+/*
+Este arquivo implementa um sistema unificado de feedback visual para campos de formulário.
+
+Estados disponíveis:
+- .campo-valido: Azul Google-style para campos válidos/preenchidos
+- .campo-invalido: Vermelho suave para campos inválidos
+- .campo-neutro: Branco/padrão para campos vazios ou iniciais
+
+Componentes suportados:
+- Input padrão (text, email, password, etc.)
+- Select
+- Textarea
+- Phone DDI Selector (.phone-input-container)
+- Custom Dropdown (.dropdown-selected)
+
+Compatibilidade:
+- Funciona com autopreenchimento do navegador
+- Mantém compatibilidade com sistema .invalid existente
+- Suporta páginas com especificidade alta (.help-form)
+
+Cores utilizadas:
+- Válido: #f5f9ff - Azul Google sólido
+- Inválido: #fef0ef - Vermelho Material sólido
+- Neutro: white - Branco padrão
+- Focus: Versions mais saturadas das cores acima
+
+Controlado via JavaScript em field-feedback.js
+*/

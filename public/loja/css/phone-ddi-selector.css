@@ -1,0 +1,466 @@
+/* ========================================
+   SELETOR DDI PROFISSIONAL - CSS
+   Sistema modular para seleção de código de país
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+.phone-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    transition: all 0.3s ease;
+    overflow: visible;
+    max-width: 400px;
+    height: 48px; /* ✅ CORRIGIDO - Altura igual aos inputs regulares */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.phone-input-container:focus-within {
+    border-color: #121F4B;
+}
+
+/* Sistema de feedback padronizado - substituindo .error e .success */
+.phone-input-container.campo-invalido {
+    border-color: #f44336;
+}
+
+.phone-input-container.campo-valido {
+    border-color: #4285f4;
+}
+
+.phone-input-container.campo-neutro {
+    background-color: white;
+    border-color: #e9ecef;
+}
+
+/* Classes antigas removidas - agora usa sistema unificado */
+
+.country-selector {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    background: #f8fafc;
+    border-right: 1px solid #ccc;
+    border-radius: 8px 0 0 8px;
+    transition: all 0.2s ease;
+    min-width: 90px;
+    height: 100%;
+    user-select: none;
+    border-top: none !important;
+    border-bottom: none !important;
+    border-left: none !important;
+}
+
+.country-selector:hover {
+    background: #f0f0f0;
+}
+
+.country-selector:active {
+    background: #e8e8e8;
+    transform: translateY(1px);
+}
+
+.country-flag {
+    font-size: 20px;
+    margin-right: 8px;
+    line-height: 1;
+    display: inline-block;
+}
+
+.country-code {
+    font-size: 14px;
+    font-weight: 600;
+    color: #121F4B;
+    white-space: nowrap;
+    min-width: 35px;
+}
+
+.dropdown-arrow {
+    margin-left: 6px;
+    font-size: 10px;
+    color: #666;
+    transition: transform 0.2s ease;
+    transform-origin: center center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 12px;
+    height: 12px;
+    line-height: 1;
+}
+
+.country-selector.open .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.phone-number-input {
+    flex: 1;
+    border: none !important;
+    outline: none !important;
+    padding: 12px 16px; /* ✅ Mantém padding consistente com inputs regulares */
+    font-size: 14px; /* ✅ CORRIGIDO - Tamanho igual aos inputs regulares */
+    color: #333;
+    background: transparent;
+    height: 100%;
+    font-family: inherit;
+    border-radius: 0 8px 8px 0;
+    box-shadow: none !important;
+}
+
+.phone-number-input::placeholder {
+    color: #aaa;
+    font-size: 14px; /* ✅ CORRIGIDO - Tamanho consistente */
+}
+
+.phone-number-input:disabled {
+    background-color: #f9fafb;
+    color: #6b7280;
+    cursor: not-allowed;
+}
+
+.countries-dropdown {
+    position: absolute;
+    top: calc(100% - 1px);
+    left: -1px;
+    right: -1px;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-height: 300px;
+    overflow: hidden;
+    z-index: 10000;
+    display: none;
+    min-width: calc(100% + 2px);
+}
+
+.countries-dropdown.show {
+    display: block;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.search-container {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    background: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: 0;
+}
+
+.search-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: inherit;
+}
+
+.search-input:focus {
+    border-color: #121F4B;
+}
+
+.countries-list {
+    max-height: 240px;
+    overflow-y: auto;
+}
+
+.country-option {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+    user-select: none;
+}
+
+.country-option:last-child {
+    border-bottom: none;
+}
+
+.country-option:hover {
+    background: #f5f5f5;
+    transform: translateX(2px);
+}
+
+.country-option:active {
+    background: #e8e8e8;
+    transform: translateX(0);
+}
+
+.country-option.selected {
+    background: #e3f2fd;
+    border-left: 3px solid #121F4B;
+    font-weight: 600;
+}
+
+.country-option.selected .country-name {
+    color: #121F4B;
+}
+
+.country-option .country-flag {
+    margin-right: 12px;
+    font-size: 18px;
+}
+
+.country-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.country-name {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    flex: 1;
+}
+
+.country-code-full {
+    font-size: 13px;
+    color: #666;
+    font-weight: 600;
+    min-width: 50px;
+    text-align: right;
+}
+
+.no-results {
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* Estados de validação - Ícones removidos, feedback apenas por cores */
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .phone-input-container {
+        max-width: 100%;
+        height: 48px;
+    }
+    
+    .country-selector {
+        min-width: 75px;
+        padding: 10px 12px;
+    }
+    
+    .country-flag {
+        font-size: 16px;
+        margin-right: 6px;
+    }
+    
+    .country-code {
+        font-size: 12px;
+    }
+    
+    .phone-number-input {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+    
+    .countries-dropdown {
+        max-height: 280px;
+    }
+    
+    .country-option {
+        padding: 14px 12px;
+    }
+    
+    .country-name {
+        font-size: 13px;
+    }
+    
+    .country-code-full {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 320px) {
+    .country-selector {
+        min-width: 65px;
+        padding: 8px 10px;
+    }
+    
+    .country-code {
+        font-size: 11px;
+    }
+    
+    .phone-number-input {
+        font-size: 14px;
+    }
+}
+
+/* Scrollbar personalizada - tons claros */
+.countries-dropdown::-webkit-scrollbar,
+.countries-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.countries-dropdown::-webkit-scrollbar-track,
+.countries-list::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.countries-dropdown::-webkit-scrollbar-thumb,
+.countries-list::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+    transition: background 0.2s ease;
+}
+
+.countries-dropdown::-webkit-scrollbar-thumb:hover,
+.countries-list::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
+
+/* Firefox scrollbar */
+.countries-dropdown,
+.countries-list {
+    scrollbar-width: thin;
+    scrollbar-color: #ccc #f5f5f5;
+}
+
+/* Animações de carregamento */
+.phone-input-container.loading .country-selector {
+    position: relative;
+    overflow: hidden;
+}
+
+.phone-input-container.loading .country-selector::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.2), transparent);
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* CORREÇÃO LIMPA - Sobrescreve apenas tema escuro automático */
+@media (prefers-color-scheme: dark) {
+    .phone-input-container .countries-dropdown {
+        background: white !important;
+        border-color: #ccc !important;
+    }
+    
+    .phone-input-container .search-container {
+        background: #f5f5f5 !important;
+        border-bottom-color: #ddd !important;
+    }
+    
+    .phone-input-container .country-option {
+        background: transparent !important;
+        color: #333 !important;
+    }
+    
+    .phone-input-container .country-option:hover {
+        background: #f5f5f5 !important;
+    }
+    
+    .phone-input-container .country-option.selected {
+        background: #e3f2fd !important;
+        color: #333 !important;
+    }
+    
+    .phone-input-container .country-name {
+        color: #333 !important;
+    }
+    
+    .phone-input-container .country-code-full {
+        color: #666 !important;
+    }
+    
+    .phone-input-container .search-input {
+        background: white !important;
+        color: #333 !important;
+        border-color: #ccc !important;
+    }
+}
+
+/* Acessibilidade */
+.phone-input-container:focus-within .country-selector {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.country-option:focus {
+    outline: none;
+    background: #e3f2fd;
+}
+
+.search-input:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+/* Utilitários */
+.phone-input-full-width {
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Correção específica e limpa para o componente DDI */
+.phone-input-container {
+    z-index: 1001;
+    position: relative;
+}
+
+.phone-input-container .countries-dropdown {
+    position: absolute;
+    z-index: 10001;
+}
+
+.phone-input-compact {
+    height: 40px;
+}
+
+.phone-input-compact .country-selector {
+    padding: 8px 12px;
+    min-width: 70px;
+}
+
+.phone-input-compact .country-flag {
+    font-size: 16px;
+}
+
+.phone-input-compact .country-code {
+    font-size: 12px;
+}
+
+.phone-input-compact .phone-number-input {
+    padding: 8px 12px;
+    font-size: 14px;
+}

@@ -1,0 +1,184 @@
+/* ===============================================
+   SISTEMA UNIFICADO DE FEEDBACK VISUAL PARA CAMPOS
+   Google-style visual feedback for form fields
+   Adaptado da new-store para forms de experiência
+   =============================================== */
+
+/* ========== ESTADOS BASE DOS CAMPOS ========== */
+
+/* Campo válido - azul Google-style SÓLIDO */
+.campo-valido,
+input.campo-valido,
+select.campo-valido,
+textarea.campo-valido,
+.dropdown-selected.campo-valido,
+.custom-dropdown .dropdown-selected.campo-valido {
+    background-color: #f5f9ff !important;
+    border-color: #4285f4 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.campo-valido:focus,
+input.campo-valido:focus,
+select.campo-valido:focus,
+textarea.campo-valido:focus,
+.dropdown-selected.campo-valido:focus,
+.dropdown-selected.campo-valido.active,
+.custom-dropdown .dropdown-selected.campo-valido:focus,
+.custom-dropdown .dropdown-selected.campo-valido.active {
+    background-color: #eef4ff !important;
+    border-color: #4285f4 !important;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1) !important;
+    outline: none !important;
+}
+
+/* Campo inválido - vermelho suave SÓLIDO */
+.campo-invalido,
+input.campo-invalido,
+select.campo-invalido,
+textarea.campo-invalido,
+.dropdown-selected.campo-invalido,
+.custom-dropdown .dropdown-selected.campo-invalido {
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+}
+
+.campo-invalido:focus,
+input.campo-invalido:focus,
+select.campo-invalido:focus,
+textarea.campo-invalido:focus,
+.dropdown-selected.campo-invalido:focus,
+.dropdown-selected.campo-invalido.active,
+.custom-dropdown .dropdown-selected.campo-invalido:focus,
+.custom-dropdown .dropdown-selected.campo-invalido.active {
+    background-color: #fde8e7 !important;
+    border-color: #f44336 !important;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+    outline: none !important;
+}
+
+/* Campo neutro - estado inicial */
+.campo-neutro,
+input.campo-neutro,
+select.campo-neutro,
+textarea.campo-neutro,
+.dropdown-selected.campo-neutro,
+.custom-dropdown .dropdown-selected.campo-neutro {
+    background-color: white !important;
+    border-color: #dee2e6 !important;
+    background-image: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.campo-neutro:focus,
+input.campo-neutro:focus,
+select.campo-neutro:focus,
+textarea.campo-neutro:focus,
+.dropdown-selected.campo-neutro:focus,
+.dropdown-selected.campo-neutro.active,
+.custom-dropdown .dropdown-selected.campo-neutro:focus,
+.custom-dropdown .dropdown-selected.campo-neutro.active {
+    background-color: white !important;
+    border-color: #121F4B !important;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1) !important;
+    outline: none !important;
+}
+
+/* ========== COMPATIBILIDADE COM AUTOPREENCHIMENTO ========== */
+
+/* Cores para autopreenchimento - SÓLIDAS */
+input.campo-valido:-webkit-autofill,
+input.campo-valido:-webkit-autofill:hover,
+input.campo-valido:-webkit-autofill:focus,
+select.campo-valido:-webkit-autofill,
+textarea.campo-valido:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #f5f9ff inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #4285f4 !important;
+    background-color: #f5f9ff !important;
+    transition: background-color 0.3s ease !important;
+}
+
+input.campo-invalido:-webkit-autofill,
+input.campo-invalido:-webkit-autofill:hover,
+input.campo-invalido:-webkit-autofill:focus,
+select.campo-invalido:-webkit-autofill,
+textarea.campo-invalido:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px #fef0ef inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #f44336 !important;
+    background-color: #fef0ef !important;
+    transition: background-color 0.3s ease !important;
+}
+
+input.campo-neutro:-webkit-autofill,
+input.campo-neutro:-webkit-autofill:hover,
+input.campo-neutro:-webkit-autofill:focus,
+select.campo-neutro:-webkit-autofill,
+textarea.campo-neutro:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #dee2e6 !important;
+    background-color: white !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* ========== COMPATIBILIDADE COM SISTEMA EXISTENTE ========== */
+
+/* Mantém compatibilidade com validação popup existente */
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: #dc3545 !important;
+}
+
+/* Quando um campo tem tanto .invalid quanto .campo-invalido, prioriza o novo sistema */
+input.invalid.campo-invalido,
+select.invalid.campo-invalido,
+textarea.invalid.campo-invalido {
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+}
+
+/* ========== RESET DE PROPRIEDADES PROBLEMÁTICAS ========== */
+
+/* Garante que background-images não interfiram */
+.campo-valido,
+.campo-invalido,
+.campo-neutro {
+    background-image: none !important;
+    background-attachment: initial !important;
+    background-size: initial !important;
+    background-repeat: initial !important;
+    background-position: initial !important;
+    background-origin: initial !important;
+    background-clip: initial !important;
+}
+
+/* ========== NOTAS DE DESENVOLVIMENTO ========== */
+/*
+Sistema unificado de feedback visual adaptado da new-store.
+
+Estados disponíveis:
+- .campo-valido: Azul Google-style para campos válidos/preenchidos
+- .campo-invalido: Vermelho suave para campos inválidos  
+- .campo-neutro: Branco padrão para campos vazios ou iniciais
+
+Componentes suportados:
+- Input padrão (text, email, etc.)
+- Select
+- Textarea
+- Custom Dropdown (.dropdown-selected)
+
+Cores utilizadas (SÓLIDAS):
+- Válido: #f5f9ff - Azul Google sólido
+- Inválido: #fef0ef - Vermelho Material sólido
+- Neutro: white - Branco padrão
+- Focus: Versões mais saturadas das cores acima
+
+Controlado via JavaScript em field-feedback.js
+*/

@@ -1,0 +1,1155 @@
+/* CSS para formulário de ajuda/solicitações - baseado no onboarding */
+
+/* Reset e configurações básicas */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    position: relative;
+    background-color: #191b2a; /* Azul escuro igual à página de pedidos */
+    color: white;
+}
+
+/* Pattern de aviõezinhos brancos animado diagonal */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    background-image: url("data:image/svg+xml,%3csvg width='800' height='800' xmlns='http://www.w3.org/2000/svg' opacity='0.08'%3e%3cdefs%3e%3cg id='airplane-real'%3e%3cg transform='scale(0.05)' fill='white' stroke='none'%3e%3cpath d='M1077.57,349.78c-96.42,59.95-261.72,163.17-367.46,228.94C604.57,644.49,518.42,699,518.81,699.78c1.36,2.91,350.39,223.12,351.55,221.95c2.52-2.52,383.95-680.02,383.37-680.6C1253.35,240.74,1174.19,289.64,1077.57,349.78z'/%3e%3cpath d='M1220.95,250.06c-1.75,1.16-32.79,9.89-68.87,19.6c-75.08,19.98-417.91,111.75-725.22,193.82C58.03,562.03,27.38,570.18,26.6,570.96c-0.97,1.16-8.34-0.97,145.12,39.97c76.25,20.37,140.47,36.67,142.6,36.28c2.13-0.58,53.16-22.51,113.5-48.89c60.34-26.39,129.21-56.46,153.27-66.93c24.06-10.48,106.13-46.18,182.37-79.55c76.25-33.18,182.37-79.55,235.73-102.83s106.13-46.37,117.18-51.22s20.57-8.73,20.76-8.34c0.39,0.39-32.59,16.49-73.53,35.7c-40.74,19.4-160.06,75.86-265.22,125.72S546.56,570.37,472.44,605.49s-135.62,64.61-136.39,65.38s17.85,54.91,41.52,120.29c23.67,65.19,43.27,118.35,43.85,117.96c0.58-0.78,17.66-78.38,38.61-176.55c4.07-18.82,7.76-35.12,8.54-36.09c0.58-0.97,170.34-101.47,377.36-223.12s377.75-222.15,379.3-223.12C1229.1,247.73,1225.22,247.73,1220.95,250.06z'/%3e%3cpath d='M476.91,820.85c-14.16,54.71-25.42,99.72-25.03,100.11c1.16,0.97,148.81-128.24,148.23-129.8c-0.58-1.75-94.48-69.65-96.42-69.65C503.1,721.51,491.07,766.33,476.91,820.85z'/%3e%3c/g%3e%3c/g%3e%3c/defs%3e%3cg%3e%3cg transform='translate(100,150) scale(0.6)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(400,200) scale(0.7)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(700,250) scale(0.56)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(150,500) scale(0.44)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(450,600) scale(0.6)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(650,650) scale(0.56)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(250,300) scale(0.5)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(550,400) scale(0.4)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(50,350) scale(0.5)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(300,700) scale(0.48)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(600,100) scale(0.52)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(200,100) scale(0.46)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(80,250) scale(0.35)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(320,120) scale(0.3)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(480,320) scale(0.38)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(180,650) scale(0.32)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(380,480) scale(0.36)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(680,480) scale(0.34)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(520,750) scale(0.33)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(750,120) scale(0.37)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(350,50) scale(0.25)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(120,400) scale(0.22)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(580,220) scale(0.28)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(280,350) scale(0.24)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(420,80) scale(0.26)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(180,280) scale(0.23)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(480,180) scale(0.27)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(350,420) scale(0.25)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(620,350) scale(0.24)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(250,550) scale(0.22)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(450,450) scale(0.26)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(720,600) scale(0.23)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(50,600) scale(0.28)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(380,750) scale(0.25)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(150,50) scale(0.24)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3cg transform='translate(550,580) scale(0.27)'%3e%3cuse href='%23airplane-real'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+    background-repeat: repeat;
+    background-size: 920px 920px;
+    animation: airplane-float 120s linear infinite;
+}
+
+@keyframes airplane-float {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 920px -920px; /* Movimento diagonal sudoeste para nordeste */
+    }
+}
+
+/* Header usa estilos padrão do style.css principal */
+
+/* Logo com tamanhos consistentes */
+.logo-container img {
+    height: 72px !important;
+    width: auto !important;
+}
+
+@media (max-width: 768px) {
+    .logo-container img {
+        height: 58px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-container img {
+        height: 52px !important;
+    }
+}
+
+/* BOTÕES DO HEADER - NOVA PALETA */
+.header-btn {
+    background-color: white !important;
+    color: #121F4B !important;
+    border: 2px solid #121F4B !important;
+}
+
+.header-btn:hover {
+    background-color: #FF662B !important; /* Laranja no hover */
+    color: white !important;
+    border-color: #FF662B !important;
+    transform: translateY(-2px);
+}
+
+.header-btn:hover i {
+    color: white !important;
+}
+
+.header-btn i, 
+.header-btn img {
+    color: #121F4B !important;
+}
+
+.header-btn.carrinho {
+    background-color: white !important;
+    border-color: #121F4B !important;
+    color: #121F4B !important;
+}
+
+.header-btn.carrinho:hover {
+    background-color: #FF662B !important;
+    border-color: #FF662B !important;
+    color: white !important;
+}
+
+.header-btn.whatsapp i,
+.header-btn.business i {
+    color: #121F4B !important;
+}
+
+.header-btn.whatsapp:hover i,
+.header-btn.business:hover i {
+    color: white !important;
+}
+
+/* Destaques específicos */
+.header-btn.meus-pedidos-destaque,
+.header-btn.loja-rapida-destaque {
+    background-color: white !important;
+    border-color: #121F4B !important;
+    color: #121F4B !important;
+}
+
+.header-btn.meus-pedidos-destaque:hover,
+.header-btn.loja-rapida-destaque:hover {
+    background-color: #FF662B !important;
+    border-color: #FF662B !important;
+    color: white !important;
+}
+
+.header-btn.meus-pedidos-destaque i,
+.header-btn.loja-rapida-destaque i {
+    color: #121F4B !important;
+}
+
+.header-btn.meus-pedidos-destaque:hover i,
+.header-btn.loja-rapida-destaque:hover i {
+    color: white !important;
+}
+
+/* Container principal - padrão da loja */
+.help-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Container do formulário branco - padrão da loja invertido */
+.help-form-container {
+    background: white !important;
+    color: #121F4B;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin: 2rem 0;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.help-form-container h1 {
+    color: #121F4B;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    letter-spacing: -0.5px;
+}
+
+.help-form-container h1 i {
+    color: #121F4B;
+    font-size: 2.2rem;
+}
+
+/* Estilos do formulário - IGUAL AO ONBOARDING */
+.help-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.form-row .form-group {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* Labels - IGUAL AO ONBOARDING */
+.help-form label {
+    color: #121F4B !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.help-form label.required::after {
+    content: " *";
+    color: #ff6b6b;
+}
+
+/* CAMPOS VISÍVEIS COMO NA LOJA - IGUAL AO ONBOARDING */
+.help-form input,
+.help-form select,
+.help-form textarea {
+    padding: 12px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 8px !important;
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+    color: #333 !important;
+    font-size: 1rem !important;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    transition: border-color 0.3s, box-shadow 0.3s !important;
+    box-sizing: border-box !important;
+    width: 100%;
+}
+
+.help-form input::placeholder,
+.help-form textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.help-form input:focus:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+.help-form select:focus:not(.campo-valido):not(.campo-invalido):not(.campo-neutro),
+.help-form textarea:focus:not(.campo-valido):not(.campo-invalido):not(.campo-neutro) {
+    outline: none !important;
+    border-color: #121F4B !important;
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+    box-shadow: 0 0 0 2px rgba(18, 31, 75, 0.1) !important;
+}
+
+/* REGRAS ESPECÍFICAS PARA FOCUS COM FEEDBACK */
+.help-form input:focus.campo-valido,
+.help-form select:focus.campo-valido,
+.help-form textarea:focus.campo-valido {
+    outline: none !important;
+    border-color: rgba(66, 133, 244, 0.5) !important;
+    background-color: #eef4ff !important;
+    background-image: none !important;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.1) !important;
+}
+
+.help-form input:focus.campo-invalido,
+.help-form select:focus.campo-invalido,
+.help-form textarea:focus.campo-invalido {
+    outline: none !important;
+    border-color: #f44336 !important;
+    background-color: #fde8e7 !important;
+    background-image: none !important;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+}
+
+.help-form input:focus.campo-neutro,
+.help-form select:focus.campo-neutro,
+.help-form textarea:focus.campo-neutro {
+    outline: none !important;
+    border-color: #121F4B !important;
+    background-color: white !important;
+    background-image: none !important;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1) !important;
+}
+
+/* CORREÇÃO: Phone DDI com cor IGUAL aos outros campos - rgba suave */
+.help-form-container .phone-input-container:focus-within {
+    border-color: rgba(18, 31, 75, 0.3) !important;
+}
+
+.help-form-container .phone-input-container.campo-valido:focus-within {
+    border-color: rgba(66, 133, 244, 0.5) !important;
+}
+
+.help-form-container .phone-input-container.campo-invalido:focus-within {
+    border-color: #f44336 !important;
+}
+
+.help-form-container .phone-input-container.campo-neutro:focus-within {
+    border-color: rgba(18, 31, 75, 0.3) !important;
+}
+
+.help-form select {
+    cursor: pointer !important;
+}
+
+.help-form select option {
+    background: white !important;
+    background-color: white !important;
+    color: #333 !important;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+/* Textarea específico */
+.help-form textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* Campos condicionais */
+.conditional-field {
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.conditional-field.show {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+}
+
+/* Upload de arquivos - VISUAL HARMONIZADO */
+.file-input-container {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.file-input {
+    position: absolute;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.file-input-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    background: #f8f9fa;
+    color: #666;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-height: 140px;
+    font-size: 1rem;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.file-input-label:hover {
+    border-color: #121F4B;
+    color: #121F4B;
+    background: #f0f8ff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.file-input-label i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #121F4B;
+}
+
+/* Texto pequeno no upload */
+.file-input-label small {
+    color: #666;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+/* Lista de arquivos selecionados */
+.file-names {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    color: #333;
+    font-size: 0.9rem;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.file-item .remove-file {
+    color: #dc3545;
+    cursor: pointer;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.file-item .remove-file:hover {
+    background: #dc3545;
+    color: white;
+}
+
+/* Mensagens - IGUAL AO ONBOARDING */
+.help-message {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    display: none;
+    align-items: center;
+    gap: 0.8rem;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.help-message.success {
+    background: linear-gradient(135deg, #d4f4dd, #c8f2d0);
+    color: #0f5132;
+    border: 1px solid #a3cfbb;
+}
+
+.help-message.error {
+    background: linear-gradient(135deg, #f8d7da, #f5c2c7);
+    color: #58151c;
+    border: 1px solid #f1aeb5;
+}
+
+.help-message.show {
+    display: flex;
+}
+
+.help-message i {
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+/* Botão de envio - IGUAL AO ONBOARDING */
+.btn-send-help {
+    width: 100%;
+    max-width: 350px;
+    margin: 2.5rem auto 0;
+    padding: 1.2rem 2.5rem;
+    background: linear-gradient(135deg, #121F4B, #1a2b5f);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    box-shadow: 0 8px 25px rgba(18, 31, 75, 0.25);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0.3px;
+}
+
+.btn-send-help:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(18, 31, 75, 0.35);
+    background: linear-gradient(135deg, #0d1a3f, #121F4B);
+}
+
+.btn-send-help:hover i {
+    transform: translateX(4px);
+}
+
+.btn-send-help:active {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(18, 31, 75, 0.3);
+}
+
+.btn-send-help i {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-send-help.loading {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Responsividade - IGUAL AO ONBOARDING */
+@media (max-width: 768px) {
+    .help-container {
+        padding: 1.5rem;
+    }
+    
+    .help-form-container {
+        padding: 2rem;
+        margin: 1rem 0;
+        border-radius: 16px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .form-row .form-group {
+        width: 100%;
+        min-width: 100%;
+        flex: none;
+    }
+    
+    .help-form-container h1 {
+        font-size: 2rem;
+        gap: 0.5rem;
+    }
+    
+    .btn-send-help {
+        max-width: none;
+        margin: 2rem 0 0;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        border-radius: 25px;
+    }
+    
+    .file-input-label {
+        padding: 2rem;
+        min-height: 120px;
+    }
+    
+    .file-input-label i {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .help-container {
+        padding: 1rem;
+    }
+    
+    .help-form-container {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    .help-form input,
+    .help-form select,
+    .help-form textarea {
+        padding: 10px !important;
+        font-size: 0.95rem !important;
+    }
+    
+    .help-form-container h1 {
+        font-size: 1.8rem;
+        gap: 0.4rem;
+    }
+    
+    .help-form-container h1 i {
+        font-size: 1.8rem;
+    }
+    
+    .file-input-label {
+        padding: 1.5rem;
+        min-height: 100px;
+        font-size: 0.9rem;
+    }
+    
+    .file-input-label i {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+/* MENU FLUTUANTE - NOVA PALETA */
+.btn-menu-flutuante {
+    background-color: white !important;
+    color: #121F4B !important;
+    border: 2px solid #121F4B !important;
+}
+
+.btn-menu-flutuante:hover {
+    background-color: #FF662B !important;
+    color: white !important;
+    border-color: #FF662B !important;
+}
+
+.btn-menu-flutuante i {
+    color: #121F4B !important;
+}
+
+.btn-menu-flutuante:hover i {
+    color: white !important;
+}
+
+.menu-aberto .btn-menu-flutuante {
+    background-color: #FF662B !important;
+    color: white !important;
+    border-color: #FF662B !important;
+}
+
+.menu-opcao {
+    background-color: white !important;
+    color: #121F4B !important;
+    border: 1px solid #121F4B !important;
+}
+
+.menu-opcao:hover {
+    background-color: #FF662B !important;
+    color: white !important;
+    border-color: #FF662B !important;
+}
+
+.menu-opcao i,
+.menu-opcao img {
+    color: #121F4B !important;
+}
+
+.menu-opcao:hover i,
+.menu-opcao:hover img {
+    color: white !important;
+}
+
+.menu-opcao.whatsapp i {
+    color: #25D366 !important;
+}
+
+.menu-opcao.whatsapp:hover i {
+    color: white !important;
+}
+
+/* REMOÇÃO ESPECÍFICA DE BOTÕES - APENAS PÁGINA DE AJUDA */
+/* Ocultar botão carrinho do header */
+.header-btn.carrinho {
+    display: none !important;
+}
+
+/* Ocultar botão carrinho do menu flutuante */
+.menu-opcao.carrinho {
+    display: none !important;
+}
+
+/* Ocultar botão ajuda do menu flutuante */
+.menu-opcao.ajuda {
+    display: none !important;
+}
+
+/* Estilos específicos para botão FAQ no header */
+.header-btn i.fa-question-circle {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    /* No mobile, mostrar apenas o ícone */
+    .header-btn[href*="faq"] .btn-text {
+        display: none !important;
+    }
+}
+
+/* CORREÇÃO HOVER MEUS PEDIDOS - FORÇA LARANJA NA PÁGINA DE AJUDA */
+.menu-opcao.pedidos-destaque:hover {
+    background-color: #FF662B !important;
+    border-color: #FF662B !important;
+    color: white !important;
+    box-shadow: 0 6px 20px rgba(255, 102, 43, 0.4) !important;
+}
+
+.menu-opcao.pedidos-destaque:hover i {
+    color: white !important;
+}
+
+/* Integração com sistema DDI */
+.help-form-container .phone-input-container {
+    margin-bottom: 0;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* ========================================
+   POPUP DE VALIDAÇÃO
+   Exatamente o mesmo sistema dos outros formulários
+   ======================================== */
+
+/* Popup de validação */
+.validation-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(18, 31, 75, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.validation-popup-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.validation-popup {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(18, 31, 75, 0.3);
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    transform: scale(0.7) translateY(-50px);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.validation-popup-overlay.show .validation-popup {
+    transform: scale(1) translateY(0);
+}
+
+.validation-popup-header {
+    background: linear-gradient(135deg, #121F4B 0%, #1a2b6b 100%);
+    color: white !important;
+    padding: 1.5rem;
+    border-radius: 16px 16px 0 0;
+    text-align: center;
+    position: relative;
+}
+
+.validation-popup-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    color: white !important;
+}
+
+.validation-popup-header .icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: #FF662B;
+}
+
+.validation-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.validation-popup-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.validation-popup-body {
+    padding: 2rem;
+}
+
+.validation-popup-message {
+    color: #121F4B;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.missing-questions-list {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.missing-questions-list h4 {
+    color: #121F4B;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.missing-questions-list h4 .icon {
+    color: #FF662B;
+    font-size: 1.2rem;
+}
+
+.missing-questions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.missing-question-item {
+    background: white;
+    border: 2px solid #FF662B;
+    border-radius: 8px;
+    padding: 0.75rem;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 500;
+    color: #121F4B;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    
+    /* Centralização vertical e altura uniforme */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    max-height: 60px;
+    height: 60px;
+    
+    /* Quebra de linha para textos longos */
+    word-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.missing-question-item:hover {
+    background: #FF662B;
+    color: white;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 4px 12px rgba(255, 102, 43, 0.3);
+}
+
+.validation-popup-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.validation-popup-btn {
+    background: linear-gradient(135deg, #FF662B 0%, #FF8A50 100%);
+    color: white;
+    border: none;
+    padding: 0.875rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.validation-popup-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 102, 43, 0.4);
+}
+
+.validation-popup-btn.secondary {
+    background: #6c757d;
+}
+
+.validation-popup-btn.secondary:hover {
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.3);
+}
+
+/* Responsividade do popup */
+@media (max-width: 768px) {
+    .validation-popup {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .validation-popup-header {
+        padding: 1.25rem;
+    }
+    
+    .validation-popup-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .validation-popup-body {
+        padding: 1.5rem;
+    }
+    
+    .missing-questions-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.5rem;
+    }
+    
+    .missing-question-item {
+        min-height: 55px !important;
+        max-height: 55px !important;
+        height: 55px !important;
+        font-size: 0.85rem !important;
+        padding: 0.5rem !important;
+    }
+    
+    .validation-popup-actions {
+        flex-direction: column;
+    }
+    
+    .validation-popup-btn {
+        min-width: 100%;
+    }
+}
+
+/* ========================================
+   CORREÇÃO SETA DDI - APLICANDO SOLUÇÃO DO ONBOARDING
+   ======================================== */
+
+/* Container DDI ajustado */
+.help-form-container .country-selector {
+    position: relative !important;
+    min-width: 105px !important;
+    padding: 12px 14px 12px 16px !important;
+    justify-content: flex-start !important;
+    box-sizing: border-box !important;
+}
+
+/* FORÇAR SETA DENTRO DO CAMPO */
+.help-form-container .phone-input-container .country-selector .dropdown-arrow {
+    position: absolute !important;
+    right: 8px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    margin: 0 !important;
+    z-index: 1 !important;
+    color: #666 !important;
+    font-size: 10px !important;
+    transition: all 0.2s ease !important;
+}
+
+.help-form-container .phone-input-container .country-selector.open .dropdown-arrow {
+    transform: translateY(-50%) rotate(180deg) !important;
+    right: 8px !important;
+    top: 50% !important;
+}
+
+/* ========================================
+   SISTEMA DE FEEDBACK VISUAL PARA CAMPOS - REMOVIDO
+   Agora controlado pelo sistema unificado (field-feedback.css)
+   ======================================== */
+/*
+
+/* Campo preenchido e válido - azul clarinho (como Google) */
+.campo-valido {
+    background-color: #f5f9ff !important;
+    border-color: #4285f4 !important;
+    transition: all 0.3s ease;
+}
+
+/* REGRAS COM ESPECIFICIDADE MÁXIMA PARA SOBRESCREVER BACKGROUND WHITE */
+.help-form input.campo-valido,
+.help-form select.campo-valido,
+.help-form textarea.campo-valido {
+    background: #f5f9ff !important;
+    background-color: #f5f9ff !important;
+    background-image: none !important;
+    border-color: #4285f4 !important;
+    transition: all 0.3s ease;
+}
+
+/* Dropdowns - agora controlados pelo sistema unificado */
+
+/* Campo preenchido mas inválido - vermelho clarinho */
+.campo-invalido {
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+    transition: all 0.3s ease;
+}
+
+/* REGRAS COM ESPECIFICIDADE MÁXIMA PARA SOBRESCREVER BACKGROUND WHITE - INVÁLIDO */
+.help-form input.campo-invalido,
+.help-form select.campo-invalido,
+.help-form textarea.campo-invalido {
+    background: #fef0ef !important;
+    background-color: #fef0ef !important;
+    background-image: none !important;
+    border-color: #f44336 !important;
+    transition: all 0.3s ease;
+}
+
+/* Dropdown customizado inválido - especificidade alta para ajuda */
+.custom-dropdown .dropdown-selected.campo-invalido,
+.dropdown-selected.campo-invalido,
+.help-form .custom-dropdown .dropdown-selected.campo-invalido {
+    background-color: #fef0ef !important;
+    border-color: #f44336 !important;
+    transition: all 0.3s ease !important;
+}
+
+.campo-invalido:focus,
+.custom-dropdown .dropdown-selected.campo-invalido:hover,
+.custom-dropdown .dropdown-selected.campo-invalido.active,
+.dropdown-selected.campo-invalido:hover,
+.dropdown-selected.campo-invalido.active {
+    background-color: #fde8e7 !important;
+    border-color: #f44336 !important;
+    box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1) !important;
+}
+
+/* CORREÇÃO: Remove sombra dos campos phone quando inválido */
+.help-form-container .phone-input-container.campo-invalido:focus-within {
+    box-shadow: none !important;
+}
+
+/* Campo não preenchido - estado normal */
+.campo-neutro {
+    background-color: white !important;
+    border-color: #e9ecef !important;
+    transition: all 0.3s ease;
+}
+
+/* REGRAS COM ESPECIFICIDADE MÁXIMA PARA SOBRESCREVER BACKGROUND WHITE - NEUTRO */
+.help-form input.campo-neutro,
+.help-form select.campo-neutro,
+.help-form textarea.campo-neutro {
+    background: white !important;
+    background-color: white !important;
+    background-image: none !important;
+    border-color: #e9ecef !important;
+    transition: all 0.3s ease;
+}
+
+/* Dropdown customizado neutro - especificidade alta para ajuda */
+.custom-dropdown .dropdown-selected.campo-neutro,
+.dropdown-selected.campo-neutro,
+.help-form .custom-dropdown .dropdown-selected.campo-neutro {
+    background-color: white !important;
+    border-color: #e9ecef !important;
+    transition: all 0.3s ease !important;
+}
+
+.campo-neutro:focus,
+.custom-dropdown .dropdown-selected.campo-neutro:hover,
+.custom-dropdown .dropdown-selected.campo-neutro.active,
+.dropdown-selected.campo-neutro:hover,
+.dropdown-selected.campo-neutro.active {
+    background-color: white !important;
+    border-color: #121F4B !important;
+    box-shadow: 0 0 0 3px rgba(18, 31, 75, 0.1) !important;
+}
+
+/* CORREÇÃO: Remove sombra dos campos phone quando neutro */
+.help-form-container .phone-input-container.campo-neutro:focus-within {
+    box-shadow: none !important;
+}
+
+/* Estilos específicos para diferentes tipos de campo */
+input.campo-valido,
+select.campo-valido,
+textarea.campo-valido {
+    background-image: none !important;
+}
+
+input.campo-invalido,
+select.campo-invalido,
+textarea.campo-invalido {
+    background-image: none !important;
+}
+
+/* Animação suave para mudanças de estado */
+.help-form input, 
+.help-form select, 
+.help-form textarea {
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* SISTEMA DE AUTOCOMPLETE INTEGRADO COM VALIDAÇÃO (para ajuda) */
+
+/* Técnica para detectar autocomplete via CSS animation */
+@keyframes onAutoFillStartAjuda {
+    from { opacity: 1; }
+    to { opacity: 1; }
+}
+
+@keyframes onAutoFillCancelAjuda {
+    from { opacity: 1; }
+    to { opacity: 1; }
+}
+
+.help-form input:-webkit-autofill {
+    animation-duration: 0.001s;
+    animation-name: onAutoFillStartAjuda;
+    animation-fill-mode: both;
+}
+
+.help-form input:not(:-webkit-autofill) {
+    animation-duration: 0.001s;
+    animation-name: onAutoFillCancelAjuda;
+    animation-fill-mode: both;
+}
+
+/* Autocomplete + Campo válido - azul mais forte */
+.help-form input.campo-valido:-webkit-autofill,
+.help-form input.campo-valido:-webkit-autofill:hover,
+.help-form input.campo-valido:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px #f5f9ff inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #4285f4 !important;
+    background-color: #f5f9ff !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Autocomplete + Campo inválido - vermelho */
+.help-form input.campo-invalido:-webkit-autofill,
+.help-form input.campo-invalido:-webkit-autofill:hover,
+.help-form input.campo-invalido:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px #fef0ef inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #f44336 !important;
+    background-color: #fef0ef !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Autocomplete + Campo neutro - branco */
+.help-form input.campo-neutro:-webkit-autofill,
+.help-form input.campo-neutro:-webkit-autofill:hover,
+.help-form input.campo-neutro:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: #333 !important;
+    border-color: #e9ecef !important;
+    background-color: white !important;
+    transition: background-color 0.3s ease;
+}
+
+/* CORREÇÃO: Remove sombra dos campos phone quando válido */
+.help-form-container .phone-input-container.campo-valido:focus-within {
+    box-shadow: none !important;
+}
+*/
