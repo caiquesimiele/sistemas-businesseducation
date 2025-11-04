@@ -1,0 +1,40 @@
+{
+  "product_id": "1º-ano-medio",
+  "name": "Coleção LIFE - 1º ano EM",
+  "grade": "1º ano Médio",
+  "active": true,
+  
+  "prices": {
+    "original": 691.95,
+    "pix": 416.95,
+    "credit_card": 438.90
+  },
+  
+  "shipping": {
+    "weight": 1.4,
+    "dimensions": {
+      "length": 29,
+      "width": 34,
+      "height": 10
+    }
+  },
+  
+  "erp": {
+    "codigo_produto_erp": "8849742350",
+    "observacoes": "Coleção completa 1º ano médio"
+  },
+  
+  "images": {
+    "main": "/images/products/1-ano-medio-1.png",
+    "gallery": [
+      "/images/products/1-ano-medio-1.png",
+      "/images/products/1-ano-medio-2.png",
+      "/images/products/1-ano-medio-3.png",
+      "/images/products/1-ano-medio-4.png",
+      "/images/products/1-ano-medio-5.png"
+    ]
+  },
+  
+  "description": "Coleção completa LIFE para o 1º ano do Ensino Médio. Contém todos os materiais didáticos necessários para o ano letivo."
+}
+

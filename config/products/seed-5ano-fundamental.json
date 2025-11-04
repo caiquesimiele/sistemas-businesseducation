@@ -1,0 +1,40 @@
+{
+  "product_id": "5º-ano-fundamental",
+  "name": "Coleção SEED - 5º ano EFAI",
+  "grade": "5º ano Fundamental",
+  "active": true,
+  
+  "prices": {
+    "original": 691.95,
+    "pix": 416.95,
+    "credit_card": 438.90
+  },
+  
+  "shipping": {
+    "weight": 1.4,
+    "dimensions": {
+      "length": 29,
+      "width": 34,
+      "height": 10
+    }
+  },
+  
+  "erp": {
+    "codigo_produto_erp": "8849742344",
+    "observacoes": "Coleção completa 5º ano"
+  },
+  
+  "images": {
+    "main": "/images/products/5-ano-fundamental-1.png",
+    "gallery": [
+      "/images/products/5-ano-fundamental-1.png",
+      "/images/products/5-ano-fundamental-2.png",
+      "/images/products/5-ano-fundamental-3.png",
+      "/images/products/5-ano-fundamental-4.png",
+      "/images/products/5-ano-fundamental-5.png"
+    ]
+  },
+  
+  "description": "Coleção completa SEED para o 5º ano do Ensino Fundamental I. Contém todos os materiais didáticos necessários para o ano letivo."
+}
+

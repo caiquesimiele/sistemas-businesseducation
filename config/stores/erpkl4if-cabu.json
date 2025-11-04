@@ -1,0 +1,109 @@
+{
+  "store_id": "erpkl4if-cabu",
+  "maintainer_id": "amc",
+  "maintainer_name": "Associação Mineira Central da IASD",
+  "store_name": "Colégio Adventista do Buritis",
+  "profit_margin": 0.20,
+  "project_year": "2025",
+  "active": true,
+  
+  "eligible_students": {
+    "3º ano Fundamental": 36,
+    "4º ano Fundamental": 48,
+    "5º ano Fundamental": 40,
+    "6º ano Fundamental": 40,
+    "7º ano Fundamental": 44,
+    "8º ano Fundamental": 24,
+    "9º ano Fundamental": 33,
+    "1º ano Médio": 28,
+    "2º ano Médio": 25,
+    "3º ano Médio": 32
+  },
+  
+  "theme": {
+    "primary_color": "#0066CC",
+    "secondary_color": "#FFD700",
+    "accent_color": "#FF4500",
+    "logo_url": "/images/stores/erpkl4if-cabu/logo.png",
+    "banner_url": "/images/stores/erpkl4if-cabu/banner.png",
+    "banner_mobile_url": "/images/stores/erpkl4if-cabu/banner-mobile.png",
+    "favicon_url": "/images/stores/erpkl4if-cabu/favicon.png",
+    "og_image_url": "/images/stores/erpkl4if-cabu/og-preview.png"
+  },
+  
+  "seo": {
+    "page_title": "Loja Rápida | Business Education & Colégio Adventista do Buritis",
+    "meta_description": "Encontre os melhores materiais didáticos para uma educação inovadora e empreendedora na Business Education.",
+    "og_title": "Loja Rápida | Business Education & Colégio Adventista do Buritis",
+    "og_description": "Educação empreendedora para qualquer futuro.",
+    "og_site_name": "Loja Rápida Business Education",
+    "twitter_handle": "@BusinessEducBR"
+  },
+  
+  "payment": {
+    "max_installments": 12,
+    "min_installment_value": 2.00,
+    "pix_discount": 0.40,
+    "credit_card_markup": 0.05,
+    "webhook_url_orders": "https://hook.us1.make.com/seu-webhook-make",
+    "getnet": {
+      "environment": "production",
+      "seller_id": "seu-seller-id"
+    }
+  },
+  
+  "freight": {
+    "enabled": true,
+    "melhor_envio": {
+      "enabled": true,
+      "sandbox": false,
+      "price_limit_enabled": true,
+      "price_limit_value": 18.90
+    },
+    "origin_zip_code": "30000-000",
+    "product_dimensions": {
+      "weight": 1.400,
+      "height": 26,
+      "width": 32,
+      "length": 9
+    }
+  },
+  
+  "erp": {
+    "omie": {
+      "enabled": true,
+      "sandbox": false,
+      "cenario_fiscal": "8850880673",
+      "categoria_fiscal": "1.01.01",
+      "frete_padrao": "retirada_escola",
+      "consumidor_final": true
+    }
+  },
+  
+  "help": {
+    "webhook_url": "https://hook.us1.make.com/seu-webhook-ajuda",
+    "max_file_size": 10485760,
+    "allowed_file_types": ["jpeg", "jpg", "png", "pdf"]
+  },
+  
+  "company": {
+    "cnpj": "48.037.991/0001-03",
+    "ie": "123456789",
+    "company_name": "Business Education Soluções de Ensino LTDA",
+    "address": {
+      "street": "Rua Exemplo",
+      "number": "123",
+      "complement": "Sala 101",
+      "neighborhood": "Centro",
+      "city": "Belo Horizonte",
+      "state": "MG",
+      "zip_code": "30000-000"
+    },
+    "contact": {
+      "phone": "(31) 3333-3333",
+      "email": "contato@businesseducation.com.br",
+      "whatsapp": "5531999999999"
+    }
+  }
+}
+
